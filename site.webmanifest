@@ -1,0 +1,22 @@
+{
+  "name": "С Приорбанком на гонку в Баку — Priorbank × Visa",
+  "short_name": "Priorbank × Visa",
+  "description": "Рекламная игра Priorbank и Visa: выигрывайте поездку на гонку Formula 1 в Баку.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#011327",
+  "theme_color": "#011327",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

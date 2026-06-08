@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "Visa Dialect";
+  src: url("../fonts/VisaDialect-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Visa Dialect";
+  src: url("../fonts/VisaDialect-RegularItalic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Visa Dialect";
+  src: url("../fonts/VisaDialect-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Visa Dialect";
+  src: url("../fonts/VisaDialect-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Visa Dialect";
+  src: url("../fonts/VisaDialect-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Visa Dialect";
+  src: url("../fonts/VisaDialect-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
