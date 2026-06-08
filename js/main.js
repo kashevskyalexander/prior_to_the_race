@@ -80,7 +80,7 @@
     breakpoints: {
       0: { spaceBetween: 16 },
       768: { spaceBetween: 20 },
-      1920: { spaceBetween: 20 },
+      1920: { spaceBetween: 20, slidesPerView: 3.2, },
     },
   }));
 
@@ -113,7 +113,7 @@
     breakpoints: {
       0: { spaceBetween: 16 },
       768: { spaceBetween: 20 },
-      1920: { spaceBetween: 20 },
+      1920: { spaceBetween: 20, slidesPerView: 3.2 },
     },
   }));
 
@@ -150,8 +150,6 @@
     var tbody = section.querySelector(".winners__table tbody");
     var searchInput = section.querySelector(".winners__search-input");
     var pagination = section.querySelector(".winners__pagination");
-    var prevBtn = section.querySelector(".winners__pagination-btn--prev");
-    var nextBtn = section.querySelector(".winners__pagination-btn--next");
     var pagesEl = section.querySelector(".winners__pagination-pages");
     var navLinks = document.querySelectorAll("[data-winners-nav]");
 
@@ -222,7 +220,7 @@
     }
 
     function renderPagination() {
-      if (!pagination || !pagesEl || !prevBtn || !nextBtn) return;
+      if (!pagination || !pagesEl) return;
 
       var totalPages = getTotalPages();
 
@@ -232,8 +230,6 @@
       }
 
       pagination.hidden = false;
-      prevBtn.disabled = currentPage <= 1;
-      nextBtn.disabled = currentPage >= totalPages;
 
       pagesEl.innerHTML = "";
 
@@ -280,22 +276,6 @@
 
     if (searchInput) {
       searchInput.addEventListener("input", applySearch);
-    }
-
-    if (prevBtn) {
-      prevBtn.addEventListener("click", function () {
-        if (currentPage <= 1) return;
-        currentPage -= 1;
-        render();
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener("click", function () {
-        if (currentPage >= getTotalPages()) return;
-        currentPage += 1;
-        render();
-      });
     }
 
     loadWinnersData()

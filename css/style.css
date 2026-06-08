@@ -247,12 +247,11 @@ ul { margin: 0; padding: 0; }
 
 .site-offcanvas__nav a:hover { color: var(--accent); }
 
-/* Hero — 768 */
 .hero {
   position: relative;
-  min-height: 1024px;
   padding-top: var(--header-h);
   overflow: hidden;
+  height: 100vh;
 }
 
 .hero__bg {
@@ -272,9 +271,10 @@ ul { margin: 0; padding: 0; }
 }
 
 .hero__container {
-  position: relative;
+  position: absolute;
   z-index: 1;
   width: 100%;
+  bottom: 0;
 }
 
 .hero__inner {
@@ -285,7 +285,6 @@ ul { margin: 0; padding: 0; }
 
 .hero__title {
   margin: 0 0 32px;
-  max-width: 1098px;
   font-weight: 700;
   font-family: var(--font);
   font-size: 72px;
@@ -293,6 +292,7 @@ ul { margin: 0; padding: 0; }
   letter-spacing: 3.6px;
   color: var(--accent);
   text-shadow: 5px 0 12px rgba(0, 0, 0, 0.6);
+  margin-bottom: 88px;
 }
 
 .hero__title-line { display: block; }
@@ -302,6 +302,7 @@ ul { margin: 0; padding: 0; }
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
+  margin-bottom: 132px;
 }
 
 .hero__team-logo {
@@ -309,7 +310,7 @@ ul { margin: 0; padding: 0; }
   z-index: 1;
   width: 244px;
   height: auto;
-  margin-top: 24px;
+  margin-bottom: 82px;
 }
 
 /* Ticket — Figma 665:834 */
@@ -341,47 +342,20 @@ ul { margin: 0; padding: 0; }
   width: 100%;
 }
 
-/* Figma: wrapper flex-center + inner flag asset */
-.ticket__decor {
-  display: none;
+.ticket__decor img{
+  width: 365px;
+}
+.ticket__decor{
   position: absolute;
-  z-index: 0;
-  pointer-events: none;
-  top: 13px;
-  width: 23.65%;
-  aspect-ratio: 424.78 / 436.7;
-  align-items: center;
-  justify-content: center;
+  top: -40px;
+}
+.ticket__decor--left{
+  left: -40px;
+}
+.ticket__decor--right{
+  right: -40px;
 }
 
-.ticket__decor-inner {
-  width: 57.7%;
-  height: 83.7%;
-}
-
-.ticket__decor-inner img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.ticket__decor--left {
-  left: -10.26%;
-}
-
-.ticket__decor--left .ticket__decor-inner {
-  transform: rotate(139.01deg) scaleY(-1);
-}
-
-.ticket__decor--right {
-  left: 86.92%;
-  right: auto;
-}
-
-.ticket__decor--right .ticket__decor-inner {
-  transform: rotate(40.99deg);
-}
 
 .ticket__band {
   position: relative;
@@ -475,13 +449,12 @@ ul { margin: 0; padding: 0; }
   height: auto;
 }
 
-/* Steps — 768: 2×2 */
 .steps {
   position: relative;
   z-index: 1;
   padding-bottom: var(--section-pad-y);
   overflow: hidden;
-  background: var(--bg-dark);
+  background: #011327;
   isolation: isolate;
 }
 
@@ -606,12 +579,15 @@ ul { margin: 0; padding: 0; }
 
 .step-card__text-break { display: inline; }
 
-/* Main prize — 768 */
 .main-prize {
   position: relative;
   z-index: 2;
   padding: var(--section-pad-y) 0;
   overflow: hidden;
+  background-image: url("../img/main-prize-confetti.png");
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: contain;
 }
 
 .main-prize__bg {
@@ -841,15 +817,16 @@ ul { margin: 0; padding: 0; }
 }
 
 .experience-card--left {
-  left: 14px;
-  margin-top: 12px;
+  left: 16px;
+  margin-top: 24px;
   z-index: 1;
   transform: rotate(-6.7deg);
   transform-origin: center center;
 }
 
 .experience-card--right {
-  right: 14px;
+  right: 8px;
+  margin-top: 32px;
   z-index: 1;
   transform: rotate(8.05deg);
   transform-origin: center center;
@@ -968,15 +945,9 @@ ul { margin: 0; padding: 0; }
   position: relative;
   padding: var(--section-pad-y) 0;
   overflow: hidden;
+  background: url("../img/prizes-section-bg.png") center / cover no-repeat;
 }
 
-.other-prizes__bg {
-  position: absolute;
-  inset: 0;
-  background: url("../img/prizes-section-bg.png") center / cover no-repeat;
-  opacity: 0.35;
-  pointer-events: none;
-}
 
 .other-prizes__box {
   position: relative;
@@ -1065,15 +1036,10 @@ ul { margin: 0; padding: 0; }
   position: relative;
   padding: var(--section-pad-y) 0;
   overflow: hidden;
+  
+  background: url("../img/cards-section-bg.png") left / cover no-repeat;
 }
 
-.cards-section__bg {
-  position: absolute;
-  inset: 0;
-  background: url("../img/cards-section-bg.png") center / cover no-repeat;
-  opacity: 0.35;
-  pointer-events: none;
-}
 
 .cards-section__box {
   position: relative;
@@ -1266,7 +1232,6 @@ ul { margin: 0; padding: 0; }
 
 .virtual-card__btn {
   width: 100%;
-  max-width: 330px;
 }
 
 /* How to */
@@ -1486,32 +1451,7 @@ ul { margin: 0; padding: 0; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
   margin-top: 40px;
-}
-
-.winners__pagination-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 60px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-}
-
-.winners__pagination-btn img {
-  width: 100%;
-  height: 100%;
-}
-
-.winners__pagination-btn--prev img { transform: rotate(180deg); }
-
-.winners__pagination-btn:disabled {
-  opacity: 0.35;
-  cursor: default;
 }
 
 .winners__pagination-pages {
@@ -1783,223 +1723,8 @@ ul { margin: 0; padding: 0; }
   margin-bottom: 0;
 }
 
-/* ===================== TABLET 1280 ===================== */
+/* Footer — Figma 665:1083 */
 @media (min-width: 768px) {
-  :root {
-    --pad-x: 40px;
-    --header-h: 68px;
-    --title-size: 50px;
-    --title-track: 1px;
-    --btn-xl-size: 30px;
-    --section-pad-y: 100px;
-  }
-
-  .site-header__bar {
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: auto;
-    padding-top: 16px;
-    padding-bottom: 16px;
-  }
-
-  .site-header__brand {
-    grid-column: 1;
-    grid-row: 1;
-    gap: 0;
-  }
-
-  .site-header__visa { width: 80px; }
-  .site-header__prior--brand { display: none; }
-
-  .site-header__prior-center { display: block; }
-
-  .site-header__actions {
-    grid-column: 3;
-    grid-row: 1;
-  }
-
-  .hero {
-    display: flex;
-    flex-direction: column;
-    min-height: 832px;
-  }
-
-  .hero__container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    min-height: 0;
-    padding-bottom: 64px;
-  }
-
-  .hero__inner {
-    width: 100%;
-    padding-top: clamp(80px, 18vh, 165px);
-    padding-bottom: 0;
-  }
-
-  .hero__title { font-size: 72px; letter-spacing: 3.02px; }
-
-  .hero__actions {
-    flex-direction: row;
-    align-items: center;
-    gap: 32px;
-  }
-
-  .hero__team-logo {
-    position: absolute;
-    left: var(--pad-x);
-    bottom: 32px;
-    margin-top: 0;
-  }
-
-  .steps {
-    background: var(--bg);
-  }
-
-  .steps__bg {
-    right: 0;
-    bottom: 0;
-    left: auto;
-    top: auto;
-    width: 151.25%;
-    height: 77.7%;
-  }
-
-  .steps .section-title { margin-bottom: 84px; }
-
-  .steps__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .step-card {
-    gap: 32px;
-    min-height: 416px;
-    aspect-ratio: 591 / 416;
-    padding: 0;
-  }
-
-  .step-card__text { font-size: 22px; letter-spacing: 0.44px; max-width: 83.08%; }
-
-  .step-card--codes .step-card__text-break,
-  .step-card--win .step-card__text-break { display: block; }
-
-  .step-card--pay .step-card__text { max-width: 83.08%; }
-
-  /* Figma 218:874 — card 591×416 */
-  .step-card__media--phone { --step-img-w: 58.54%; --step-img-ratio: 346 / 190; }
-  .step-card__media--cards { --step-img-w: 34.86%; --step-img-ratio: 206 / 200; }
-  .step-card__media--codes { --step-img-w: 40.78%; --step-img-ratio: 241 / 190; }
-  .step-card__media--f1 { --step-img-w: 49.75%; --step-img-ratio: 294 / 190; }
-
-  .step-card__sparkle--tr {
-    width: 111px;
-    height: 122px;
-    right: -4px;
-    top: -34px;
-  }
-
-  .step-card__sparkle--bl {
-    display: block;
-    width: 111px;
-    height: 122px;
-    left: -948px;
-    top: 491px;
-    right: auto;
-    transform: scaleY(-1);
-  }
-
-  .main-prize__spark--1 { left: 1.15%; top: 30%; width: 90px; }
-  .main-prize__spark--2 { display: block; right: 1.77%; top: 48%; width: 90px; }
-
-  .experience-fan__spark--bl { left: 0; bottom: 0; width: 90px; }
-  .experience-fan__spark--tr { right: -14px; top: 36%; width: 90px; }
-
-  .main-prize__cards .prize-feature { min-height: 562px; }
-
-  .prize-feature__title { font-size: 26px; }
-  .prize-feature__desc { font-size: 22px; }
-
-  .prize-feature__img--flight { height: 120px; }
-  .prize-feature__img--hotel { width: 220px; height: 230px; }
-  .prize-feature__img--paddock { max-width: 340px; height: 200px; }
-
-  .main-prize__lead { font-size: 32px; font-weight: 400; }
-
-  .prize-card__bottom p { font-size: 24px; }
-
-  .card-slide p { font-size: 36px; }
-
-  .virtual-card {
-    padding: 100px 0;
-  }
-
-  .virtual-card__box {
-    display: grid;
-    grid-template-columns: minmax(260px, 42%) minmax(0, 1fr);
-    gap: 40px;
-    align-items: center;
-  }
-
-  .virtual-card__card {
-    width: 100%;
-    max-width: 475px;
-    justify-self: center;
-  }
-
-  .virtual-card__content {
-    width: auto;
-    max-width: none;
-    justify-self: start;
-  }
-
-  .virtual-card__btn {
-    width: auto;
-    max-width: none;
-  }
-
-  .how-to__layout {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 60px;
-  }
-
-  .how-to__phone {
-    flex: 0 0 auto;
-    width: min(395px, 34vw);
-    max-width: 395px;
-  }
-
-  .how-to__content {
-    flex: 1;
-    max-width: 625px;
-  }
-
-  .how-to__steps { gap: 48px; }
-
-  .how-to__step { gap: 32px; }
-
-  .how-to__num {
-    width: 60px;
-    height: 60px;
-    font-size: 26px;
-    letter-spacing: 0.52px;
-  }
-
-  .how-to__step-title { font-size: 24px; letter-spacing: 0.48px; }
-  .how-to__step-text { font-size: 18px; letter-spacing: 0.36px; }
-  .how-to__qr {
-    gap: 32px;
-    margin-top: 48px;
-    margin-left: 92px;
-  }
-
-  .how-to__qr img { width: 100px; }
-  .how-to__qr-text { font-size: 18px; letter-spacing: 0.36px; }
-
   .site-footer__grid {
     display: grid;
     grid-template-columns: 1.4fr 1fr 1fr;
@@ -2007,9 +1732,36 @@ ul { margin: 0; padding: 0; }
   }
 }
 
-/* ===================== DESKTOP 1920 ===================== */
 @media (min-width: 1920px) {
-  :root {
+  .site-footer {
+    min-height: 295px;
+    padding: 40px 0;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 685px 257px 257px;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .site-footer__col--info {
+    max-width: 685px;
+  }
+
+  .site-footer__col:not(.site-footer__col--info) {
+    max-width: 257px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .site-footer__logos {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+:root {
     --pad-x: 100px;
     --title-size: 70px;
     --title-track: 1.4px;
@@ -2058,9 +1810,6 @@ ul { margin: 0; padding: 0; }
 
   .site-header__menu-btn { display: none; }
 
-  .hero {
-    min-height: 984px;
-  }
 
   .hero__inner {
     padding-top: 0;
@@ -2085,26 +1834,7 @@ ul { margin: 0; padding: 0; }
 
   .ticket__stage { max-width: 1546px; padding-top: 0; }
 
-  .ticket__decor {
-    display: flex;
-    width: 27.48%;
-    top: -8.8%;
-  }
 
-  .ticket__decor--left { left: -17.14%; }
-  .ticket__decor--right { left: 90.14%; right: auto; }
-
-  .ticket__band {
-    aspect-ratio: 1546 / 534;
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.12);
-  }
-
-  .ticket__image {
-    left: 2.98%;
-    width: 97.02%;
-    inset: 0 auto 0 2.98%;
-    border-radius: 0 32px 32px 0;
-  }
 
   .ticket__blue {
     inset: 0 auto 0 0;
@@ -2137,7 +1867,6 @@ ul { margin: 0; padding: 0; }
     padding-top: 90px;
     padding-bottom: 171px;
     min-height: 821px;
-    background: var(--bg-dark);
   }
 
   .steps__bg {
@@ -2159,11 +1888,11 @@ ul { margin: 0; padding: 0; }
   }
 
   .step-card {
-    gap: 32px;
     width: 100%;
     min-height: 0;
     aspect-ratio: 1;
     overflow: visible;
+    gap: 32px;
     padding: 0;
   }
 
@@ -2224,7 +1953,6 @@ ul { margin: 0; padding: 0; }
   .prize-feature__img--paddock { max-width: 401px; height: 234px; }
   .prize-feature__img--paddock img { max-height: 234px; max-width: 401px; }
 
-  .main-prize__bg { margin-top: -251px; }
 
   .main-prize__spark--1 { left: -5%; top: 34%; width: 111px; }
   .main-prize__spark--2 {display: block; right: -3.5%; bottom: -14%; width: 111px; top: unset;}
@@ -2235,7 +1963,7 @@ ul { margin: 0; padding: 0; }
   .main-prize__lead {
     margin: 140px auto 60px;
     font-size: 40px;
-    max-width: 1723px;
+    max-width: 1200px;
     font-weight: 400;
   }
 
@@ -2319,7 +2047,12 @@ ul { margin: 0; padding: 0; }
   .virtual-card__btn {
     padding: 26px 72px 30px;
     font-size: 30px;
+    width: max-content;
   }
+
+  a:hover {
+    color: var(--accent);
+}
 
   .how-to {
     padding: 80px 0 120px;
@@ -2392,510 +2125,3 @@ ul { margin: 0; padding: 0; }
 
   .winners__table th:nth-child(2),
   .winners__table td:nth-child(2) { width: 500px; }
-
-  .site-footer {
-    min-height: 295px;
-    padding: 40px 0;
-  }
-
-  .site-footer__grid {
-    grid-template-columns: 685px 257px 257px;
-    justify-content: space-between;
-    gap: 0;
-  }
-
-  .site-footer__col:not(.site-footer__col--info) {
-    max-width: 257px;
-  }
-}
-
-/* Virtual card — tablet / small desktop */
-@media (min-width: 1280px) and (max-width: 1919.98px) {
-  .how-to__title {
-    margin-bottom: clamp(48px, 5vw, 74px);
-    font-size: clamp(48px, 4.5vw, 70px);
-    letter-spacing: clamp(0.96px, 0.1vw, 1.4px);
-  }
-
-  .how-to__layout {
-    display: grid;
-    grid-template-columns: minmax(280px, 395px) minmax(0, 1fr);
-    column-gap: clamp(48px, 6vw, 100px);
-    align-items: start;
-    padding-left: clamp(0px, 4vw, 60px);
-  }
-
-  .how-to__phone {
-    width: 100%;
-    max-width: 395px;
-  }
-
-  .how-to__content {
-    max-width: 883px;
-    padding-top: clamp(48px, 8vw, 143px);
-  }
-
-  .how-to__steps { gap: clamp(40px, 4vw, 60px); }
-
-  .how-to__step { gap: 42px; }
-
-  .how-to__num {
-    width: 60px;
-    height: 60px;
-    font-size: 26px;
-    letter-spacing: 0.52px;
-  }
-
-  .how-to__step-title {
-    font-size: clamp(24px, 2vw, 30px);
-    letter-spacing: 0.6px;
-  }
-
-  .how-to__step-text {
-    font-size: clamp(18px, 1.4vw, 22px);
-    letter-spacing: 0.44px;
-  }
-
-  .how-to__qr {
-    gap: 42px;
-    margin-top: clamp(40px, 4vw, 60px);
-    margin-left: 102px;
-  }
-
-  .how-to__qr img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .how-to__qr-text {
-    font-size: clamp(18px, 1.4vw, 22px);
-    letter-spacing: 0.44px;
-  }
-
-  .virtual-card__box {
-    display: grid;
-    grid-template-columns: minmax(360px, 560px) minmax(0, 1fr);
-    gap: clamp(48px, 5vw, 96px);
-    align-items: center;
-    padding-inline: var(--pad-x);
-  }
-
-  .virtual-card__card {
-    width: 100%;
-    max-width: 560px;
-  }
-
-  .virtual-card__content {
-    width: auto;
-    max-width: 934px;
-    gap: 63px;
-    justify-self: start;
-  }
-
-  .virtual-card__list {
-    width: 598px;
-    flex-shrink: 0;
-  }
-
-  .virtual-card__list li {
-    white-space: nowrap;
-  }
-
-  .virtual-card__list li::before {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-}
-
-/* Hero — один экран на ширине > 1199.98px (Figma 854:69) */
-@media (min-width: 1200px) {
-  .hero {
-    display: flex;
-    flex-direction: column;
-    min-height: calc(var(--vh) * 100);
-    height: calc(var(--vh) * 100);
-    max-height: calc(var(--vh) * 100);
-  }
-
-  .hero__bg-img {
-    object-fit: cover;
-    object-position: center 88%;
-  }
-
-  .hero__container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    min-height: 0;
-    padding-bottom: 0;
-  }
-
-  .hero__inner {
-    width: 100%;
-    padding-top: clamp(140px, calc(24.7vh - var(--header-h) * 0.15), 243px);
-    padding-bottom: 0;
-  }
-
-  .hero__title {
-    max-width: 1024px;
-    font-size: clamp(64px, 6vw, 116px);
-    margin-bottom: clamp(24px, 5vh, 52px);
-  }
-
-  .hero__actions {
-    flex-direction: row;
-    align-items: center;
-    gap: 32px;
-  }
-
-  .hero__btn {
-    min-width: 447px;
-    max-width: 100%;
-  }
-
-  .hero__team-logo {
-    position: absolute;
-    left: var(--pad-x);
-    bottom: clamp(40px, 8.3vh, 82px);
-    width: 244px;
-    margin-top: 0;
-  }
-
-  /* Ticket — Figma 665:834, адаптация > 1199.98px */
-  .ticket {
-    margin-top: 0;
-    padding: clamp(60px, 4.17vw, 80px) 0;
-    min-height: clamp(520px, 36.15vw, 694px);
-    display: flex;
-    align-items: center;
-    z-index: auto;
-  }
-
-  .ticket__shell {
-    width: 100%;
-    min-height: 0;
-  }
-
-  .ticket__stage {
-    max-width: clamp(1056px, calc(1056px + (100vw - 1280px) * 490 / 640), 1546px);
-    padding-top: 0;
-  }
-
-  .ticket__decor {
-    display: flex;
-    width: 27.48%;
-    top: -8.8%;
-  }
-
-  .ticket__decor--left { left: -17.14%; }
-  .ticket__decor--right { left: 90.14%; right: auto; }
-
-  .ticket__band {
-    aspect-ratio: 1546 / 534;
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.12);
-  }
-
-  .ticket__image {
-    left: 2.98%;
-    width: 97.02%;
-    inset: 0 auto 0 2.98%;
-    border-radius: 0 32px 32px 0;
-  }
-
-  .ticket__blue {
-    inset: 0 auto 0 0;
-    width: 78.17%;
-    background: linear-gradient(60.22deg, #00204b 11.53%, #004cb1 90.93%);
-  }
-
-  .ticket__content {
-    left: 5.89%;
-    width: 66.27%;
-  }
-
-  .ticket__logos { top: 11.05%; }
-  .ticket__copy { top: 32.58%; }
-
-  .ticket__logo-visa { width: clamp(68px, 4.79vw, 92px); }
-  .ticket__logo-prior { width: clamp(232px, 15.26vw, 293px); }
-
-  .ticket__title,
-  .ticket__text { font-size: clamp(22px, 1.67vw, 32px); }
-
-  .ticket__title { margin-bottom: clamp(12px, 1.25vw, 24px); }
-
-  .ticket__team {
-    top: 73.97%;
-    width: clamp(152px, 12.7vw, 244px);
-  }
-}
-
-@media (min-width: 1200px) and (max-width: 1919.98px) {
-  .ticket__stage { max-width: 1056px; }
-
-  .ticket__decor {
-    width: 31.91%;
-    top: -27.8%;
-  }
-
-  .ticket__decor--left { left: -15.93%; }
-  .ticket__decor--right { left: 82.91%; }
-
-  .ticket__band { aspect-ratio: 1056 / 356; }
-
-  .ticket__image {
-    left: 5.3%;
-    width: 94.7%;
-    inset: 0 auto 0 5.3%;
-  }
-
-  .ticket__blue { width: 76.23%; }
-
-  .ticket__content {
-    left: 4.92%;
-    width: 66.76%;
-  }
-
-  .ticket__logos { top: 14.04%; }
-  .ticket__copy { top: 34.83%; }
-
-  .ticket__title,
-  .ticket__text { font-size: 22px; }
-
-  .ticket__title { margin-bottom: 12px; }
-
-  .ticket__team {
-    top: 72.19%;
-    width: 152px;
-  }
-}
-
-/* Ticket tablet — 768–1199.98px (Figma 1280) */
-@media (min-width: 768px) and (max-width: 1199.98px) {
-  .ticket__stage {
-    max-width: 1056px;
-    padding-top: 0;
-  }
-
-  .ticket__decor {
-    display: flex;
-    width: 31.91%;
-    top: -27.8%;
-  }
-
-  .ticket__decor--left { left: -15.93%; }
-  .ticket__decor--right { left: 82.91%; }
-
-  .ticket__band {
-    aspect-ratio: 1056 / 356;
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.12);
-  }
-
-  .ticket__image {
-    left: 5.3%;
-    width: 94.7%;
-    inset: 0 auto 0 5.3%;
-  }
-
-  .ticket__blue { width: 76.23%; }
-
-  .ticket__content {
-    left: 4.92%;
-    width: 66.76%;
-  }
-
-  .ticket__logos { top: 14.04%; }
-  .ticket__copy { top: 34.83%; }
-
-  .ticket__logo-visa { width: 68px; }
-  .ticket__logo-prior { width: 232px; }
-
-  .ticket__title,
-  .ticket__text { font-size: 22px; }
-
-  .ticket__title { margin-bottom: 12px; }
-
-  .ticket__team {
-    top: 72.19%;
-    width: 152px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .main-prize__lead {
-    margin: 80px auto 60px;
-    font-weight: 400;
-  }
-}
-
-/* Swiper slides — desktop */
-@media (min-width: 768px) {
-  .prizes-swiper .swiper-slide,
-  .cards-swiper .swiper-slide { width: 560px; }
-}
-
-@media (max-width: 767.98px) {
-  .faq__bg {
-    left: 0;
-    width: 100%;
-  }
-
-  .faq__bg-img {
-    left: 0;
-    width: 100%;
-    object-position: center;
-  }
-
-  .other-prizes__track {
-    --prizes-peek: 20px;
-  }
-
-  .prizes-swiper .swiper-slide {
-    width: calc(100% - var(--prizes-peek));
-  }
-
-  .cards-section__track {
-    --cards-peek: 20px;
-  }
-
-  .cards-swiper .swiper-slide {
-    width: calc(100% - var(--cards-peek));
-  }
-
-  .site-header__bar {
-    grid-template-columns: 1fr auto;
-    padding-top: 11px;
-    padding-bottom: 11px;
-  }
-
-  .site-header__brand {
-    justify-content: space-between;
-    width: min(421px, calc(100% - 160px));
-    gap: 0;
-  }
-
-  .site-header__cta {
-    padding: 14px 24px;
-    font-size: 16px;
-  }
-
-  .hero {
-    display: flex;
-    flex-direction: column;
-    min-height: calc(var(--vh) * 100);
-    min-height: max(1024px, calc(var(--vh) * 100));
-    padding-bottom: calc(120px + env(safe-area-inset-bottom, 0));
-  }
-
-  .hero__container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
-  }
-
-  .hero__inner {
-    flex: 1;
-    padding-top: 75px;
-    min-height: 0;
-  }
-
-  .hero__title {
-    font-size: 72px;
-    letter-spacing: 3.6px;
-    margin-bottom: 40px;
-  }
-
-  .hero__btn {
-    width: min(346px, 100%);
-    padding: 22px 42px;
-    font-size: 24px;
-  }
-
-  .hero__team-logo {
-    position: absolute;
-    left: var(--pad-x);
-    bottom: 48px;
-    margin-top: 0;
-  }
-
-  .ticket {
-    margin-top: -72px;
-    padding-top: 0;
-    z-index: 4;
-  }
-
-  .ticket__decor { display: flex; }
-
-  .ticket__band {
-    box-shadow: 0 0 50px rgba(255, 255, 255, 0.12);
-  }
-
-  .steps__bg {
-    right: 9px;
-    bottom: 0;
-    left: auto;
-    top: auto;
-    width: 183.8%;
-    height: 79.2%;
-  }
-
-  .steps .section-title {
-    margin-bottom: 70px;
-  }
-
-  .main-prize__title {
-    text-transform: uppercase;
-    font-size: 40px;
-  }
-
-  .main-prize__subtitle {
-    font-size: 38px;
-  }
-
-  .virtual-card__title {
-    font-size: 40px;
-    white-space: normal;
-  }
-
-  .main-prize-swiper,
-  .experience-swiper {
-    overflow: visible;
-    margin-bottom: 32px;
-  }
-
-  .main-prize-swiper .swiper-slide { width: 88%; }
-
-  .main-prize-swiper .prize-feature {
-    min-height: 480px;
-    padding: 40px 20px 32px;
-  }
-
-  .main-prize-swiper .prize-feature--ticket { padding-top: 28px; }
-
-  .main-prize-swiper .prize-feature__title { font-size: 22px; }
-  .main-prize-swiper .prize-feature__desc { font-size: 18px; }
-
-  .main-prize-swiper .prize-feature__img--flight { height: 90px; }
-  .main-prize-swiper .prize-feature__img--hotel { width: 180px; height: 190px; }
-  .main-prize-swiper .prize-feature__img--paddock { max-width: 280px; height: 150px; }
-  .experience-swiper .swiper-slide { width: 92%; }
-
-  .polaroid {
-    transform: none !important;
-    padding: 20px 20px 40px;
-  }
-
-  .polaroid__photo { height: 400px; aspect-ratio: auto; }
-
-  .polaroid__body h3 { font-size: 18px; }
-  .polaroid__body p,
-  .polaroid__body li { font-size: 14px; }
-
-  .site-footer__logos {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-}
