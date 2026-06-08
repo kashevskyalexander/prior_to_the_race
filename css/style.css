@@ -383,7 +383,7 @@ ul {
 }
 
 .ticket__decor img {
-	width: 365px;
+	width: 400px;
 }
 
 .ticket__decor {
@@ -392,11 +392,11 @@ ul {
 }
 
 .ticket__decor--left {
-	left: -40px;
+	left: -253px;
 }
 
 .ticket__decor--right {
-	right: -40px;
+	right: -253px;
 }
 
 
@@ -2414,8 +2414,87 @@ a:hover {
 }
 
 @media (min-width: 1200px) and (max-width: 1919px) {
+	/* Ticket — Figma 218:863, якорь 1280 / 1056px */
+	.ticket {
+		padding: 80px 0;
+		display: flex;
+		align-items: center;
+	}
 
-	.hero__title{
+	.ticket__stage {
+		max-width: 1056px;
+		padding-top: 0;
+	}
+
+	.ticket__decor {
+		display: flex;
+		width: 31.91%;
+		top: -27.8%;
+	}
+
+	.ticket__decor--left {
+		left: -15.93%;
+	}
+
+	.ticket__decor--right {
+		left: 82.91%;
+		right: auto;
+	}
+
+	.ticket__band {
+		aspect-ratio: 1056 / 356;
+		box-shadow: 0 0 25px rgba(255, 255, 255, 0.12);
+	}
+
+	.ticket__image {
+		left: 5.3%;
+		width: 94.7%;
+		inset: 0 auto 0 5.3%;
+		border-radius: 0 32px 32px 0;
+	}
+
+	.ticket__blue {
+		inset: 0 auto 0 0;
+		width: 76.23%;
+		background: linear-gradient(60.22deg, #00204b 11.53%, #004cb1 90.93%);
+	}
+
+	.ticket__content {
+		left: 4.92%;
+		width: 66.76%;
+	}
+
+	.ticket__logos {
+		top: 14.04%;
+	}
+
+	.ticket__copy {
+		top: 34.83%;
+	}
+
+	.ticket__logo-visa {
+		width: 68px;
+	}
+
+	.ticket__logo-prior {
+		width: 232px;
+	}
+
+	.ticket__title,
+	.ticket__text {
+		font-size: 22px;
+	}
+
+	.ticket__title {
+		margin-bottom: 12px;
+	}
+
+	.ticket__team {
+		top: 72.19%;
+		width: 152px;
+	}
+
+	.hero__title {
 		font-size: 72px;
 		font-style: normal;
 		font-weight: 700;
@@ -2430,7 +2509,214 @@ a:hover {
 		font-size: 24px;
 	}
 
-	.hero__team-logo{
+	.hero__team-logo {
 		margin-bottom: 61px;
+	}
+}
+
+/* Ticket — 1440 (≈25% к 1920 / 1546px) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+	.ticket__stage {
+		max-width: 1179px;
+	}
+
+	.ticket__decor {
+		width: 30.8%;
+		top: -23.05%;
+	}
+
+	.ticket__decor--left {
+		left: -16.23%;
+	}
+
+	.ticket__decor--right {
+		left: 84.72%;
+	}
+
+	.ticket__band {
+		aspect-ratio: 1179 / 401;
+	}
+
+	.ticket__image {
+		left: 4.72%;
+		width: 95.28%;
+		inset: 0 auto 0 4.72%;
+	}
+
+	.ticket__blue {
+		width: 76.72%;
+	}
+
+	.ticket__content {
+		left: 5.16%;
+		width: 66.64%;
+	}
+
+	.ticket__logos {
+		top: 13.29%;
+	}
+
+	.ticket__copy {
+		top: 34.27%;
+	}
+
+	.ticket__logo-visa {
+		width: 74px;
+	}
+
+	.ticket__logo-prior {
+		width: 247px;
+	}
+
+	.ticket__title,
+	.ticket__text {
+		font-size: 25px;
+	}
+
+	.ticket__title {
+		margin-bottom: 15px;
+	}
+
+	.ticket__team {
+		top: 72.64%;
+		width: 175px;
+	}
+}
+
+/* Ticket — 1600 (≈50% к 1920 / 1546px) */
+@media (min-width: 1600px) and (max-width: 1919px) {
+	.ticket__stage {
+		max-width: 1301px;
+	}
+
+	.ticket__decor {
+		width: 29.69%;
+		top: -18.3%;
+	}
+
+	.ticket__decor--left {
+		left: -16.54%;
+	}
+
+	.ticket__decor--right {
+		left: 86.53%;
+	}
+
+	.ticket__band {
+		aspect-ratio: 1301 / 445;
+	}
+
+	.ticket__image {
+		left: 4.14%;
+		width: 95.86%;
+		inset: 0 auto 0 4.14%;
+	}
+
+	.ticket__blue {
+		width: 77.2%;
+	}
+
+	.ticket__content {
+		left: 5.41%;
+		width: 66.52%;
+	}
+
+	.ticket__logos {
+		top: 12.55%;
+	}
+
+	.ticket__copy {
+		top: 33.71%;
+	}
+
+	.ticket__logo-visa {
+		width: 80px;
+	}
+
+	.ticket__logo-prior {
+		width: 263px;
+	}
+
+	.ticket__title,
+	.ticket__text {
+		font-size: 27px;
+	}
+
+	.ticket__title {
+		margin-bottom: 18px;
+	}
+
+	.ticket__team {
+		top: 73.08%;
+		width: 198px;
+	}
+}
+
+/* Ticket — 1760 (≈75% к 1920 / 1546px) */
+@media (min-width: 1760px) and (max-width: 1919px) {
+	.ticket__stage {
+		max-width: 1424px;
+	}
+
+	.ticket__decor {
+		width: 28.57%;
+		top: -13.55%;
+	}
+
+	.ticket__decor--left {
+		left: -16.84%;
+	}
+
+	.ticket__decor--right {
+		left: 88.34%;
+	}
+
+	.ticket__band {
+		aspect-ratio: 1424 / 490;
+	}
+
+	.ticket__image {
+		left: 3.56%;
+		width: 96.44%;
+		inset: 0 auto 0 3.56%;
+	}
+
+	.ticket__blue {
+		width: 77.69%;
+	}
+
+	.ticket__content {
+		left: 5.65%;
+		width: 66.39%;
+	}
+
+	.ticket__logos {
+		top: 11.8%;
+	}
+
+	.ticket__copy {
+		top: 33.14%;
+	}
+
+	.ticket__logo-visa {
+		width: 86px;
+	}
+
+	.ticket__logo-prior {
+		width: 278px;
+	}
+
+	.ticket__title,
+	.ticket__text {
+		font-size: 30px;
+	}
+
+	.ticket__title {
+		margin-bottom: 21px;
+	}
+
+	.ticket__team {
+		top: 73.53%;
+		width: 221px;
 	}
 }
