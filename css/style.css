@@ -2412,3 +2412,25 @@ a:hover {
 .winners__table td:nth-child(2) {
 	width: 500px;
 }
+
+@media (min-width: 1200px) and (max-width: 1919px) {
+
+	.hero__title{
+		font-size: 72px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 100%;
+		letter-spacing: 3.6px;
+		margin: 0;
+		margin-bottom: 51px;
+	}
+
+	.hero__btn {
+		padding: 22px 42px 26px;
+		font-size: 24px;
+	}
+
+	.hero__team-logo{
+		margin-bottom: 61px;
+	}
+}
