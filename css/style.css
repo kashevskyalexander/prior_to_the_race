@@ -1,5 +1,3 @@
-/* Priorbank × Visa — 375 / 768 / 1280 / 1920 */
-
 :root {
 	--bg: #011327;
 	--bg-dark: #010c1b;
@@ -90,7 +88,6 @@ ul {
 	padding-inline: var(--pad-x);
 }
 
-/* Typography */
 .section-title {
 	margin: 0 0 40px;
 	font-weight: 600;
@@ -120,7 +117,6 @@ ul {
 	margin-bottom: 0;
 }
 
-/* Buttons */
 .btn-accent,
 .btn-outline-accent,
 .accordion-button,
@@ -186,7 +182,6 @@ img.re__bg-img {
 	color: var(--black);
 }
 
-/* Header — mobile / 768 */
 .site-header {
 	position: fixed;
 	top: 0;
@@ -373,7 +368,6 @@ img.re__bg-img {
 	z-index: 1;
 }
 
-/* Ticket — Figma 665:834 */
 .ticket {
 	position: relative;
 	padding: 40px 0 60px;
@@ -418,7 +412,6 @@ img.re__bg-img {
 .ticket__decor--right {
 	right: -253px;
 }
-
 
 .ticket__band {
 	position: relative;
@@ -634,7 +627,6 @@ img.re__bg-img {
 	object-fit: contain;
 }
 
-/* Figma 224:1575 — card 354×300 */
 .step-card__media--phone {
 	--step-img-w: 72.03%;
 	--step-img-ratio: 255 / 140;
@@ -740,13 +732,11 @@ img.re__bg-img {
 	z-index: 3;
 }
 
-/* Figma 859:233 — у ряда призовых карточек */
 .main-prize__spark--1 {
 	left: 1.15%;
 	top: 28%;
 }
 
-/* Figma 859:234 */
 .main-prize__spark--2 {
 	right: 1.77%;
 	top: 45%;
@@ -877,7 +867,6 @@ img.re__bg-img {
 	object-fit: contain;
 }
 
-
 .prize-feature__img--hotel {
 	width: 200px;
 	height: 210px;
@@ -937,7 +926,6 @@ img.re__bg-img {
 	margin-inline: auto;
 }
 
-/* Experience fan — Figma 859:236–859:238 */
 .experience-fan {
 	position: relative;
 	width: 100%;
@@ -957,7 +945,6 @@ img.re__bg-img {
 	overflow: visible;
 }
 
-/* Figma 859:250 / 859:249 — относительно experience-fan__row */
 .experience-fan__spark {
 	position: absolute;
 	width: 7.05%;
@@ -980,8 +967,6 @@ img.re__bg-img {
 	top: 38%;
 	transform: rotate(172deg) scaleY(-1);
 }
-
-/* Figma 859:239 / 859:244 */
 
 .main-prize__spark-wrap {
 	position: relative;
@@ -1028,7 +1013,6 @@ img.re__bg-img {
 	transform: rotate(8.05deg);
 	transform-origin: center center;
 }
-
 
 .experience-card__media {
 	width: 100%;
@@ -1095,7 +1079,6 @@ img.re__bg-img {
 	}
 }
 
-/* Polaroid — mobile swiper */
 .polaroid {
 	position: relative;
 	display: flex;
@@ -1141,14 +1124,12 @@ img.re__bg-img {
 	text-align: center;
 }
 
-/* Other prizes */
 .other-prizes {
 	position: relative;
 	padding: var(--section-pad-y) 0;
 	overflow: hidden;
 	background: url("../img/prizes-section-bg.png") center / cover no-repeat;
 }
-
 
 .other-prizes__box {
 	position: relative;
@@ -1238,7 +1219,6 @@ img.re__bg-img {
 	line-height: 1;
 }
 
-/* Cards section */
 .cards-section {
 	position: relative;
 	padding: var(--section-pad-y) 0;
@@ -1246,7 +1226,6 @@ img.re__bg-img {
 
 	background: url("../img/cards-section-bg.png") left / cover no-repeat;
 }
-
 
 .cards-section__box {
 	position: relative;
@@ -1304,7 +1283,6 @@ img.re__bg-img {
 	letter-spacing: 0.56px;
 }
 
-/* Swiper nav */
 .swiper-nav {
 	display: flex;
 	align-items: center;
@@ -1341,7 +1319,6 @@ img.re__bg-img {
 	z-index: 2;
 }
 
-/* Virtual card */
 .virtual-card {
 	position: relative;
 	display: flex;
@@ -1461,7 +1438,6 @@ img.re__bg-img {
 	width: 100%;
 }
 
-/* How to */
 .how-to {
 	padding: var(--section-pad-y) 0;
 	background: var(--bg-blue);
@@ -1578,17 +1554,22 @@ img.re__bg-img {
 	color: var(--white);
 }
 
-/* Winners — desktop only */
 .winners {
 	display: none;
 	padding: var(--section-pad-y) 0;
 	background: var(--bg-blue);
 }
 
-@media (min-width: 1280px) {
-	.winners.winners--visible {
-		display: block;
-	}
+.winners.winners--visible {
+	display: block;
+}
+
+.winners__list {
+	display: none;
+}
+
+.winners__more {
+	display: none;
 }
 
 .winners__search {
@@ -1723,7 +1704,6 @@ img.re__bg-img {
 	cursor: default;
 }
 
-/* FAQ */
 .faq {
 	position: relative;
 	padding: var(--section-pad-y) 0;
@@ -1896,7 +1876,6 @@ img.re__bg-img {
 	color: var(--accent);
 }
 
-/* Footer — 768 stacked */
 .site-footer {
 	padding: 40px 0 calc(48px + env(safe-area-inset-bottom, 0));
 	background: var(--footer-bg);
@@ -1974,7 +1953,6 @@ img.re__bg-img {
 	margin-bottom: 0;
 }
 
-/* Footer — tablet: логотипы в ряд, контент одной колонкой (Figma 224) */
 @media (min-width: 768px) and (max-width: 1199.98px) {
 	.site-footer {
 		padding: 40px 0 48px;
@@ -2037,7 +2015,6 @@ img.re__bg-img {
 	}
 }
 
-/* Footer — Figma 218:1053, экраны < 1440 */
 @media (min-width: 1200px) and (max-width: 1439.98px) {
 	.site-footer {
 		padding: 40px 0;
@@ -2171,7 +2148,7 @@ img.re__bg-img {
 		border-radius: 12px;
 	}
 
-	/* Header — Figma 375: Visa слева, Prior по центру, меню справа */
+	
 	.site-header__bar {
 		grid-template-columns: 54px 1fr 40px;
 		grid-template-rows: auto;
@@ -2225,7 +2202,7 @@ img.re__bg-img {
 		height: auto;
 	}
 
-	/* Hero — Figma 375 */
+	
 	.hero {
 		height: auto;
 		min-height: 640px;
@@ -2297,7 +2274,7 @@ img.re__bg-img {
 		margin-bottom: 32px;
 	}
 
-	/* Ticket — Figma 375: ticket-mobile.png + текст */
+	
 	.ticket {
 		padding: 24px 0 48px;
 		margin-top: -16px;
@@ -2368,7 +2345,7 @@ img.re__bg-img {
 		display: none;
 	}
 
-	/* Steps — Figma 375, сетка 2×2 */
+	
 	.steps {
 		padding-top: 64px;
 		padding-bottom: 64px;
@@ -2436,7 +2413,7 @@ img.re__bg-img {
 		    grid-template-columns: repeat(1, minmax(0, 1fr));
 	}
 
-	/* Main prize — Figma 375 */
+	
 	.main-prize {
 		padding: 80px 0;
 		background-image: url("../img/bg_3.png");
@@ -2533,7 +2510,7 @@ img.re__bg-img {
 		width: 100%;
 	}
 
-	/* Other prizes — Figma 375 */
+	
 	.other-prizes {
 		padding: 80px 0;
 	}
@@ -2580,7 +2557,7 @@ img.re__bg-img {
 		font-size: 13px;
 	}
 
-	/* Cards — Figma 375 */
+	
 	.cards-section {
 		padding: 64px 0;
 	}
@@ -2602,7 +2579,7 @@ img.re__bg-img {
 		margin-bottom: 12px;
 	}
 
-	/* Virtual card — Figma 375: заголовок → список → карта → кнопка */
+	
 	.virtual-card {
 		padding: 64px 0;
 		background: var(--bg);
@@ -2685,7 +2662,7 @@ img.re__bg-img {
 		font-size: 20px;
 	}
 
-	/* How to — Figma 375: шаги → QR → телефон */
+	
 	.how-to {
 		padding: 64px 0 80px;
 		background: var(--bg-blue);
@@ -2770,7 +2747,106 @@ img.re__bg-img {
 		line-height: 1.4;
 	}
 
-	/* FAQ — Figma 375 */
+	
+	.winners {
+		padding: 64px 0;
+	}
+
+	.section-head--winners {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 40px;
+		margin-bottom: 24px;
+	}
+
+	.section-head--winners .section-title {
+		margin-bottom: 0;
+		text-align: center;
+	}
+
+	.winners__search {
+		max-width: none;
+		padding: 12px 16px;
+		border-radius: 12px;
+		gap: 8px;
+	}
+
+	.winners__search-icon {
+		width: 24px;
+		height: 24px;
+	}
+
+	.winners__search-input {
+		font-size: 16px;
+	}
+
+	.winners__table-wrap,
+	.winners__pagination {
+		display: none !important;
+	}
+
+	.winners__list {
+		display: block;
+		border-radius: 12px;
+		overflow: hidden;
+		background: var(--white);
+	}
+
+	.winners-card {
+		padding: 12px 16px;
+	}
+
+	.winners-card:nth-child(odd) {
+		background: var(--white);
+	}
+
+	.winners-card:nth-child(even) {
+		background: #f2f2f2;
+	}
+
+	.winners-card__row {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 12px;
+	}
+
+	.winners-card__row + .winners-card__row {
+		margin-top: 8px;
+	}
+
+	.winners-card__label {
+		flex: 0 0 46%;
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 1.4;
+		color: var(--black);
+	}
+
+	.winners-card__value {
+		flex: 1;
+		text-align: right;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 1.4;
+		color: var(--black);
+	}
+
+	.winners__empty--mobile {
+		margin: 0;
+		padding: 24px 16px;
+		text-align: center;
+		color: var(--text-muted);
+		font-size: 14px;
+	}
+
+	.winners__more:not([hidden]) {
+		display: inline-flex;
+		width: 100%;
+		margin-top: 24px;
+	}
+
+	
 	.faq {
 		padding: 64px 0;
 	}
@@ -2798,7 +2874,7 @@ img.re__bg-img {
 		line-height: 1.5;
 	}
 
-	/* Footer — Figma 375 */
+	
 	.site-footer {
 		padding: 32px 0 calc(40px + env(safe-area-inset-bottom, 0));
 	}
@@ -2834,7 +2910,6 @@ img.re__bg-img {
 	}
 }
 
-/* Header menu — tablet */
 @media (min-width: 768px) and (max-width: 1919.98px) {
 	.site-header__bar {
 		position: relative;
@@ -2880,7 +2955,6 @@ img.re__bg-img {
 	}
 }
 
-/* Header menu — desktop */
 @media (min-width: 1920px) {
 	.site-header__bar {
 		display: flex;
@@ -2933,7 +3007,6 @@ img.re__bg-img {
 	}
 }
 
-/* Tablet — Figma 224:1383 (768px artboard), диапазон 768–1199.98 */
 @media (min-width: 768px) and (max-width: 1199.98px) {
 	:root {
 		--pad-x: 40px;
@@ -3000,7 +3073,7 @@ img.re__bg-img {
 		display: none;
 	}
 
-	/* Hero — Figma 224:1384 */
+	
 	.hero {
 		height: 1024px;
 	}
@@ -3058,7 +3131,7 @@ img.re__bg-img {
 		margin: 0 0 0;
 	}
 
-	/* Ticket — Figma 224:1400 */
+	
 	.ticket {
 		padding: 0 0 60px;
 		margin-top: -24px;
@@ -3140,7 +3213,7 @@ img.re__bg-img {
 		width: 91px;
 	}
 
-	/* Steps — Figma 224:1575, card 354×300, сетка 2×2 */
+	
 	.steps {
 		padding-top: 80px;
 		padding-bottom: 80px;
@@ -3238,7 +3311,7 @@ img.re__bg-img {
 		display: none;
 	}
 
-	/* Main prize — Figma 224:1630 */
+	
 	.main-prize {
 		padding: 80px 0;
 		background: url("../img/tablet_5.png") no-repeat top / contain;
@@ -3332,7 +3405,7 @@ img.re__bg-img {
 		line-height: 1.3;
 	}
 
-	/* Experience — tablet_6.png */
+	
 	.experience-tablet {
 		display: block;
 		width: 100%;
@@ -3359,7 +3432,7 @@ img.re__bg-img {
 		font-size: 24px;
 	}
 
-	/* Other prizes — Figma 224:1720 */
+	
 	.other-prizes {
 		padding: 80px 0;
 	}
@@ -3421,7 +3494,7 @@ img.re__bg-img {
 		max-width: none;
 	}
 
-	/* Cards — Figma 224:1756 */
+	
 	.cards-section {
 		padding: 80px 0;
 	}
@@ -3452,7 +3525,7 @@ img.re__bg-img {
 		letter-spacing: 0.4px;
 	}
 
-	/* Virtual card — Figma 224:1788: заголовок → список → карта → кнопка */
+	
 	.virtual-card {
 		min-height: 0;
 		padding: 80px 0;
@@ -3523,7 +3596,7 @@ img.re__bg-img {
 		font-size: 24px;
 	}
 
-	/* How to — Figma 224:1810: телефон слева, шаги справа */
+	
 	.how-to {
 		padding: 80px 0 100px;
 	}
@@ -3605,7 +3678,7 @@ img.re__bg-img {
 		margin: 0;
 	}
 
-	/* FAQ — Figma 224:1844 */
+	
 	.faq {
 		padding: 80px 0;
 	}
@@ -3638,7 +3711,6 @@ img.re__bg-img {
 	}
 }
 
-/* Fluid tablet — 992–1199.98 (масштаб к макету 1280) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
 	.hero__title {
 		font-size: 80px;
@@ -3847,7 +3919,6 @@ img.re__bg-img {
 	padding-top: 0;
 }
 
-
 .ticket__blue {
 	inset: 0 auto 0 0;
 	width: 78.17%;
@@ -3915,7 +3986,6 @@ img.re__bg-img {
 	max-width: 100%;
 }
 
-
 .step-card__text {
 	font-size: 18px;
 	font-weight: 500;
@@ -3927,8 +3997,6 @@ img.re__bg-img {
 	display: block;
 }
 
-
-/* Figma 665:891 — card 416×416 */
 .step-card__media--phone {
 	--step-img-w: 96.39%;
 	--step-img-ratio: 401 / 220;
@@ -3995,7 +4063,6 @@ img.re__bg-img {
 	letter-spacing: 0.6px;
 }
 
-
 .prize-feature__img--hotel {
 	width: 248px;
 	height: 260px;
@@ -4014,7 +4081,6 @@ img.re__bg-img {
 	max-height: 234px;
 	max-width: 401px;
 }
-
 
 .main-prize__spark--1 {
 	left: -5%;
@@ -4276,7 +4342,7 @@ a:hover {
 		width: 152px;
 	}
 
-	/* Steps — Figma 218:874, якорь 1280 / 2×2 */
+	
 	.steps {
 		background: var(--bg);
 		padding-top: 80px;
@@ -4357,7 +4423,7 @@ a:hover {
 		padding-inline: 40px;
 	}
 
-	/* Other prizes — Figma 218:916, якорь 1280 */
+	
 	.other-prizes {
 		padding: 100px 0;
 	}
@@ -4406,7 +4472,7 @@ a:hover {
 		font-size: 13px;
 	}
 
-	/* Cards section — Figma 218:991, якорь 1280 */
+	
 	.cards-section {
 		padding: 90px 0;
 	}
@@ -4434,7 +4500,7 @@ a:hover {
 		letter-spacing: 0.48px;
 	}
 
-	/* How to — Figma 322:677, якорь 1280 */
+	
 	.how-to {
 		padding: 80px 0 100px;
 	}
@@ -4506,7 +4572,7 @@ a:hover {
 		letter-spacing: 0.36px;
 	}
 
-	/* Main prize — Figma 859:258, якорь 1280 */
+	
 	.main-prize {
 		padding: 100px 0;
 		background-image: url("../img/main-prize-confetti_1280.png");
@@ -4538,7 +4604,6 @@ a:hover {
 		padding-left: 40px;
 	}
 
-
 	.main-prize__cards .prize-feature,
 	.main-prize-swiper .prize-feature {
 		min-height: 562px;
@@ -4555,7 +4620,6 @@ a:hover {
 		font-size: 22px;
 		letter-spacing: 0.44px;
 	}
-
 
 	.prize-feature__img--hotel {
 		width: 220px;
@@ -4652,18 +4716,15 @@ a:hover {
 	}
 }
 
-/* Ticket — 1440 (≈25% к 1920 / 1546px) */
 @media (min-width: 1440px) and (max-width: 1919px) {
 	.ticket__stage {
 		max-width: 1179px;
 	}
 
-
 	.steps__grid {
 		grid-template-columns: repeat(4, minmax(0, 1fr));
 		gap: 19px;
 	}
-
 
 	.ticket__band {
 		aspect-ratio: 1179 / 401;
@@ -4796,7 +4857,6 @@ a:hover {
 		margin-bottom: 46px;
 	}
 
-
 	.main-prize__cards .prize-feature {
 		min-height: 577px;
 	}
@@ -4847,12 +4907,10 @@ a:hover {
 	}
 }
 
-/* Ticket — 1600 (≈50% к 1920 / 1546px) */
 @media (min-width: 1600px) and (max-width: 1919px) {
 	.ticket__stage {
 		max-width: 1301px;
 	}
-
 
 	.ticket__band {
 		aspect-ratio: 1301 / 445;
@@ -4985,8 +5043,6 @@ a:hover {
 		margin-bottom: 52px;
 	}
 
-
-
 	.main-prize__cards .prize-feature {
 		min-height: 591px;
 	}
@@ -5039,12 +5095,10 @@ a:hover {
 	}
 }
 
-/* Ticket — 1760 (≈75% к 1920 / 1546px) */
 @media (min-width: 1760px) and (max-width: 1919px) {
 	.ticket__stage {
 		max-width: 1424px;
 	}
-
 
 	.ticket__band {
 		aspect-ratio: 1424 / 490;
@@ -5187,8 +5241,6 @@ a:hover {
 		margin-bottom: 58px;
 	}
 
-
-
 	.main-prize__cards .prize-feature {
 		min-height: 606px;
 	}
@@ -5202,7 +5254,6 @@ a:hover {
 		font-size: 28px;
 		letter-spacing: 0.56px;
 	}
-
 
 	.prize-feature__img--hotel {
 		width: 241px;
@@ -5222,9 +5273,6 @@ a:hover {
 		max-height: 226px;
 		max-width: 386px;
 	}
-
-
-
 
 	.experience-card__media {
 		height: 282px;
@@ -5247,7 +5295,7 @@ a:hover {
 }
 
 @media (min-width: 1440px) {
-	/* Virtual card — как 1920 */
+	
 	.virtual-card {
 		min-height: 762px;
 		padding: 120px 0;
@@ -5320,7 +5368,7 @@ a:hover {
 }
 
 @media (min-width: 1200px) and (max-width: 1439px) {
-	/* Virtual card — Figma 218:1044, якорь 1280 */
+	
 	.virtual-card {
 		min-height: 0;
 		padding: 100px 0;

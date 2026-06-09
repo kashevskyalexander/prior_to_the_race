@@ -46,7 +46,6 @@ async function run() {
     failedRequests.push({ url: req.url(), failure: req.failure()?.errorText });
   });
 
-  // --- Page load ---
   try {
     const response = await page.goto(URL, { waitUntil: 'networkidle', timeout: 60000 });
     if (!response || !response.ok()) {
@@ -63,7 +62,6 @@ async function run() {
 
   await page.waitForTimeout(1500);
 
-  // --- Title ---
   const title = await page.title();
   if (title.includes('Приорбанком') && title.includes('Баку')) {
     results.passed.push(`Title корректный: «${title}»`);
@@ -71,7 +69,6 @@ async function run() {
     results.warnings.push(`Title неожиданный: «${title}»`);
   }
 
-  // --- Viewport meta ---
   const viewportMeta = await page.$eval('meta[name="viewport"]', (el) => el.content).catch(() => null);
   if (viewportMeta?.includes('width=device-width')) {
     results.passed.push(`Viewport meta: ${viewportMeta}`);
@@ -79,7 +76,6 @@ async function run() {
     results.failed.push(`Viewport meta отсутствует или некорректен`);
   }
 
-  // --- Horizontal overflow per viewport ---
   for (const vp of VIEWPORTS) {
     await page.setViewportSize({ width: vp.width, height: vp.height });
     await page.waitForTimeout(400);
@@ -91,7 +87,6 @@ async function run() {
     }
   }
 
-  // --- Sections visibility (desktop) ---
   await page.setViewportSize({ width: 1280, height: 800 });
   for (const sec of SECTIONS) {
     const el = page.locator(`#${sec.id}`);
@@ -110,7 +105,6 @@ async function run() {
     }
   }
 
-  // --- Broken images ---
   const brokenImages = await page.evaluate(() => {
     return [...document.querySelectorAll('img')].filter((img) => {
       if (!img.complete) return false;
@@ -126,7 +120,6 @@ async function run() {
     results.passed.push('Все загруженные изображения отображаются');
   }
 
-  // --- Header fixed ---
   const header = page.locator('.site-header');
   const headerPos = await header.evaluate((el) => getComputedStyle(el).position);
   if (headerPos === 'fixed' || headerPos === 'sticky') {
@@ -135,7 +128,6 @@ async function run() {
     results.warnings.push(`Шапка не fixed/sticky (position: ${headerPos})`);
   }
 
-  // --- Mobile menu ---
   await page.setViewportSize({ width: 375, height: 812 });
   const menuBtn = page.locator('.site-header__menu-btn');
   if (await menuBtn.isVisible()) {
@@ -159,7 +151,6 @@ async function run() {
     results.warnings.push('Кнопка мобильного меню не видна на 375px');
   }
 
-  // --- FAQ accordion ---
   await page.setViewportSize({ width: 1280, height: 800 });
   await page.locator('#faq').scrollIntoViewIfNeeded();
   const firstFaqBtn = page.locator('#faq .accordion-button').first();
@@ -175,7 +166,6 @@ async function run() {
     }
   }
 
-  // --- Swiper prizes carousel ---
   const swiper = page.locator('.prizes-swiper, .swiper').first();
   if (await swiper.count()) {
     const swiperVisible = await swiper.isVisible();
@@ -183,7 +173,6 @@ async function run() {
     else results.warnings.push('Слайдер призов не виден');
   }
 
-  // --- Anchor links ---
   const brokenAnchors = await page.evaluate(() => {
     const ids = new Set([...document.querySelectorAll('[id]')].map((el) => el.id));
     const issues = [];
@@ -203,7 +192,6 @@ async function run() {
     results.passed.push('Все внутренние якорные ссылки ведут на существующие id');
   }
 
-  // --- Font loading ---
   const fonts = await page.evaluate(() => {
     return [...document.fonts].map((f) => ({ family: f.family, status: f.status }));
   });
@@ -214,7 +202,6 @@ async function run() {
     results.passed.push('Шрифты загружены без ошибок');
   }
 
-  // --- Console & network ---
   if (consoleErrors.length) {
     const unique = [...new Set(consoleErrors)];
     for (const err of unique.slice(0, 5)) {
@@ -232,7 +219,6 @@ async function run() {
     }
   }
 
-  // --- Touch targets mobile ---
   await page.setViewportSize({ width: 375, height: 812 });
   const smallTargets = await page.evaluate(() => {
     const min = 44;
@@ -258,7 +244,6 @@ async function run() {
     }
   }
 
-  // --- CLS rough check ---
   await page.setViewportSize({ width: 1280, height: 800 });
   await page.goto(URL, { waitUntil: 'load' });
   let shifts = 0;

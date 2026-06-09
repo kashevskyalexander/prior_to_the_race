@@ -125,7 +125,6 @@
     },
   }));
 
-
   var prizesPrev = document.getElementById("prizesPrev");
   var prizesNext = document.getElementById("prizesNext");
 
@@ -241,15 +240,19 @@
     if (!section) return;
 
     var tbody = section.querySelector(".winners__table tbody");
+    var listEl = section.querySelector(".winners__list");
+    var moreBtn = section.querySelector(".winners__more");
     var searchInput = section.querySelector(".winners__search-input");
     var pagination = section.querySelector(".winners__pagination");
     var pagesEl = section.querySelector(".winners__pagination-pages");
     var navLinks = document.querySelectorAll("[data-winners-nav]");
 
     var PAGE_SIZE = 12;
+    var MOBILE_STEP = 5;
     var allWinners = [];
     var filteredWinners = [];
     var currentPage = 1;
+    var mobileShownCount = MOBILE_STEP;
 
     function hideWinners() {
       section.setAttribute("hidden", "");
@@ -312,6 +315,43 @@
       });
     }
 
+    function renderMobileList() {
+      if (!listEl) return;
+
+      listEl.innerHTML = "";
+
+      if (!filteredWinners.length) {
+        listEl.innerHTML = '<p class="winners__empty winners__empty--mobile">Ничего не найдено</p>';
+        if (moreBtn) moreBtn.hidden = true;
+        return;
+      }
+
+      var visibleItems = filteredWinners.slice(0, mobileShownCount);
+
+      visibleItems.forEach(function (winner) {
+        var card = document.createElement("article");
+        card.className = "winners-card";
+        card.innerHTML =
+          '<div class="winners-card__row">' +
+            '<span class="winners-card__label">Дата розыгрыша</span>' +
+            '<span class="winners-card__value">' + escapeHtml(winner.date) + '</span>' +
+          '</div>' +
+          '<div class="winners-card__row">' +
+            '<span class="winners-card__label">ФИО победителя</span>' +
+            '<span class="winners-card__value">' + escapeHtml(winner.name) + '</span>' +
+          '</div>' +
+          '<div class="winners-card__row">' +
+            '<span class="winners-card__label">Приз</span>' +
+            '<span class="winners-card__value">' + escapeHtml(winner.prize) + '</span>' +
+          '</div>';
+        listEl.appendChild(card);
+      });
+
+      if (moreBtn) {
+        moreBtn.hidden = mobileShownCount >= filteredWinners.length;
+      }
+    }
+
     function renderPagination() {
       if (!pagination || !pagesEl) return;
 
@@ -349,6 +389,7 @@
 
     function render() {
       renderTable();
+      renderMobileList();
       renderPagination();
     }
 
@@ -364,11 +405,19 @@
       }
 
       currentPage = 1;
+      mobileShownCount = MOBILE_STEP;
       render();
     }
 
     if (searchInput) {
       searchInput.addEventListener("input", applySearch);
+    }
+
+    if (moreBtn) {
+      moreBtn.addEventListener("click", function () {
+        mobileShownCount += MOBILE_STEP;
+        renderMobileList();
+      });
     }
 
     loadWinnersData()
