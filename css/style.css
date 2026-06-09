@@ -1218,6 +1218,10 @@ ul {
 	overflow: hidden;
 }
 
+.cards-swiper .swiper-slide {
+	height: auto;
+}
+
 .card-slide {
 	text-align: center;
 }
@@ -1233,6 +1237,7 @@ ul {
 	font-weight: 500;
 	font-size: 28px;
 	line-height: 1.3;
+	letter-spacing: 0.56px;
 }
 
 /* Swiper nav */
@@ -1348,6 +1353,10 @@ ul {
 	line-height: 1.05;
 	color: var(--white);
 	text-align: center;
+}
+
+.virtual-card__title-br {
+	display: none;
 }
 
 .virtual-card__list {
@@ -1974,6 +1983,10 @@ ul {
 	.other-prizes__track {
 		--prizes-peek: 20px;
 	}
+
+	.cards-section__track {
+		--cards-peek: 20px;
+	}
 }
 
 /* Header menu — tablet */
@@ -2363,58 +2376,7 @@ ul {
 
 .card-slide p {
 	font-size: 36px;
-}
-
-.virtual-card {
-	min-height: 762px;
-	padding: 120px 0;
-}
-
-.virtual-card__box {
-	display: grid;
-	grid-template-columns: 560px 934px;
-	gap: 96px;
-	align-items: center;
-	padding-left: 260px;
-	padding-right: 70px;
-}
-
-.virtual-card__card {
-	width: 100%;
-	max-width: 560px;
-}
-
-.virtual-card__content {
-	width: auto;
-	max-width: 934px;
-	gap: 63px;
-}
-
-.virtual-card__title {
-	font-size: 70px;
-	letter-spacing: 1.4px;
-	line-height: 1;
-}
-
-.virtual-card__list {
-	width: 598px;
-	flex-shrink: 0;
-}
-
-.virtual-card__list li {
-	font-size: 24px;
-	white-space: nowrap;
-}
-
-.virtual-card__list li::before {
-	top: 50%;
-	transform: translateY(-50%);
-}
-
-.virtual-card__btn {
-	padding: 26px 72px 30px;
-	font-size: 30px;
-	width: max-content;
+	letter-spacing: 0.72px;
 }
 
 a:hover {
@@ -2717,6 +2679,103 @@ a:hover {
 		font-size: 13px;
 	}
 
+	/* Cards section — Figma 218:991, якорь 1280 */
+	.cards-section {
+		padding: 90px 0;
+	}
+	
+	.cards-section__track{
+		padding-left: 40px;
+	}
+
+	.cards-section__head {
+		margin-bottom: 40px;
+	}
+
+	.cards-section__head .section-title {
+		font-size: 50px;
+		letter-spacing: 1px;
+	}
+
+	.card-slide img {
+		max-width: 373px;
+		margin-bottom: 13px;
+	}
+
+	.card-slide p {
+		font-size: 24px;
+		letter-spacing: 0.48px;
+	}
+
+	/* How to — Figma 322:677, якорь 1280 */
+	.how-to {
+		padding: 80px 0 100px;
+	}
+
+	.how-to__title {
+		margin-bottom: 50px;
+		font-size: 50px;
+		letter-spacing: 1px;
+	}
+
+	.how-to__layout {
+		display: grid;
+		grid-template-columns: 395px minmax(0, 1fr);
+		column-gap: 48px;
+		align-items: start;
+	}
+
+	.how-to__phone {
+		width: 395px;
+		max-width: none;
+	}
+
+	.how-to__content {
+		max-width: none;
+		padding-top: 100px;
+	}
+
+	.how-to__steps {
+		gap: 40px;
+	}
+
+	.how-to__step {
+		gap: 28px;
+	}
+
+	.how-to__num {
+		width: 48px;
+		height: 48px;
+		font-size: 22px;
+		letter-spacing: 0.44px;
+	}
+
+	.how-to__step-title {
+		font-size: 24px;
+		letter-spacing: 0.48px;
+	}
+
+	.how-to__step-text {
+		font-size: 18px;
+		letter-spacing: 0.36px;
+	}
+
+	.how-to__qr {
+		gap: 28px;
+		margin-top: 40px;
+		margin-left: 76px;
+	}
+
+	.how-to__qr img {
+		width: 80px;
+		height: 80px;
+	}
+
+	.how-to__qr-text {
+		font-size: 18px;
+		letter-spacing: 0.36px;
+	}
+
 	/* Main prize — Figma 859:258, якорь 1280 */
 	.main-prize {
 		padding: 100px 0;
@@ -2960,6 +3019,25 @@ a:hover {
 		font-size: 15px;
 	}
 
+	.cards-section__head {
+		margin-bottom: 46px;
+	}
+
+	.cards-section__head .section-title {
+		font-size: 55px;
+		letter-spacing: 1.1px;
+	}
+
+	.card-slide img {
+		max-width: 420px;
+		margin-bottom: 15px;
+	}
+
+	.card-slide p {
+		font-size: 27px;
+		letter-spacing: 0.54px;
+	}
+
 	.steps .section-title {
 		margin-bottom: 78px;
 		font-size: 55px;
@@ -3128,6 +3206,25 @@ a:hover {
 		width: 50px;
 		height: 50px;
 		font-size: 17px;
+	}
+
+	.cards-section__head {
+		margin-bottom: 52px;
+	}
+
+	.cards-section__head .section-title {
+		font-size: 60px;
+		letter-spacing: 1.2px;
+	}
+
+	.card-slide img {
+		max-width: 467px;
+		margin-bottom: 17px;
+	}
+
+	.card-slide p {
+		font-size: 30px;
+		letter-spacing: 0.6px;
 	}
 
 	.steps .section-title {
@@ -3303,6 +3400,25 @@ a:hover {
 		font-size: 18px;
 	}
 
+	.cards-section__head {
+		margin-bottom: 58px;
+	}
+
+	.cards-section__head .section-title {
+		font-size: 65px;
+		letter-spacing: 1.3px;
+	}
+
+	.card-slide img {
+		max-width: 513px;
+		margin-bottom: 18px;
+	}
+
+	.card-slide p {
+		font-size: 33px;
+		letter-spacing: 0.66px;
+	}
+
 	.steps {
 		padding-top: 90px;
 		padding-bottom: 140px;
@@ -3396,18 +3512,186 @@ a:hover {
 	}
 }
 
+@media (min-width: 1440px) {
+	/* Virtual card — как 1920 */
+	.virtual-card {
+		min-height: 762px;
+		padding: 120px 0;
+	}
+
+	.virtual-card__box {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-items: center;
+		gap: 96px;
+		padding-left: 260px;
+		padding-right: 70px;
+	}
+
+	.virtual-card__card {
+		flex: 0 0 560px;
+		width: 560px;
+		max-width: 560px;
+	}
+
+	.virtual-card__content {
+		flex: 1 1 auto;
+		min-width: 0;
+		width: auto;
+		max-width: 934px;
+		gap: 63px;
+	}
+
+	.virtual-card__title {
+		width: 100%;
+		max-width: none;
+		font-size: 70px;
+		letter-spacing: 1.4px;
+		line-height: 1;
+		text-align: center;
+	}
+
+	.virtual-card__title-br {
+		display: none;
+	}
+
+	.virtual-card__list {
+		width: 598px;
+		max-width: none;
+		align-self: center;
+		flex-shrink: 0;
+	}
+
+	.virtual-card__list li {
+		font-size: 24px;
+		letter-spacing: 0.48px;
+		white-space: nowrap;
+		margin-bottom: 12px;
+	}
+
+	.virtual-card__list li::before {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.virtual-card__btn {
+		align-self: center;
+		width: max-content;
+		max-width: none;
+		margin-top: 0;
+		padding: 26px 72px 30px;
+		font-size: 30px;
+	}
+}
+
+@media (min-width: 1200px) and (max-width: 1439px) {
+	/* Virtual card — Figma 218:1044, якорь 1280 */
+	.virtual-card {
+		min-height: 0;
+		padding: 100px 0;
+	}
+
+	.virtual-card__box {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-items: center;
+		gap: 48px;
+		padding-inline: 40px;
+	}
+
+	.virtual-card__card {
+		flex: 0 0 475px;
+		width: 475px;
+		max-width: 475px;
+	}
+
+	.virtual-card__content {
+		flex: 1 1 auto;
+		min-width: 0;
+		align-items: flex-start;
+		gap: 32px;
+		width: auto;
+		max-width: none;
+	}
+
+	.virtual-card__title {
+		width: auto;
+		font-size: 40px;
+		letter-spacing: 1px;
+		line-height: 1.05;
+		text-align: left;
+	}
+
+	.virtual-card__title-br {
+		display: block;
+	}
+
+	.virtual-card__list {
+		width: 100%;
+		max-width: 580px;
+		align-self: flex-start;
+	}
+
+	.virtual-card__list li {
+		font-size: 20px;
+		letter-spacing: 0.4px;
+		white-space: normal;
+		margin-bottom: 12px;
+	}
+
+	.virtual-card__list li::before {
+		top: 0.55em;
+		transform: none;
+	}
+
+	.virtual-card__btn {
+		align-self: flex-start;
+		width: auto;
+		max-width: none;
+		margin-top: 8px;
+		padding: 22px 42px 26px;
+		font-size: 24px;
+	}
+
+	.virtual-card__title{
+		margin: auto;
+	}
+
+	.virtual-card__list{
+		margin: auto;
+		padding-left: 36px;
+	}
+
+	.virtual-card__btn{
+		margin: auto;
+	}
+}
+
 @media (min-width: 1440px) and (max-width: 1919px) {
 	.step-card__text {
-        font-size: 16px;
-    }
-
-	.steps{
-	    padding-bottom: 171px;
+		font-size: 16px;
 	}
-	
+
+	.steps {
+		padding-bottom: 171px;
+	}
+
 	.main-prize__spark--1 {
 		left: -3%;
 		top: 30%;
 		width: 90px;
 	}
+
+	.virtual-card__box{
+		padding-left: 100px;
+	}
+
+	.virtual-card__title{
+		font-size: 50px;
+	}
+	.virtual-card__content {
+        gap: 40px;
+    }
 }

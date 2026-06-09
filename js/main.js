@@ -130,13 +130,29 @@
 
   var cardsSwiper = new Swiper(".cards-swiper", Object.assign({}, swiperBase, {
     slidesPerGroup: 1,
-    slidesOffsetAfter: 0,
+    slidesOffsetAfter: 24,
     observer: true,
     observeParents: true,
     breakpoints: {
-      0: { spaceBetween: 16 },
-      768: { spaceBetween: 20 },
-      1920: { spaceBetween: 20, slidesPerView: 3.2 },
+      0: {
+        spaceBetween: 16,
+        slidesPerView: 1.08,
+        slidesOffsetAfter: 20,
+      },
+      768: {
+        spaceBetween: 20,
+        slidesPerView: 1.2,
+        slidesOffsetAfter: 24,
+      },
+      1200: {
+        spaceBetween: 20,
+        slidesPerView: 3.2,
+      },
+      1920: {
+        spaceBetween: 20,
+        slidesPerView: 3.2,
+        slidesOffsetAfter: 24,
+      },
     },
   }));
 
