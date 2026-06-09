@@ -1999,7 +1999,6 @@ ul {
 
 .ticket {
 	padding: 80px 0;
-	min-height: 694px;
 }
 
 .ticket__stage {
@@ -2414,9 +2413,25 @@ a:hover {
 }
 
 @media (min-width: 1200px) and (max-width: 1919px) {
-	/* Ticket — Figma 218:863, якорь 1280 / 1056px */
+	.ticket__decor img {
+		width: 320px;
+	}
+
+	.ticket__decor {
+        position: absolute;
+        top: -95px;
+    }
+
+	.ticket__decor--left {
+		left: -162px;
+	}
+
+	.ticket__decor--right {
+		right: -162px;
+	}
+	
 	.ticket {
-		padding: 80px 0;
+		padding: 100px 0;
 		display: flex;
 		align-items: center;
 	}
@@ -2424,21 +2439,6 @@ a:hover {
 	.ticket__stage {
 		max-width: 1056px;
 		padding-top: 0;
-	}
-
-	.ticket__decor {
-		display: flex;
-		width: 31.91%;
-		top: -27.8%;
-	}
-
-	.ticket__decor--left {
-		left: -15.93%;
-	}
-
-	.ticket__decor--right {
-		left: 82.91%;
-		right: auto;
 	}
 
 	.ticket__band {
@@ -2520,19 +2520,6 @@ a:hover {
 		max-width: 1179px;
 	}
 
-	.ticket__decor {
-		width: 30.8%;
-		top: -23.05%;
-	}
-
-	.ticket__decor--left {
-		left: -16.23%;
-	}
-
-	.ticket__decor--right {
-		left: 84.72%;
-	}
-
 	.ticket__band {
 		aspect-ratio: 1179 / 401;
 	}
@@ -2589,18 +2576,6 @@ a:hover {
 		max-width: 1301px;
 	}
 
-	.ticket__decor {
-		width: 29.69%;
-		top: -18.3%;
-	}
-
-	.ticket__decor--left {
-		left: -16.54%;
-	}
-
-	.ticket__decor--right {
-		left: 86.53%;
-	}
 
 	.ticket__band {
 		aspect-ratio: 1301 / 445;
@@ -2658,18 +2633,6 @@ a:hover {
 		max-width: 1424px;
 	}
 
-	.ticket__decor {
-		width: 28.57%;
-		top: -13.55%;
-	}
-
-	.ticket__decor--left {
-		left: -16.84%;
-	}
-
-	.ticket__decor--right {
-		left: 88.34%;
-	}
 
 	.ticket__band {
 		aspect-ratio: 1424 / 490;
