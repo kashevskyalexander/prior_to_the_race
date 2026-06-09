@@ -153,8 +153,12 @@ img.re__bg-img {
 	height: auto;
 }
 
+.step-card__media{
+	width: 100%;
+	height: 234px;
+}
 .step-card__media .step-card__img {
-	width: var(--step-img-w, 100%);
+	width: 100%;
 	max-width: none;
 	height: auto;
 	margin: auto;
