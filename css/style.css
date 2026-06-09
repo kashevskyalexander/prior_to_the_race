@@ -2723,15 +2723,15 @@ a:hover {
 	}
 
 	.main-prize__lead {
-		margin: 80px auto 40px;
-		max-width: min(960px, 90vw);
-		font-size: 32px;
+		margin: 150px auto 60px;
+		max-width: 800px;
+		font-size: 24px;
 		font-weight: 400;
 	}
 
 	.experience-fan {
 		max-width: 100%;
-		margin-bottom: 40px;
+		margin-bottom: 0;
 		padding-bottom: 72px;
 	}
 
@@ -2912,13 +2912,6 @@ a:hover {
 		max-width: 355px;
 	}
 
-	.main-prize__lead {
-		margin: 95px auto 45px;
-		font-size: 34px;
-	}
-
-
-
 	.experience-card__media {
 		height: 245px;
 	}
@@ -3053,14 +3046,6 @@ a:hover {
 		max-width: 371px;
 	}
 
-	.main-prize__lead {
-		margin: 110px auto 50px;
-		max-width: min(1080px, 90vw);
-		font-size: 36px;
-	}
-
-
-
 	.experience-card__media {
 		height: 264px;
 	}
@@ -3156,7 +3141,6 @@ a:hover {
 	}
 
 	.main-prize {
-		padding-top: 120px;
 		background-image: url("../img/main-prize-confetti.png");
 	}
 
@@ -3207,11 +3191,6 @@ a:hover {
 		max-width: 386px;
 	}
 
-	.main-prize__lead {
-		margin: 125px auto 55px;
-		max-width: min(1140px, 90vw);
-		font-size: 38px;
-	}
 
 
 
