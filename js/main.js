@@ -64,13 +64,22 @@
     observeParents: true,
     breakpoints: {
       0: { spaceBetween: 19 },
-      768: { spaceBetween: 19 },
+      768: { spaceBetween: 19, slidesPerView: 2 },
+      1200: { spaceBetween: 19 },
     },
   }));
 
-  new Swiper(".experience-swiper", Object.assign({}, swiperBase, {
-    spaceBetween: 24,
-  }));
+  var experienceSwiperEl = document.querySelector(".experience-swiper");
+  if (experienceSwiperEl) {
+    new Swiper(".experience-swiper", {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      enabled: false,
+      allowTouchMove: false,
+      observer: true,
+      observeParents: true,
+    });
+  }
 
   var prizesPrev = document.getElementById("prizesPrev");
   var prizesNext = document.getElementById("prizesNext");
@@ -88,8 +97,8 @@
       },
       768: {
         spaceBetween: 20,
-        slidesPerView: 1.2,
-        slidesOffsetAfter: 24,
+        slidesPerView: 2,
+        slidesOffsetAfter: 40,
       },
       1200: {
         spaceBetween: 20,
@@ -141,8 +150,8 @@
       },
       768: {
         spaceBetween: 20,
-        slidesPerView: 1.2,
-        slidesOffsetAfter: 24,
+        slidesPerView: 2,
+        slidesOffsetAfter: 40,
       },
       1200: {
         spaceBetween: 20,

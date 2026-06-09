@@ -1,4 +1,4 @@
-/* Priorbank × Visa — 768 / 1280 / 1920 */
+/* Priorbank × Visa — 375 / 768 / 1280 / 1920 */
 
 :root {
 	--bg: #011327;
@@ -147,6 +147,18 @@ ul {
 	background: #e6ca00;
 	border-color: #e6ca00;
 	color: var(--black);
+}
+
+img.re__bg-img {
+	height: auto;
+}
+
+.step-card__media .step-card__img {
+	width: var(--step-img-w, 100%);
+	max-width: none;
+	height: auto;
+	margin: auto;
+	object-fit: contain;
 }
 
 .btn-outline-accent {
@@ -623,16 +635,18 @@ ul {
 	transform: scaleY(-1) rotate(180deg);
 }
 
-.step-card__media{
-	height: 234px;
-}
-
-.step-card__media img{
+.step-card__media img {
 	margin: auto;
 }
 
 .step-card__sparkle--bl {
 	display: none;
+}
+
+@media (max-width: 767.98px) {
+	.step-card__media {
+		height: 234px;
+	}
 }
 
 .step-card__text {
@@ -734,7 +748,7 @@ ul {
 	height: auto;
 }
 
-@media (max-width: 1399.98px) {
+@media (min-width: 768px) and (max-width: 1399.98px) {
 	.main-prize-swiper .swiper-slide {
 		width: clamp(300px, 42vw, 591px);
 		box-sizing: border-box;
@@ -761,7 +775,7 @@ ul {
 	}
 }
 
-@media (min-width: 768px) and (max-width: 1399.98px) {
+@media (min-width: 1200px) and (max-width: 1399.98px) {
 	.main-prize-swiper .swiper-slide {
 		width: clamp(420px, 42vw, 591px);
 	}
@@ -788,7 +802,7 @@ ul {
 	border: 1px solid var(--prize-bg);
 	border-radius: 24px;
 	background: var(--prize-bg);
-	box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+	box-shadow: 0 0 25px rgba(255, 255, 255, 0.12);
 	text-align: center;
 }
 
@@ -868,6 +882,13 @@ ul {
 	font-weight: 500;
 	font-size: 26px;
 	line-height: 1.3;
+}
+
+.experience-tablet {
+	display: none;
+	width: 100%;
+	height: auto;
+	margin-inline: auto;
 }
 
 /* Experience fan — Figma 859:236–859:238 */
@@ -1907,16 +1928,66 @@ ul {
 	margin-bottom: 0;
 }
 
-/* Footer — tablet */
+/* Footer — tablet: логотипы в ряд, контент одной колонкой (Figma 224) */
 @media (min-width: 768px) and (max-width: 1199.98px) {
+	.site-footer {
+		padding: 40px 0 48px;
+	}
+
+	.site-footer .site-container {
+		display: block;
+	}
+
+	.site-footer__logos {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 40px;
+	}
+
+	.site-footer__logos img:first-child {
+		width: 80px;
+		height: auto;
+	}
+
+	.site-footer__logos img:last-child {
+		width: 262px;
+		height: auto;
+		max-width: none;
+	}
+
 	.site-footer__grid {
-		display: grid;
-		grid-template-columns: 1.4fr 1fr 1fr;
-		gap: 32px;
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	.site-footer__col--info {
+		max-width: none;
 	}
 
 	.site-footer__contacts {
-		display: contents;
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	.site-footer__heading {
+		margin-bottom: 8px;
+		font-size: 18px;
+		line-height: 1.6;
+	}
+
+	.site-footer__text {
+		margin-bottom: 6px;
+		font-size: 16px;
+		line-height: 1.4;
+	}
+
+	.site-footer__link {
+		margin-bottom: 6px;
+		font-size: 16px;
+		line-height: 1.4;
 	}
 }
 
@@ -2033,14 +2104,263 @@ ul {
 }
 
 @media (max-width: 767.98px) {
-	.site-footer__logos {
+	:root {
+		--pad-x: 20px;
+		--title-size: 32px;
+		--title-track: 0.64px;
+		--section-pad-y: 64px;
+		--btn-xl-size: 20px;
+		--header-h: 72px;
+	}
+
+	.section-title {
+		margin-bottom: 32px;
+		font-size: 32px;
+		letter-spacing: 0.64px;
+	}
+
+	.btn-accent {
+		padding: 18px 24px 20px;
+		font-size: 20px;
+		border-radius: 12px;
+	}
+
+	/* Header — Figma 375: меню слева, Prior по центру, Visa справа */
+	.site-header__bar {
+		grid-template-columns: 40px 1fr 62px;
+		grid-template-rows: auto;
+		gap: 0;
+		padding-block: 16px 12px;
+	}
+
+	.site-header__brand {
+		grid-column: 3;
+		grid-row: 1;
+		justify-self: end;
+		gap: 0;
+	}
+
+	.site-header__prior--brand {
+		display: none;
+	}
+
+	.site-header__prior-center {
+		display: block;
+		grid-column: 2;
+		grid-row: 1;
+		justify-self: center;
+	}
+
+	.site-header__prior-center img {
+		width: 180px;
+		max-width: 48vw;
+	}
+
+	.site-header__actions {
+		display: contents;
+	}
+
+	.site-header__menu-btn {
+		grid-column: 1;
+		grid-row: 1;
+		justify-self: start;
+	}
+
+	.site-header__cta {
+		display: none;
+	}
+
+	.site-header__visa {
+		width: 62px;
+	}
+
+	/* Hero — Figma 375 */
+	.hero {
+		height: auto;
+		min-height: calc(100svh - var(--header-h));
+		min-height: calc(var(--vh) * 100 - var(--header-h));
+	}
+
+	.hero__bg-img {
+		object-position: 72% 12%;
+	}
+
+	.hero__container {
+		position: relative;
+		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
-		gap: 16px;
+		justify-content: flex-end;
+		min-height: calc(100svh - var(--header-h));
+		min-height: calc(var(--vh) * 100 - var(--header-h));
+	}
+
+	.hero__inner {
+		padding-top: 24px;
+		padding-bottom: 0;
+	}
+
+	.hero__title {
+		margin: 0 0 24px;
+		font-size: 40px;
+		line-height: 0.95;
+		letter-spacing: 2px;
+	}
+
+	.hero__actions {
+		width: 100%;
+		margin-bottom: 32px;
+	}
+
+	.hero__btn {
+		width: 100%;
+	}
+
+	.hero__team-logo {
+		width: 180px;
+		margin-bottom: 32px;
+	}
+
+	/* Ticket — Figma 375 */
+	.ticket {
+		padding: 0 0 40px;
+		margin-top: -16px;
+	}
+
+	.ticket__stage {
+		max-width: 100%;
+		padding-top: 28px;
+	}
+
+	.ticket__decor img {
+		width: 72px;
+	}
+
+	.ticket__decor {
+		top: 0;
+	}
+
+	.ticket__decor--left {
+		left: -36px;
+	}
+
+	.ticket__decor--right {
+		right: -36px;
+	}
+
+	.ticket__band {
+		border-radius: 16px;
+		box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+	}
+
+	.ticket__image,
+	.ticket__blue {
+		border-radius: 16px;
+	}
+
+	.ticket__blue {
+		border-radius: 16px 0 0 16px;
+	}
+
+	.ticket__title,
+	.ticket__text {
+		font-size: 12px;
+	}
+
+	.ticket__title {
+		margin-bottom: 8px;
+	}
+
+	.ticket__logo-visa {
+		width: 28px;
+	}
+
+	.ticket__logo-prior {
+		width: 98px;
+	}
+
+	.ticket__team {
+		width: 72px;
+	}
+
+	/* Steps — Figma 375, сетка 2×2 */
+	.steps {
+		padding-top: 64px;
+		padding-bottom: 64px;
+	}
+
+	.steps .section-title {
+		margin-bottom: 32px;
+		font-size: 32px;
+	}
+
+	.steps__grid {
+		gap: 11px;
+	}
+
+	.step-card {
+		display: flex;
+		flex-direction: column;
+		min-height: 0;
+		padding: 16px 10px 14px;
+		border-radius: 16px;
+		box-shadow: 0 0 16px rgba(255, 224, 0, 0.45);
+	}
+
+	.step-card__media {
+		height: 108px;
+		margin-bottom: 8px;
+	}
+
+	.step-card__media--phone {
+		--step-img-w: 78%;
+	}
+
+	.step-card__media--cards {
+		--step-img-w: 52%;
+	}
+
+	.step-card__media--codes {
+		--step-img-w: 48%;
+	}
+
+	.step-card__media--f1 {
+		--step-img-w: 68%;
+	}
+
+	.step-card__text {
+		margin-top: auto;
+		font-size: 14px;
+		letter-spacing: 0.28px;
+		line-height: 1.35;
+	}
+
+	.step-card__sparkle--tr {
+		width: 48px;
+		height: 54px;
+		right: -8px;
+		top: -8px;
+	}
+
+	/* Main prize — Figma 375 */
+	.main-prize {
+		padding: 64px 0;
+		background-image: url("../img/main-prize-confetti.png");
+		background-size: 120% auto;
+	}
+
+	.main-prize__title {
+		font-size: 32px;
+		letter-spacing: 0.64px;
+	}
+
+	.main-prize__subtitle {
+		margin-bottom: 24px;
+		font-size: 28px;
+		letter-spacing: 0.56px;
 	}
 
 	.main-prize-swiper {
-		margin-bottom: 32px;
+		margin-bottom: 24px;
 	}
 
 	.main-prize-swiper .swiper-slide {
@@ -2048,42 +2368,357 @@ ul {
 	}
 
 	.main-prize-swiper .prize-feature {
-		min-height: 480px;
-		padding: 40px 20px 32px;
+		min-height: 420px;
+		padding: 32px 16px 24px;
 	}
 
 	.main-prize-swiper .prize-feature--ticket {
-		padding-top: 28px;
+		padding-top: 24px;
 	}
 
 	.main-prize-swiper .prize-feature__title {
-		font-size: 22px;
+		font-size: 20px;
+		letter-spacing: 0.4px;
+		margin-bottom: 12px;
 	}
 
 	.main-prize-swiper .prize-feature__desc {
-		font-size: 18px;
+		font-size: 16px;
+		letter-spacing: 0.32px;
+	}
+
+	.main-prize-swiper .prize-feature__note {
+		font-size: 12px;
 	}
 
 	.main-prize-swiper .prize-feature__img--flight {
-		height: 90px;
+		height: 72px;
 	}
 
 	.main-prize-swiper .prize-feature__img--hotel {
-		width: 180px;
-		height: 190px;
+		width: 140px;
+		height: 148px;
 	}
 
 	.main-prize-swiper .prize-feature__img--paddock {
-		max-width: 280px;
-		height: 150px;
+		max-width: 240px;
+		height: 120px;
+	}
+
+	.main-prize__spark--1 {
+		width: 48px;
+		left: 0;
+	}
+
+	.main-prize__lead {
+		margin: 32px auto 24px;
+		font-size: 18px;
+		font-weight: 500;
+	}
+
+	.experience-tablet {
+		display: none !important;
+	}
+
+	/* Experience — вертикальный стек polaroid */
+	.experience-swiper {
+		overflow: visible;
+		margin-bottom: 24px;
+	}
+
+	.experience-swiper .swiper-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0;
+		transform: none !important;
+	}
+
+	.experience-swiper .swiper-slide {
+		width: 100% !important;
+		height: auto !important;
+		margin: 0 !important;
+	}
+
+	.experience-swiper .swiper-slide:not(:first-child) {
+		margin-top: -28px !important;
+	}
+
+	.experience-swiper .swiper-slide:nth-child(1) {
+		z-index: 1;
+	}
+
+	.experience-swiper .swiper-slide:nth-child(2) {
+		z-index: 2;
+	}
+
+	.experience-swiper .swiper-slide:nth-child(3) {
+		z-index: 3;
+	}
+
+	.polaroid {
+		padding: 20px 16px 32px;
+		gap: 16px;
+	}
+
+	.polaroid--tilt-left {
+		transform: rotate(-4deg);
+	}
+
+	.polaroid--tilt-right {
+		transform: rotate(4deg);
+	}
+
+	.polaroid__body h3 {
+		font-size: 18px;
+	}
+
+	.polaroid__body p,
+	.polaroid__body li {
+		font-size: 14px;
+	}
+
+	.main-prize__cta-wrap {
+		margin-top: 8px;
+	}
+
+	.main-prize__cta-wrap .btn-accent {
+		width: 100%;
+	}
+
+	/* Other prizes — Figma 375 */
+	.other-prizes {
+		padding: 64px 0;
+	}
+
+	.other-prizes__head.section-head {
+		margin-bottom: 32px;
+	}
+
+	.other-prizes .swiper-nav {
+		display: none;
 	}
 
 	.other-prizes__track {
 		--prizes-peek: 20px;
 	}
 
+	.prize-card__top {
+		min-height: 160px;
+		padding: 16px;
+	}
+
+	.prize-card__top img {
+		max-height: 120px;
+	}
+
+	.prize-card__bottom {
+		min-height: 72px;
+		padding: 12px 16px;
+		gap: 12px;
+	}
+
+	.prize-card__bottom p {
+		font-size: 14px;
+		letter-spacing: 0.28px;
+	}
+
+	.prize-card__count {
+		width: 40px;
+		height: 40px;
+		font-size: 13px;
+	}
+
+	/* Cards — Figma 375 */
+	.cards-section {
+		padding: 64px 0;
+	}
+
+	.cards-section__head {
+		margin-bottom: 32px;
+	}
+
 	.cards-section__track {
 		--cards-peek: 20px;
+	}
+
+	.card-slide p {
+		font-size: 20px;
+		letter-spacing: 0.4px;
+	}
+
+	.card-slide img {
+		margin-bottom: 12px;
+	}
+
+	/* Virtual card — Figma 375 */
+	.virtual-card {
+		padding: 64px 0;
+		background: var(--bg);
+	}
+
+	.virtual-card__box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 32px;
+	}
+
+	.virtual-card__content {
+		display: contents;
+	}
+
+	.virtual-card__title {
+		order: 1;
+		font-size: 32px;
+		letter-spacing: 0.64px;
+	}
+
+	.virtual-card__title-br {
+		display: block;
+	}
+
+	.virtual-card__list {
+		order: 2;
+		max-width: 100%;
+	}
+
+	.virtual-card__list li {
+		font-size: 16px;
+		letter-spacing: 0.32px;
+	}
+
+	.virtual-card__img_wrap {
+		order: 3;
+		width: 100%;
+		max-width: 280px;
+	}
+
+	.virtual-card__card {
+		max-width: 280px;
+	}
+
+	.virtual-card__btn {
+		order: 4;
+		width: 100%;
+		margin-top: 0;
+	}
+
+	/* How to — Figma 375 */
+	.how-to {
+		padding: 64px 0 80px;
+	}
+
+	.how-to__title {
+		margin-bottom: 32px;
+		font-size: 32px;
+		letter-spacing: 0.64px;
+	}
+
+	.how-to__layout {
+		gap: 32px;
+	}
+
+	.how-to__phone {
+		max-width: 200px;
+	}
+
+	.how-to__steps {
+		gap: 24px;
+	}
+
+	.how-to__step {
+		align-items: flex-start;
+		gap: 16px;
+	}
+
+	.how-to__num {
+		width: 40px;
+		height: 40px;
+		font-size: 18px;
+	}
+
+	.how-to__step-title {
+		font-size: 16px;
+		letter-spacing: 0.32px;
+	}
+
+	.how-to__step-text {
+		font-size: 14px;
+		letter-spacing: 0.28px;
+	}
+
+	.how-to__qr {
+		margin-top: 32px;
+		margin-left: 0;
+	}
+
+	.how-to__qr img {
+		width: 72px;
+		height: 72px;
+	}
+
+	.how-to__qr-text {
+		font-size: 14px;
+	}
+
+	/* FAQ — Figma 375 */
+	.faq {
+		padding: 64px 0;
+	}
+
+	.faq .section-title {
+		margin-bottom: 32px;
+	}
+
+	.faq__accordion {
+		gap: 12px;
+	}
+
+	.faq__accordion .accordion-button {
+		padding: 14px 16px;
+		font-size: 16px;
+		line-height: 1.4;
+	}
+
+	.faq__accordion .accordion-body {
+		font-size: 14px;
+		line-height: 1.5;
+	}
+
+	/* Footer — Figma 375 */
+	.site-footer {
+		padding: 32px 0 calc(40px + env(safe-area-inset-bottom, 0));
+	}
+
+	.site-footer__logos {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+		margin-bottom: 32px;
+	}
+
+	.site-footer__logos img:first-child {
+		width: 62px;
+	}
+
+	.site-footer__logos img:last-child {
+		width: 180px;
+		max-width: 52vw;
+	}
+
+	.site-footer__grid {
+		gap: 32px;
+	}
+
+	.site-footer__heading {
+		font-size: 16px;
+	}
+
+	.site-footer__text,
+	.site-footer__link {
+		font-size: 14px;
 	}
 }
 
@@ -2186,6 +2821,860 @@ ul {
 	}
 }
 
+/* Tablet — Figma 224:1383 (768px artboard), диапазон 768–1199.98 */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+	:root {
+		--pad-x: 40px;
+		--title-size: 40px;
+		--title-track: 0.8px;
+		--section-pad-y: 80px;
+		--btn-xl-size: 24px;
+		--header-h: 72px;
+	}
+
+	.section-title {
+		margin-bottom: 40px;
+		font-size: 40px;
+		letter-spacing: 0.8px;
+	}
+
+	.btn-accent {
+		padding: 22px 42px 26px;
+		font-size: 24px;
+		border-radius: 16px;
+	}
+
+	.site-header__bar {
+		display: grid;
+		grid-template-columns: 1fr auto 1fr;
+		grid-template-rows: auto;
+		align-items: center;
+		padding-block: 16px;
+	}
+
+	.site-header__brand {
+		grid-column: 1;
+		grid-row: 1;
+		justify-self: start;
+	}
+
+	.site-header__actions {
+		display: contents;
+	}
+
+	.site-header__prior-center {
+		grid-column: 2;
+		grid-row: 1;
+		justify-self: center;
+	}
+
+	.site-header__visa {
+		width: 80px;
+	}
+
+	.site-header__prior-center img {
+		width: 262px;
+		max-width: none;
+	}
+
+	.site-header__menu-btn {
+		grid-column: 3;
+		grid-row: 1;
+		justify-self: end;
+		display: block;
+	}
+
+	.site-header__cta {
+		display: none;
+	}
+
+	/* Hero — Figma 224:1384 */
+	.hero {
+		height: 1024px;
+	}
+
+	.hero__container {
+		bottom: unset;
+		top: 120px;
+	}
+	.hero__inner {
+		padding-top: 32px;
+		padding-bottom: 0;
+	}
+
+	.hero__title {
+		margin: 0 0 60px;
+		font-size: 72px;
+		font-weight: 700;
+		line-height: 100%;
+		letter-spacing: 3.6px;
+	}
+
+	.hero__actions {
+		margin-bottom: 238px;
+	}
+
+	.hero__team-logo {
+		width: 244px;
+		margin-bottom: 0;
+	}
+
+	/* Ticket — Figma 224:1400 */
+	.ticket {
+		padding: 0 0 60px;
+		margin-top: -24px;
+	}
+
+	.ticket__stage {
+		max-width: 688px;
+		padding-top: 55px;
+	}
+
+	.ticket__decor img {
+		width: 200px;
+	}
+
+	.ticket__decor {
+		top: 0;
+	}
+
+	.ticket__decor--left {
+        left: -80px;
+    }
+
+	.ticket__decor--right {
+		right: -80px;
+	}
+
+	.ticket__band {
+		aspect-ratio: 688 / 245;
+		border-radius: 32px;
+		box-shadow: 0 0 50px rgba(255, 255, 255, 0.12);
+	}
+
+	.ticket__image {
+		inset: 0;
+		left: auto;
+		width: 100%;
+		border-radius: 32px;
+	}
+
+	.ticket__blue {
+		inset: 0 auto 0 0;
+		width: 75.15%;
+		background: linear-gradient(61.91deg, #00204b 11.53%, #004cb1 90.93%);
+		border-radius: 32px 0 0 32px;
+	}
+
+	.ticket__content {
+		left: 5%;
+		width: 66.57%;
+	}
+
+	.ticket__logos {
+		top: 8.98%;
+	}
+
+	.ticket__copy {
+		top: 27.68%;
+	}
+
+	.ticket__logo-visa {
+		width: 34.82px;
+	}
+
+	.ticket__logo-prior {
+		width: 122.09px;
+	}
+
+	.ticket__title,
+	.ticket__text {
+		font-size: 16px;
+	}
+
+	.ticket__title {
+		margin-bottom: 16px;
+	}
+
+	.ticket__team {
+		top: 79.11%;
+		width: 91px;
+	}
+
+	/* Steps — Figma 224:1575, card 354×300, сетка 2×2 */
+	.steps {
+		padding-top: 80px;
+		padding-bottom: 80px;
+		min-height: 0;
+		background: #011327;
+	}
+
+	.steps__bg {
+		right: 0;
+		bottom: 0;
+		left: auto;
+		width: 183.8%;
+		height: 79.2%;
+	}
+
+	.steps__bg img {
+		width: 141.6%;
+		height: 187.71%;
+		left: -2.55%;
+		top: -2.74%;
+	}
+
+	.steps .section-title {
+		margin-bottom: 40px;
+		font-size: 40px;
+		letter-spacing: 0.8px;
+	}
+
+	img.re__bg-img {
+		height: auto;
+	}
+
+	.steps__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 19px;
+	}
+
+	.step-card {
+		display: flex;
+		flex-direction: column;
+		min-height: 300px;
+		padding: 40px 20px 32px;
+		border-radius: 24px;
+	}
+
+	.step-card__media {
+		height: 160px;
+		margin-bottom: 20px;
+		flex-shrink: 0;
+	}
+
+	.step-card__media--phone {
+		--step-img-w: 72.03%;
+		--step-img-ratio: 255 / 140;
+	}
+
+	.step-card__media--cards {
+		--step-img-w: 46.33%;
+		--step-img-ratio: 164 / 140;
+	}
+
+	.step-card__media--codes {
+		--step-img-w: 41.53%;
+		--step-img-ratio: 147 / 140;
+	}
+
+	.step-card__media--f1 {
+		--step-img-w: 61.3%;
+		--step-img-ratio: 217 / 140;
+	}
+
+	.step-card__media .step-card__img {
+		width: var(--step-img-w);
+		max-width: none;
+	}
+
+	.step-card__text {
+		font-size: 18px;
+		font-weight: 500;
+		letter-spacing: 0.36px;
+		line-height: 1.4;
+		margin-top: auto;
+	}
+
+	.step-card--codes .step-card__text-break,
+	.step-card--win .step-card__text-break {
+		display: block;
+	}
+
+	.step-card__sparkle--tr {
+		width: 72px;
+		height: 80px;
+		right: -14px;
+		top: -13px;
+	}
+
+	.step-card__sparkle--bl {
+		display: none;
+	}
+
+	/* Main prize — Figma 224:1630 */
+	.main-prize {
+		padding: 80px 0;
+		background: url("../img/tablet_5.png") no-repeat top / contain;
+	}
+
+	.main-prize__title {
+		margin-bottom: 10px;
+		font-size: 40px;
+		letter-spacing: 0.8px;
+		text-transform: uppercase;
+	}
+
+	.main-prize__subtitle {
+		margin-bottom: 40px;
+		font-size: 36px;
+		letter-spacing: 0.8px;
+		text-transform: none;
+		color: var(--white);
+	}
+
+	.main-prize__spark-wrap {
+		overflow: visible;
+	}
+
+	.main-prize-swiper {
+		display: block;
+		margin-bottom: 0;
+		overflow: visible;
+		padding-block: 12px;
+		margin-block: -12px;
+	}
+
+	.main-prize__cards {
+		display: none;
+	}
+
+	.main-prize-swiper .swiper-slide {
+		width: calc((100% - 19px) / 2);
+		max-width: none;
+	}
+
+	.main-prize-swiper .prize-feature {
+		min-height: 500px;
+		padding: 40px 16px 32px;
+	}
+
+	.main-prize-swiper .prize-feature--ticket {
+		padding-top: 28px;
+	}
+
+	.main-prize-swiper .prize-feature__title {
+		margin-bottom: 12px;
+		font-size: 22px;
+		letter-spacing: 0.44px;
+	}
+
+	.main-prize-swiper .prize-feature__desc {
+		font-size: 18px;
+		letter-spacing: 0.36px;
+	}
+
+	.main-prize-swiper .prize-feature__img--flight {
+		height: 96px;
+	}
+
+	.main-prize-swiper .prize-feature__img--hotel {
+		width: 186px;
+		height: 196px;
+	}
+
+	.main-prize-swiper .prize-feature__img--paddock {
+		max-width: 280px;
+		height: 150px;
+	}
+
+	.main-prize__spark--1 {
+		left: -2%;
+		top: 28%;
+		width: 72px;
+	}
+
+	.main-prize__spark--2 {
+		display: none;
+	}
+
+	.main-prize__lead {
+		margin: 120px auto 40px;
+		max-width: 596px;
+		font-size: 26px;
+		font-weight: 400;
+		line-height: 1.3;
+	}
+
+	/* Experience — tablet_6.png */
+	.experience-tablet {
+		display: block;
+		width: 100%;
+		max-width: 688px;
+		margin: 0 auto 40px;
+	}
+
+	.experience-swiper.d-md-none {
+		display: none !important;
+	}
+
+	.experience-fan.d-md-block {
+		display: none !important;
+	}
+
+	.main-prize__cta-wrap {
+		margin-top: 32px;
+	}
+
+	.main-prize__cta-wrap .btn-accent {
+		min-width: 0;
+		width: max-content;
+		padding: 22px 42px 26px;
+		font-size: 24px;
+	}
+
+	/* Other prizes — Figma 224:1720 */
+	.other-prizes {
+		padding: 80px 0;
+	}
+
+	.other-prizes__head.section-head {
+		margin-bottom: 40px;
+		padding-inline: var(--pad-x);
+	}
+
+	.other-prizes__head .section-title {
+		font-size: 40px;
+		letter-spacing: 0.8px;
+	}
+
+	.other-prizes__track {
+		--prizes-peek: 40px;
+		padding-left: var(--pad-x);
+	}
+
+	.other-prizes .swiper-nav {
+		gap: 40px;
+	}
+
+	.other-prizes .swiper-nav__btn {
+		width: 20px;
+		height: 40px;
+	}
+
+	.prize-card__top {
+		min-height: 196px;
+		padding: 16px;
+	}
+
+	.prize-card__top img {
+		max-height: 140px;
+	}
+
+	.prize-card__bottom {
+		min-height: 80px;
+		padding: 16px 20px;
+		gap: 20px;
+	}
+
+	.prize-card__bottom p {
+		font-size: 16px;
+		letter-spacing: 0.32px;
+		line-height: 1.3;
+	}
+
+	.prize-card__count {
+		width: 40px;
+		height: 40px;
+		font-size: 13px;
+	}
+
+	.prizes-swiper .swiper-slide,
+	.cards-swiper .swiper-slide {
+		width: calc((100% - 20px) / 2);
+		max-width: none;
+	}
+
+	/* Cards — Figma 224:1756 */
+	.cards-section {
+		padding: 80px 0;
+	}
+
+	.cards-section__head {
+		margin-bottom: 40px;
+		padding-inline: var(--pad-x);
+	}
+
+	.cards-section__head .section-title {
+		font-size: 40px;
+		letter-spacing: 0.8px;
+	}
+
+	.cards-section__track {
+		--cards-peek: 40px;
+		padding-left: var(--pad-x);
+	}
+
+	.card-slide img {
+		width: 100%;
+		max-width: none;
+		margin-bottom: 13px;
+	}
+
+	.card-slide p {
+		font-size: 20px;
+		letter-spacing: 0.4px;
+	}
+
+	/* Virtual card — Figma 224:1788: заголовок → список → карта → кнопка */
+	.virtual-card {
+		min-height: 0;
+		padding: 80px 0;
+		background: var(--bg);
+	}
+
+	.virtual-card__bg::after {
+		background: rgba(1, 19, 39, 0.45);
+	}
+
+	.virtual-card__box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 40px;
+		padding-inline: var(--pad-x);
+	}
+
+	.virtual-card__content {
+		display: contents;
+	}
+
+	.virtual-card__title {
+		order: 1;
+		width: 100%;
+		max-width: 520px;
+		font-size: 40px;
+		letter-spacing: 0.8px;
+		line-height: 1.05;
+		text-align: center;
+	}
+
+	.virtual-card__title-br {
+		display: block;
+	}
+
+	.virtual-card__list {
+		order: 2;
+		width: 100%;
+		max-width: 480px;
+		margin: 0;
+		padding-left: 0;
+	}
+
+	.virtual-card__list li {
+		font-size: 20px;
+		letter-spacing: 0.4px;
+		white-space: normal;
+	}
+
+	.virtual-card__img_wrap {
+		order: 3;
+		width: 100%;
+		max-width: 400px;
+	}
+
+	.virtual-card__card {
+		width: 100%;
+		max-width: 400px;
+		margin-inline: auto;
+	}
+
+	.virtual-card__btn {
+		order: 4;
+		width: auto;
+		margin-top: 0;
+		padding: 22px 42px 26px;
+		font-size: 24px;
+	}
+
+	/* How to — Figma 224:1810: телефон слева, шаги справа */
+	.how-to {
+		padding: 80px 0 100px;
+	}
+
+	.how-to__title {
+		margin-bottom: 40px;
+		font-size: 40px;
+		letter-spacing: 0.8px;
+		text-align: center;
+	}
+
+	.how-to__layout {
+		display: grid;
+		grid-template-columns: 200px minmax(0, 1fr);
+		column-gap: 32px;
+		align-items: start;
+		padding-left: 0;
+	}
+
+	.how-to__phone {
+		width: 200px;
+		max-width: 100%;
+		justify-self: start;
+	}
+
+	.how-to__content {
+		width: auto;
+		max-width: none;
+		min-width: 0;
+	}
+
+	.how-to__steps {
+		gap: 32px;
+	}
+
+	.how-to__step {
+		align-items: flex-start;
+		gap: 24px;
+	}
+
+	.how-to__num {
+		width: 48px;
+		height: 48px;
+		font-size: 22px;
+		letter-spacing: 0.44px;
+	}
+
+	.how-to__step-title {
+		font-size: 20px;
+		letter-spacing: 0.4px;
+	}
+
+	.how-to__step-text {
+		font-size: 16px;
+		letter-spacing: 0.32px;
+	}
+
+	.how-to__qr {
+		gap: 16px;
+		margin-top: 40px;
+		margin-left: 72px;
+	}
+
+	.how-to__qr img {
+		width: 80px;
+		height: 80px;
+	}
+
+	.how-to__qr-text {
+		font-size: 16px;
+		letter-spacing: 0.32px;
+	}
+
+	.step-card__media {
+		margin: 0;
+	}
+
+	/* FAQ — Figma 224:1844 */
+	.faq {
+		padding: 80px 0;
+	}
+
+	.faq .section-title {
+		margin-bottom: 40px;
+		font-size: 40px;
+		letter-spacing: 0.8px;
+	}
+
+	.faq__bg {
+		left: -21.875%;
+		width: 143.75%;
+	}
+
+	.faq__accordion {
+		max-width: 100%;
+		gap: 16px;
+	}
+
+	.faq__accordion .accordion-button {
+		padding: 16px 24px;
+		font-size: 18px;
+		line-height: 1.6;
+	}
+
+	.faq__accordion .accordion-body {
+		font-size: 16px;
+		line-height: 1.6;
+	}
+}
+
+/* Fluid tablet — 992–1199.98 (масштаб к макету 1280) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	.hero__title {
+		font-size: 80px;
+		letter-spacing: 4px;
+	}
+
+	.ticket__stage {
+		max-width: 912px;
+	}
+
+	.ticket__band {
+		aspect-ratio: 912 / 308;
+	}
+
+	.ticket__logo-visa {
+		width: 58px;
+	}
+
+	.ticket__logo-prior {
+		width: 198px;
+	}
+
+	.ticket__title,
+	.ticket__text {
+		font-size: 20px;
+	}
+
+	.ticket__title {
+		margin-bottom: 12px;
+	}
+
+	.ticket__team {
+		width: 130px;
+	}
+
+	.ticket__decor img {
+		width: 300px;
+	}
+
+	.ticket__decor--left {
+		left: -180px;
+	}
+
+	.ticket__decor--right {
+		right: -180px;
+	}
+
+	.step-card__media {
+		height: 160px;
+	}
+
+	.step-card__text {
+		font-size: 20px;
+		letter-spacing: 0.4px;
+	}
+
+	.main-prize-swiper .swiper-slide {
+		width: calc((100% - 19px) / 2);
+	}
+
+	.main-prize-swiper .prize-feature {
+		min-height: 520px;
+		padding: 48px 24px 36px;
+	}
+
+	.main-prize-swiper .prize-feature__title {
+		font-size: 24px;
+		letter-spacing: 0.48px;
+	}
+
+	.main-prize-swiper .prize-feature__desc {
+		font-size: 20px;
+		letter-spacing: 0.4px;
+	}
+
+	.main-prize-swiper .prize-feature__img--hotel {
+		width: 200px;
+		height: 210px;
+	}
+
+	.main-prize-swiper .prize-feature__img--paddock {
+		max-width: 300px;
+		height: 170px;
+	}
+
+	.main-prize__lead {
+		margin: 100px auto 40px;
+		font-size: 26px;
+		max-width: 680px;
+	}
+
+	.experience-tablet {
+		max-width: 912px;
+	}
+
+	.prize-card__top {
+		min-height: 200px;
+	}
+
+	.prize-card__top img {
+		max-height: 145px;
+	}
+
+	.prize-card__bottom {
+		min-height: 84px;
+		padding: 16px 20px;
+	}
+
+	.prize-card__bottom p {
+		font-size: 16px;
+	}
+
+	.prize-card__count {
+		width: 40px;
+		height: 40px;
+		font-size: 13px;
+	}
+
+	.card-slide p {
+		font-size: 22px;
+	}
+
+	.virtual-card__img_wrap,
+	.virtual-card__card {
+		max-width: 475px;
+	}
+
+	.how-to__layout {
+		grid-template-columns: 247px minmax(0, 1fr);
+		column-gap: 48px;
+	}
+
+	.how-to__phone {
+		width: 247px;
+	}
+
+	.how-to__title {
+		margin-bottom: 50px;
+	}
+
+	.how-to__steps {
+		gap: 40px;
+	}
+
+	.how-to__step {
+		gap: 28px;
+	}
+
+	.how-to__step-title {
+		font-size: 22px;
+		letter-spacing: 0.48px;
+	}
+
+	.how-to__step-text {
+		font-size: 16px;
+		letter-spacing: 0.36px;
+	}
+
+	.how-to__qr {
+		gap: 28px;
+		margin-top: 40px;
+		margin-left: 76px;
+	}
+
+	.how-to__qr img {
+		width: 100px;
+		height: 100px;
+	}
+
+	.how-to__qr-text {
+		font-size: 16px;
+		letter-spacing: 0.36px;
+	}
+}
+
+@media (min-width: 1920px) {
 :root {
 	--pad-x: 100px;
 	--title-size: 70px;
@@ -2553,6 +4042,8 @@ a:hover {
 .winners__table th:nth-child(2),
 .winners__table td:nth-child(2) {
 	width: 500px;
+}
+
 }
 
 @media (min-width: 1200px) and (max-width: 1919px) {
@@ -2925,6 +4416,10 @@ a:hover {
 
 	.prize-feature__img--hotel img {
 		max-height: 230px;
+	}
+
+	img.re__bg-img{
+		height: 190px;
 	}
 
 	.prize-feature__img--paddock {
@@ -3914,4 +5409,5 @@ a:hover {
 	.how-to__qr-text {
         font-size: 16px;
     }
+
 }
