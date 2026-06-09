@@ -1,5 +1,1 @@
-<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 30 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="weui:arrow-outlined">
-<path id="Vector" d="M6.13 16.45L8.7825 13.8L23.23 28.2425C23.4629 28.4739 23.6477 28.7491 23.7738 29.0522C23.8999 29.3554 23.9649 29.6804 23.9649 30.0087C23.9649 30.3371 23.8999 30.6621 23.7738 30.9653C23.6477 31.2684 23.4629 31.5436 23.23 31.775L8.7825 46.225L6.1325 43.575L19.6925 30.0125L6.13 16.45Z" fill="var(--fill-0, white)"/>
-</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" overflow="visible" preserveAspectRatio="none" style="display:block" viewBox="0 0 30 60"><path fill="var(--fill-0, white)" d="m6.13 16.45 2.653-2.65L23.23 28.242a2.49 2.49 0 0 1 0 3.533L8.783 46.225l-2.65-2.65 13.56-13.563z"/></svg>

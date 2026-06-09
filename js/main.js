@@ -85,6 +85,15 @@
     var mobileMenuNavLinks = document.querySelectorAll(".site-offcanvas__nav a[href^=\"#\"]");
     bindAnchorNav(mobileMenuNavLinks, { smooth: true, closeOffcanvas: true });
 
+    document.querySelectorAll(".site-offcanvas__nav a[target=\"_blank\"]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        var mobileMenuEl = document.getElementById("mobileMenu");
+        if (mobileMenuEl && mobileMenuEl.classList.contains("show")) {
+          bootstrap.Offcanvas.getOrCreateInstance(mobileMenuEl).hide();
+        }
+      });
+    });
+
     var headerNavLinks = document.querySelectorAll(".site-header__nav-link[href^=\"#\"]");
     bindAnchorNav(headerNavLinks, { smooth: true });
 
