@@ -557,15 +557,8 @@ ul {
 }
 
 .step-card {
-	position: relative;
-	container-type: inline-size;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 16px;
+	display: block;
 	width: 100%;
-	min-height: 300px;
 	padding: 40px 20px;
 	border: 1px solid var(--accent);
 	border-radius: 24px;
@@ -635,6 +628,14 @@ ul {
 	transform: scaleY(-1) rotate(180deg);
 }
 
+.step-card__media{
+	height: 234px;
+}
+
+.step-card__media img{
+	margin: auto;
+}
+
 .step-card__sparkle--bl {
 	display: none;
 }
@@ -646,6 +647,7 @@ ul {
 	font-size: 18px;
 	line-height: 1.4;
 	letter-spacing: 0.36px;
+	margin: auto;
 }
 
 .step-card__text-break {
@@ -2094,20 +2096,11 @@ ul {
 	max-width: 100%;
 }
 
-.step-card {
-	width: 100%;
-	min-height: 0;
-	aspect-ratio: 1;
-	overflow: visible;
-	gap: 32px;
-	padding: 0;
-}
 
 .step-card__text {
 	font-size: 18px;
 	font-weight: 500;
 	letter-spacing: 0.36px;
-	max-width: 75.96%;
 }
 
 .step-card--codes .step-card__text-break,
@@ -2540,13 +2533,6 @@ a:hover {
 	.steps__grid {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 19px;
-	}
-
-	.step-card {
-		gap: 32px;
-		min-height: 416px;
-		aspect-ratio: 591 / 416;
-		padding: 0;
 	}
 
 	.step-card__text {
