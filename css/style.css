@@ -2498,6 +2498,10 @@ a:hover {
 	.ticket__decor img {
 		width: 320px;
 	}
+	
+	.main-prize__spark--2{
+		display: none;
+	}
 
 	.ticket__decor {
         position: absolute;
@@ -2679,19 +2683,11 @@ a:hover {
 	}
 
 	.main-prize__spark--1 {
-		left: 1.15%;
+		left: -3.85%;
 		top: 30%;
 		width: 90px;
 	}
 
-	.main-prize__spark--2 {
-		display: block;
-		right: 1.77%;
-		top: 48%;
-		bottom: auto;
-		width: 90px;
-		transform: rotate(180deg) scaleY(-1);
-	}
 
 	.main-prize__cards .prize-feature,
 	.main-prize-swiper .prize-feature {
@@ -2808,6 +2804,7 @@ a:hover {
 		max-width: 1179px;
 	}
 
+
 	.steps__grid {
 		grid-template-columns: repeat(4, minmax(0, 1fr));
 		gap: 19px;
@@ -2887,14 +2884,6 @@ a:hover {
 		margin-bottom: 46px;
 	}
 
-	.main-prize__spark--1 {
-		top: 31%;
-		width: 95px;
-	}
-
-	.main-prize__spark--2 {
-		width: 95px;
-	}
 
 	.main-prize__cards .prize-feature {
 		min-height: 577px;
@@ -3040,17 +3029,7 @@ a:hover {
 		margin-bottom: 52px;
 	}
 
-	.main-prize__spark--1 {
-		left: -0.5%;
-		top: 32%;
-		width: 101px;
-	}
 
-	.main-prize__spark--2 {
-		right: 0.5%;
-		top: 46%;
-		width: 101px;
-	}
 
 	.main-prize__cards .prize-feature {
 		min-height: 591px;
@@ -3217,18 +3196,7 @@ a:hover {
 		margin-bottom: 58px;
 	}
 
-	.main-prize__spark--1 {
-		left: -2.5%;
-		top: 33%;
-		width: 106px;
-	}
 
-	.main-prize__spark--2 {
-		right: -1%;
-		top: unset;
-		bottom: -8%;
-		width: 106px;
-	}
 
 	.main-prize__cards .prize-feature {
 		min-height: 606px;
@@ -3314,5 +3282,11 @@ a:hover {
 
 	.steps{
 	    padding-bottom: 171px;
+	}
+	
+	.main-prize__spark--1 {
+		left: -3%;
+		top: 30%;
+		width: 90px;
 	}
 }
