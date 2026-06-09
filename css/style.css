@@ -3724,6 +3724,28 @@ a:hover {
 	.how-to__qr-text {
         font-size: 16px;
     }
+	.section-title {
+		font-size: 50px;
+		letter-spacing: 1.4px;
+	}
+	.other-prizes__head .section-title{
+		font-size: 50px;
+	}
+	.cards-section__head .section-title {
+        font-size: 50px;
+    }
+	.main-prize__title, .main-prize__subtitle {
+        font-size: 50px;
+    }
+	.steps .section-title {
+        font-size: 50px;
+    }
+	.faq .section-title {
+		margin-bottom: 68px;
+	}
+	.faq__accordion{
+		max-width: 100%;
+	}
 }
 
 @media (min-width: 1440px) and (max-width: 1919px) {
