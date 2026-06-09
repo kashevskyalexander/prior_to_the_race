@@ -2748,9 +2748,9 @@ a:hover {
 
 	.experience-card {
 		height: 550px;
-		width: 451px;
+		width: 480px;
 		min-height: 580px;
-		max-width: 451px;
+		max-width: 480px;
 		gap: 24px;
 	}
 
