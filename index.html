@@ -91,18 +91,20 @@
   <main>
     <section id="hero" class="hero">
       <picture class="hero__bg">
-        <source media="(max-width: 767px)" srcset="img/hero_tablet.png">
+        <source media="(max-width: 767px)" srcset="img/mob_hero.jpg">
         <source media="(max-width: 1199px)" srcset="img/hero_tablet.png">
         <img src="img/hero-bg.jpg" alt="" class="hero__bg-img">
       </picture>
       <div class="hero__container">
         <div class="site-container hero__inner">
           <h1 class="hero__title">С Приорбанком <br>на гонку в Баку</h1>
+        </div>
+        <div class="site-container hero__foot">
           <div class="hero__actions">
-            <a href="#mechanics" class="btn btn-accent hero__btn">Участвовать</a>
+            <a href="#mechanics" class="btn btn-accent hero__btn">Участвовать в игре</a>
           </div>
         </div>
-        <div class="site-container">
+        <div class="site-container hero__mid">
           <img src="img/racing-bulls-logo.png" alt="Visa Cash App Racing Bulls" class="hero__team-logo" width="244" height="80">
         </div>
       </div>
@@ -122,6 +124,13 @@
             <img src="img/ticket-decor.png" alt="">
           </div>
           <div class="ticket__card">
+            <img
+              src="img/ticket-mobile.png"
+              alt="Платите карточкой Visa Приорбанка. Станьте ближе к гонке с командой Visa Cash App Racing Bulls Formula One Team, благодаря Visa. Сентябрь 2026, Баку."
+              class="ticket__mobile-art"
+              width="335"
+              height="520"
+            >
             <div class="ticket__band">
               <img src="img/ticket.png" alt="" class="ticket__image" aria-hidden="true">
               <div class="ticket__blue" aria-hidden="true"></div>
@@ -143,7 +152,12 @@
     </section>
 
     <section id="mechanics" class="steps">
-      <div class="steps__bg" aria-hidden="true"><img src="img/steps-bg.jpg" alt=""></div>
+      <div class="steps__bg" aria-hidden="true">
+         <picture class="hero__bg">
+          <source media="(max-width: 767px)" srcset="img/bg_2.png">
+          <img src="img/steps-bg.jpg" alt="" class="hero__bg-img">
+        </picture>
+      </div>
       <div class="steps__container">
       <div class="site-container steps__inner">
         <h2 class="section-title section-title--center">Как принять участие?</h2>
@@ -151,6 +165,7 @@
           <article class="step-card">
             <div class="step-card__media step-card__media--phone">
               <picture>
+                <source media="(max-width: 768px)" srcset="img/mob_1.png">
                 <source media="(min-width: 768px) and (max-width: 1199.98px)" srcset="img/tablet_1.png">
                 <img src="img/tablet_1.png" alt="" class="step-card__img">
               </picture>
@@ -160,6 +175,7 @@
           <article class="step-card step-card--pay">
             <div class="step-card__media step-card__media--cards">
               <picture>
+                <source media="(max-width: 768px)" srcset="img/mob_2.png">
                 <source media="(min-width: 768px) and (max-width: 1199.98px)" srcset="img/tablet_2.png">
                 <img src="img/tablet_2.png" alt="" class="step-card__img">
               </picture>
@@ -169,6 +185,7 @@
           <article class="step-card step-card--codes">
             <div class="step-card__media step-card__media--codes">
               <picture>
+                <source media="(max-width: 768px)" srcset="img/mob_3.png">
                 <source media="(min-width: 768px) and (max-width: 1199.98px)" srcset="img/tablet_3.png">
                 <img src="img/tablet_3.png" alt="" class="step-card__img">
               </picture>
@@ -178,6 +195,7 @@
           <article class="step-card step-card--win">
             <div class="step-card__media step-card__media--f1">
               <picture>
+                <source media="(max-width: 768px)" srcset="img/mob_4.png">
                 <source media="(min-width: 768px) and (max-width: 1199.98px)" srcset="img/tablet_4.png">
                 <img src="img/tablet_4.png" alt="" class="step-card__img">
               </picture>
@@ -252,6 +270,14 @@
         </div>
 
         <p class="main-prize__lead">Проведите 3 незабываемых дня в самом сердце гонки вместе с командой Visa Cash App Racing Bulls</p>
+
+        <img
+          src="img/mob_veer.png"
+          alt="Получите эксклюзивный доступ в Premium Lounge. Окажитесь рядом с легендарными пилотами и болидами. Наслаждайтесь привилегиями VIP-уровня."
+          class="experience-mobile-art"
+          width="335"
+          aria-hidden="true"
+        >
 
         <img src="img/tablet_6.png" alt="" class="experience-tablet" width="688" aria-hidden="true">
 
@@ -467,7 +493,6 @@
       <div class="site-container how-to__container">
         <h2 class="how-to__title">Как оформить:</h2>
         <div class="how-to__layout">
-          <img src="img/phone-app.png" alt="Prior Online" class="how-to__phone" width="395" height="800">
           <div class="how-to__content">
             <ol class="how-to__steps">
               <li class="how-to__step">
@@ -497,6 +522,7 @@
               <p class="how-to__qr-text">Чтобы зайти в приложение —<br>отсканируйте QR‑код камерой вашего смартфона</p>
             </div>
           </div>
+          <img src="img/phone-app.png" alt="Prior Online" class="how-to__phone" width="395" height="800">
         </div>
       </div>
     </section>
