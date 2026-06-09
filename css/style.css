@@ -2620,6 +2620,10 @@ a:hover {
 	.hero__team-logo {
 		margin-bottom: 61px;
 	}
+
+	.main-prize{
+		background: url("../img/main-prize-confetti_1280.png");
+	}
 }
 
 /* Ticket — 1440 (≈25% к 1920 / 1546px) */
