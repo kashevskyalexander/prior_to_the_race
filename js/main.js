@@ -60,8 +60,11 @@
 
   new Swiper(".main-prize-swiper", Object.assign({}, swiperBase, {
     spaceBetween: 19,
+    observer: true,
+    observeParents: true,
     breakpoints: {
       0: { spaceBetween: 19 },
+      768: { spaceBetween: 19 },
     },
   }));
 

@@ -724,8 +724,60 @@ ul {
 }
 
 .main-prize__cards {
-	display: flex;
+	display: none;
 	gap: 19px;
+}
+
+.main-prize-swiper {
+	display: block;
+	overflow: visible;
+}
+
+.main-prize-swiper .swiper-slide {
+	height: auto;
+}
+
+@media (max-width: 1399.98px) {
+	.main-prize-swiper .swiper-slide {
+		width: clamp(300px, 42vw, 591px);
+		box-sizing: border-box;
+	}
+
+	.main-prize-swiper .prize-feature {
+		min-height: 562px;
+		height: 100%;
+		padding: 54px 24px 40px;
+	}
+
+	.main-prize-swiper .prize-feature--ticket {
+		padding-top: 31px;
+	}
+
+	.main-prize-swiper .prize-feature__title {
+		font-size: 26px;
+		letter-spacing: 0.52px;
+	}
+
+	.main-prize-swiper .prize-feature__desc {
+		font-size: 22px;
+		letter-spacing: 0.44px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1399.98px) {
+	.main-prize-swiper .swiper-slide {
+		width: clamp(420px, 42vw, 591px);
+	}
+}
+
+@media (min-width: 1400px) {
+	.main-prize-swiper {
+		display: none;
+	}
+
+	.main-prize__cards {
+		display: flex;
+	}
 }
 
 .prize-feature {
@@ -1877,6 +1929,45 @@ ul {
 		align-items: flex-start;
 		gap: 16px;
 	}
+
+	.main-prize-swiper {
+		margin-bottom: 32px;
+	}
+
+	.main-prize-swiper .swiper-slide {
+		width: 88%;
+	}
+
+	.main-prize-swiper .prize-feature {
+		min-height: 480px;
+		padding: 40px 20px 32px;
+	}
+
+	.main-prize-swiper .prize-feature--ticket {
+		padding-top: 28px;
+	}
+
+	.main-prize-swiper .prize-feature__title {
+		font-size: 22px;
+	}
+
+	.main-prize-swiper .prize-feature__desc {
+		font-size: 18px;
+	}
+
+	.main-prize-swiper .prize-feature__img--flight {
+		height: 90px;
+	}
+
+	.main-prize-swiper .prize-feature__img--hotel {
+		width: 180px;
+		height: 190px;
+	}
+
+	.main-prize-swiper .prize-feature__img--paddock {
+		max-width: 280px;
+		height: 150px;
+	}
 }
 
 /* Header menu — tablet */
@@ -2602,7 +2693,8 @@ a:hover {
 		transform: rotate(180deg) scaleY(-1);
 	}
 
-	.main-prize__cards .prize-feature {
+	.main-prize__cards .prize-feature,
+	.main-prize-swiper .prize-feature {
 		min-height: 562px;
 		padding-top: 54px;
 	}
