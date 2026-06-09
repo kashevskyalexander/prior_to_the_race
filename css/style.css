@@ -208,7 +208,6 @@ ul {
 	grid-template-rows: auto auto;
 	align-items: center;
 	gap: 12px 16px;
-	min-height: var(--header-h);
 	padding-block: 20px 12px;
 }
 
@@ -580,7 +579,6 @@ ul {
 
 .step-card__img {
 	display: block;
-	width: var(--step-img-w);
 	height: auto;
 	max-width: 100%;
 	margin: 0;
@@ -777,15 +775,6 @@ ul {
 	object-fit: contain;
 }
 
-.prize-feature__img--flight {
-	max-width: 533px;
-	height: 110px;
-}
-
-.prize-feature__img--flight img {
-	max-height: 142px;
-	width: 100%;
-}
 
 .prize-feature__img--hotel {
 	width: 200px;
@@ -2108,9 +2097,6 @@ ul {
 	display: block;
 }
 
-.step-card--pay .step-card__text {
-	max-width: 86.06%;
-}
 
 /* Figma 665:891 — card 416×416 */
 .step-card__media--phone {
@@ -2179,14 +2165,6 @@ ul {
 	letter-spacing: 0.6px;
 }
 
-.prize-feature__img--flight {
-	max-width: 533px;
-	height: 142px;
-}
-
-.prize-feature__img--flight img {
-	max-height: 142px;
-}
 
 .prize-feature__img--hotel {
 	width: 248px;
@@ -2529,7 +2507,7 @@ a:hover {
 		font-size: 50px;
 		letter-spacing: 1px;
 	}
-
+	
 	.steps__grid {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 19px;
@@ -2539,16 +2517,12 @@ a:hover {
 		font-size: 22px;
 		font-weight: 500;
 		letter-spacing: 0.44px;
-		max-width: 83.08%;
+		max-width: 100%;
 	}
 
 	.step-card--codes .step-card__text-break,
 	.step-card--win .step-card__text-break {
 		display: block;
-	}
-
-	.step-card--pay .step-card__text {
-		max-width: 83.08%;
 	}
 
 	.step-card__media--phone {
@@ -2636,6 +2610,7 @@ a:hover {
 	.prize-feature__title {
 		font-size: 26px;
 		letter-spacing: 0.52px;
+		margin-bottom: 0;
 	}
 
 	.prize-feature__desc {
@@ -2643,14 +2618,6 @@ a:hover {
 		letter-spacing: 0.44px;
 	}
 
-	.prize-feature__img--flight {
-		max-width: none;
-		height: 120px;
-	}
-
-	.prize-feature__img--flight img {
-		max-height: 120px;
-	}
 
 	.prize-feature__img--hotel {
 		width: 220px;
@@ -2749,6 +2716,12 @@ a:hover {
 		max-width: 1179px;
 	}
 
+	.steps__grid {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 19px;
+	}
+
+
 	.ticket__band {
 		aspect-ratio: 1179 / 401;
 	}
@@ -2841,12 +2814,6 @@ a:hover {
 
 	.prize-feature__desc {
 		font-size: 24px;
-	}
-
-	.prize-feature__img--flight,
-	.prize-feature__img--flight img {
-		height: 126px;
-		max-height: 126px;
 	}
 
 	.prize-feature__img--hotel {
@@ -3005,12 +2972,6 @@ a:hover {
 	.prize-feature__desc {
 		font-size: 26px;
 		letter-spacing: 0.52px;
-	}
-
-	.prize-feature__img--flight,
-	.prize-feature__img--flight img {
-		height: 131px;
-		max-height: 131px;
 	}
 
 	.prize-feature__img--hotel {
@@ -3191,11 +3152,6 @@ a:hover {
 		letter-spacing: 0.56px;
 	}
 
-	.prize-feature__img--flight,
-	.prize-feature__img--flight img {
-		height: 137px;
-		max-height: 137px;
-	}
 
 	.prize-feature__img--hotel {
 		width: 241px;
@@ -3256,5 +3212,15 @@ a:hover {
 		min-width: 400px;
 		padding: 25px 64px 29px;
 		font-size: 29px;
+	}
+}
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+	.step-card__text {
+        font-size: 16px;
+    }
+
+	.steps{
+	    padding-bottom: 171px;
 	}
 }
