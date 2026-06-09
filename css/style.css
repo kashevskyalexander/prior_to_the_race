@@ -2514,6 +2514,94 @@ a:hover {
 		width: 152px;
 	}
 
+	/* Steps — Figma 218:874, якорь 1280 / 2×2 */
+	.steps {
+		background: var(--bg);
+		padding-top: 80px;
+		padding-bottom: 100px;
+		min-height: 0;
+	}
+
+	.steps__bg {
+		top: auto;
+		right: 0;
+		bottom: 0;
+		left: auto;
+		width: 151.25%;
+		height: 77.7%;
+	}
+
+	.steps .section-title {
+		margin-bottom: 84px;
+		font-size: 50px;
+		letter-spacing: 1px;
+	}
+
+	.steps__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 19px;
+	}
+
+	.step-card {
+		gap: 32px;
+		min-height: 416px;
+		aspect-ratio: 591 / 416;
+		padding: 0;
+	}
+
+	.step-card__text {
+		font-size: 22px;
+		font-weight: 500;
+		letter-spacing: 0.44px;
+		max-width: 83.08%;
+	}
+
+	.step-card--codes .step-card__text-break,
+	.step-card--win .step-card__text-break {
+		display: block;
+	}
+
+	.step-card--pay .step-card__text {
+		max-width: 83.08%;
+	}
+
+	.step-card__media--phone {
+		--step-img-w: 58.54%;
+		--step-img-ratio: 346 / 190;
+	}
+
+	.step-card__media--cards {
+		--step-img-w: 34.86%;
+		--step-img-ratio: 206 / 200;
+	}
+
+	.step-card__media--codes {
+		--step-img-w: 40.78%;
+		--step-img-ratio: 241 / 190;
+	}
+
+	.step-card__media--f1 {
+		--step-img-w: 49.75%;
+		--step-img-ratio: 294 / 190;
+	}
+
+	.step-card__sparkle--tr {
+		width: 111px;
+		height: 122px;
+		right: -4px;
+		top: -34px;
+	}
+
+	.step-card__sparkle--bl {
+		display: block;
+		width: 111px;
+		height: 122px;
+		left: -948px;
+		top: 491px;
+		right: auto;
+		transform: scaleY(-1);
+	}
+
 	.hero__title {
 		font-size: 72px;
 		font-style: normal;
@@ -2588,6 +2676,20 @@ a:hover {
 		top: 72.64%;
 		width: 175px;
 	}
+
+	.steps .section-title {
+		margin-bottom: 78px;
+		font-size: 55px;
+		letter-spacing: 1.1px;
+	}
+
+	.step-card__text {
+		font-size: 21px;
+	}
+
+	.step-card__sparkle--bl {
+		top: 460px;
+	}
 }
 
 /* Ticket — 1600 (≈50% к 1920 / 1546px) */
@@ -2645,6 +2747,20 @@ a:hover {
 		top: 73.08%;
 		width: 198px;
 	}
+
+	.steps .section-title {
+		margin-bottom: 72px;
+		font-size: 60px;
+		letter-spacing: 1.2px;
+	}
+
+	.step-card__text {
+		font-size: 20px;
+	}
+
+	.step-card__sparkle--bl {
+		top: 430px;
+	}
 }
 
 /* Ticket — 1760 (≈75% к 1920 / 1546px) */
@@ -2701,5 +2817,24 @@ a:hover {
 	.ticket__team {
 		top: 73.53%;
 		width: 221px;
+	}
+
+	.steps {
+		padding-top: 90px;
+		padding-bottom: 140px;
+	}
+
+	.steps .section-title {
+		margin-bottom: 66px;
+		font-size: 65px;
+		letter-spacing: 1.3px;
+	}
+
+	.step-card__text {
+		font-size: 19px;
+	}
+
+	.step-card__sparkle--bl {
+		top: 399px;
 	}
 }
