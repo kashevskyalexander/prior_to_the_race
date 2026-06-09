@@ -3758,6 +3758,29 @@ a:hover {
 	.virtual-card__btn{
 		margin: auto;
 	}
+	
+	.site-footer__logos img:last-child{
+		width: auto;
+	}
+
+	.site-footer__col--info {
+        max-width: 665px;
+    }
+
+	.site-footer .site-container {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 300px;
+        justify-content: space-between;
+        column-gap: 0;
+    }
+
+	.site-footer__contacts{
+		width: 300px;
+	}
+
+	.site-footer__contacts{
+		gap: 24px;
+	}
 }
 
 @media (min-width: 1440px) and (max-width: 1919px) {
@@ -3785,6 +3808,7 @@ a:hover {
 	.virtual-card__content {
         gap: 40px;
     }
+
 }
 
 @media (min-width: 1200px) and (max-width: 1919px) {
