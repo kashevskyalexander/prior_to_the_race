@@ -2745,6 +2745,10 @@ a:hover {
 		width: 90px;
 	}
 
+	.other-prizes__track, .other-prizes__head.section-head{
+		padding-left: 40px;
+	}
+
 
 	.main-prize__cards .prize-feature,
 	.main-prize-swiper .prize-feature {
