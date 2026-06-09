@@ -1016,10 +1016,6 @@ ul {
 }
 
 @media (min-width: 1200px) {
-	.experience-card {
-		height: 640px;
-		min-height: 640px;
-	}
 
 	.experience-card__media {
 		height: 300px;
@@ -2754,8 +2750,9 @@ a:hover {
 
 	.experience-card {
 		height: auto;
-		min-height: 560px;
+		min-height: 430px;
 		max-width: min(491px, 42vw);
+		gap: 24px;
 	}
 
 	.experience-card__media {
@@ -2926,9 +2923,6 @@ a:hover {
 		width: 95px;
 	}
 
-	.experience-card {
-		min-height: 580px;
-	}
 
 	.experience-card__media {
 		height: 245px;
@@ -3081,10 +3075,6 @@ a:hover {
 		width: 101px;
 	}
 
-	.experience-card {
-		min-height: 600px;
-		max-width: min(491px, 40vw);
-	}
 
 	.experience-card__media {
 		height: 264px;
@@ -3250,10 +3240,6 @@ a:hover {
 		width: 106px;
 	}
 
-	.experience-card {
-		min-height: 620px;
-		max-width: 491px;
-	}
 
 	.experience-card__media {
 		height: 282px;
