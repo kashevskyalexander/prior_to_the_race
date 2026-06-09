@@ -1857,6 +1857,12 @@ ul {
 	gap: 40px;
 }
 
+.site-footer__contacts {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
 .site-footer__heading {
 	margin: 0 0 8px;
 	font-weight: 600;
@@ -1901,25 +1907,120 @@ ul {
 	margin-bottom: 0;
 }
 
-/* Footer — Figma 665:1083 */
-@media (min-width: 768px) {
+/* Footer — tablet */
+@media (min-width: 768px) and (max-width: 1199.98px) {
 	.site-footer__grid {
 		display: grid;
 		grid-template-columns: 1.4fr 1fr 1fr;
 		gap: 32px;
 	}
+
+	.site-footer__contacts {
+		display: contents;
+	}
 }
 
-@media (min-width: 1920px) {
+/* Footer — Figma 218:1053, экраны < 1440 */
+@media (min-width: 1200px) and (max-width: 1439.98px) {
+	.site-footer {
+		padding: 40px 0;
+	}
+
+	.site-footer .site-container {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 257px;
+		justify-content: space-between;
+		column-gap: 48px;
+		row-gap: 40px;
+		align-items: start;
+	}
+
+	.site-footer__logos {
+		display: contents;
+		margin-bottom: 0;
+	}
+
+	.site-footer__logos img:first-child {
+		grid-column: 1;
+		grid-row: 1;
+		width: 92px;
+		max-width: none;
+	}
+
+	.site-footer__logos img:last-child {
+		grid-column: 2;
+		grid-row: 1;
+		justify-self: end;
+		width: 232px;
+		max-width: 100%;
+	}
+
+	.site-footer__grid {
+		display: contents;
+	}
+
+	.site-footer__col--info {
+		grid-column: 1;
+		grid-row: 2;
+		max-width: 685px;
+	}
+
+	.site-footer__contacts {
+		grid-column: 2;
+		grid-row: 2;
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		width: 257px;
+		max-width: 100%;
+		justify-self: end;
+	}
+
+	.site-footer__heading {
+		font-size: 18px;
+		line-height: 1.6;
+	}
+
+	.site-footer__text,
+	.site-footer__link {
+		font-size: 16px;
+		line-height: 1.4;
+	}
+}
+
+@media (min-width: 1440px) {
 	.site-footer {
 		min-height: 295px;
 		padding: 40px 0;
 	}
 
+	.site-footer .site-container {
+		display: block;
+	}
+
+	.site-footer__logos {
+		display: flex;
+		margin-bottom: 40px;
+	}
+
+	.site-footer__logos img:first-child {
+		width: 92px;
+	}
+
+	.site-footer__logos img:last-child {
+		width: 293px;
+		max-width: 55vw;
+	}
+
 	.site-footer__grid {
+		display: grid;
 		grid-template-columns: 685px 257px 257px;
 		justify-content: space-between;
 		gap: 0;
+	}
+
+	.site-footer__contacts {
+		display: contents;
 	}
 
 	.site-footer__col--info {
