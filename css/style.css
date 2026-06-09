@@ -2602,6 +2602,141 @@ a:hover {
 		transform: scaleY(-1);
 	}
 
+	.site-container {
+		padding-inline: 40px;
+	}
+	/* Main prize — Figma 859:258, якорь 1280 */
+	.main-prize {
+		padding: 100px 0;
+		background-image: url("../img/main-prize-confetti_1280.png");
+		background-repeat: no-repeat;
+		background-position: left top;
+		background-size: contain;
+	}
+
+	.main-prize__title {
+		text-transform: uppercase;
+		font-size: 50px;
+		letter-spacing: 1px;
+		margin-bottom: 10px;
+	}
+
+	.main-prize__subtitle {
+		font-size: 50px;
+		letter-spacing: 1px;
+		margin-bottom: 40px;
+	}
+
+	.main-prize__spark--1 {
+		left: 1.15%;
+		top: 30%;
+		width: 90px;
+	}
+
+	.main-prize__spark--2 {
+		display: block;
+		right: 1.77%;
+		top: 48%;
+		bottom: auto;
+		width: 90px;
+		transform: rotate(180deg) scaleY(-1);
+	}
+
+	.main-prize__cards .prize-feature {
+		min-height: 562px;
+		padding-top: 54px;
+	}
+
+	.prize-feature__title {
+		font-size: 26px;
+		letter-spacing: 0.52px;
+	}
+
+	.prize-feature__desc {
+		font-size: 22px;
+		letter-spacing: 0.44px;
+	}
+
+	.prize-feature__img--flight {
+		max-width: none;
+		height: 120px;
+	}
+
+	.prize-feature__img--flight img {
+		max-height: 120px;
+	}
+
+	.prize-feature__img--hotel {
+		width: 220px;
+		height: 230px;
+	}
+
+	.prize-feature__img--hotel img {
+		max-height: 230px;
+	}
+
+	.prize-feature__img--paddock {
+		max-width: 340px;
+		height: 200px;
+	}
+
+	.prize-feature__img--paddock img {
+		max-height: 200px;
+		max-width: 340px;
+	}
+
+	.main-prize__lead {
+		margin: 80px auto 40px;
+		max-width: min(960px, 90vw);
+		font-size: 32px;
+		font-weight: 400;
+	}
+
+	.experience-fan {
+		max-width: 100%;
+		margin-bottom: 40px;
+		padding-bottom: 72px;
+	}
+
+	.experience-fan__spark--bl {
+		left: 0;
+		bottom: 0;
+		width: 90px;
+		transform: rotate(172deg) scaleY(-1);
+	}
+
+	.experience-fan__spark--tr {
+		right: -14px;
+		top: 36%;
+		width: 90px;
+	}
+
+	.experience-card {
+		height: auto;
+		min-height: 560px;
+		max-width: min(491px, 42vw);
+	}
+
+	.experience-card__media {
+		height: 227px;
+	}
+
+	.experience-card__body h3 {
+		font-size: 20px;
+	}
+
+	.experience-card__body p,
+	.experience-card__body li {
+		font-size: 16px;
+	}
+
+	.main-prize__cta-wrap .btn-accent {
+		min-width: 0;
+		width: max-content;
+		padding: 22px 42px 26px;
+		font-size: 24px;
+	}
+
 	.hero__title {
 		font-size: 72px;
 		font-style: normal;
@@ -2619,10 +2754,6 @@ a:hover {
 
 	.hero__team-logo {
 		margin-bottom: 61px;
-	}
-
-	.main-prize{
-		background: url("../img/main-prize-confetti_1280.png");
 	}
 }
 
@@ -2694,6 +2825,94 @@ a:hover {
 	.step-card__sparkle--bl {
 		top: 460px;
 	}
+
+	.main-prize__title,
+	.main-prize__subtitle {
+		font-size: 55px;
+		letter-spacing: 1.1px;
+	}
+
+	.main-prize__subtitle {
+		margin-bottom: 46px;
+	}
+
+	.main-prize__spark--1 {
+		top: 31%;
+		width: 95px;
+	}
+
+	.main-prize__spark--2 {
+		width: 95px;
+	}
+
+	.main-prize__cards .prize-feature {
+		min-height: 577px;
+	}
+
+	.prize-feature__title {
+		font-size: 28px;
+	}
+
+	.prize-feature__desc {
+		font-size: 24px;
+	}
+
+	.prize-feature__img--flight,
+	.prize-feature__img--flight img {
+		height: 126px;
+		max-height: 126px;
+	}
+
+	.prize-feature__img--hotel {
+		width: 227px;
+		height: 238px;
+	}
+
+	.prize-feature__img--hotel img {
+		max-height: 238px;
+	}
+
+	.prize-feature__img--paddock {
+		max-width: 355px;
+		height: 209px;
+	}
+
+	.prize-feature__img--paddock img {
+		max-height: 209px;
+		max-width: 355px;
+	}
+
+	.main-prize__lead {
+		margin: 95px auto 45px;
+		font-size: 34px;
+	}
+
+	.experience-fan__spark--bl,
+	.experience-fan__spark--tr {
+		width: 95px;
+	}
+
+	.experience-card {
+		min-height: 580px;
+	}
+
+	.experience-card__media {
+		height: 245px;
+	}
+
+	.experience-card__body h3 {
+		font-size: 22px;
+	}
+
+	.experience-card__body p,
+	.experience-card__body li {
+		font-size: 17px;
+	}
+
+	.main-prize__cta-wrap .btn-accent {
+		padding: 23px 48px 27px;
+		font-size: 25px;
+	}
 }
 
 /* Ticket — 1600 (≈50% к 1920 / 1546px) */
@@ -2764,6 +2983,107 @@ a:hover {
 
 	.step-card__sparkle--bl {
 		top: 430px;
+	}
+
+	.main-prize__title,
+	.main-prize__subtitle {
+		font-size: 60px;
+		letter-spacing: 1.2px;
+	}
+
+	.main-prize__subtitle {
+		margin-bottom: 52px;
+	}
+
+	.main-prize__spark--1 {
+		left: -0.5%;
+		top: 32%;
+		width: 101px;
+	}
+
+	.main-prize__spark--2 {
+		right: 0.5%;
+		top: 46%;
+		width: 101px;
+	}
+
+	.main-prize__cards .prize-feature {
+		min-height: 591px;
+	}
+
+	.prize-feature__title {
+		font-size: 29px;
+		letter-spacing: 0.58px;
+	}
+
+	.prize-feature__desc {
+		font-size: 26px;
+		letter-spacing: 0.52px;
+	}
+
+	.prize-feature__img--flight,
+	.prize-feature__img--flight img {
+		height: 131px;
+		max-height: 131px;
+	}
+
+	.prize-feature__img--hotel {
+		width: 234px;
+		height: 245px;
+	}
+
+	.prize-feature__img--hotel img {
+		max-height: 245px;
+	}
+
+	.prize-feature__img--paddock {
+		max-width: 371px;
+		height: 217px;
+	}
+
+	.prize-feature__img--paddock img {
+		max-height: 217px;
+		max-width: 371px;
+	}
+
+	.main-prize__lead {
+		margin: 110px auto 50px;
+		max-width: min(1080px, 90vw);
+		font-size: 36px;
+	}
+
+	.experience-fan__spark--bl {
+		left: -4%;
+		width: 101px;
+	}
+
+	.experience-fan__spark--tr {
+		right: -8%;
+		top: 43%;
+		width: 101px;
+	}
+
+	.experience-card {
+		min-height: 600px;
+		max-width: min(491px, 40vw);
+	}
+
+	.experience-card__media {
+		height: 264px;
+	}
+
+	.experience-card__body h3 {
+		font-size: 23px;
+	}
+
+	.experience-card__body p,
+	.experience-card__body li {
+		font-size: 18px;
+	}
+
+	.main-prize__cta-wrap .btn-accent {
+		padding: 24px 56px 28px;
+		font-size: 27px;
 	}
 }
 
@@ -2840,5 +3160,115 @@ a:hover {
 
 	.step-card__sparkle--bl {
 		top: 399px;
+	}
+
+	.main-prize {
+		padding-top: 120px;
+		background-image: url("../img/main-prize-confetti.png");
+	}
+
+	.main-prize__title {
+		text-transform: none;
+		font-size: 65px;
+		letter-spacing: 1.3px;
+	}
+
+	.main-prize__subtitle {
+		font-size: 65px;
+		margin-bottom: 58px;
+	}
+
+	.main-prize__spark--1 {
+		left: -2.5%;
+		top: 33%;
+		width: 106px;
+	}
+
+	.main-prize__spark--2 {
+		right: -1%;
+		top: unset;
+		bottom: -8%;
+		width: 106px;
+	}
+
+	.main-prize__cards .prize-feature {
+		min-height: 606px;
+	}
+
+	.prize-feature__title {
+		font-size: 31px;
+		letter-spacing: 0.62px;
+	}
+
+	.prize-feature__desc {
+		font-size: 28px;
+		letter-spacing: 0.56px;
+	}
+
+	.prize-feature__img--flight,
+	.prize-feature__img--flight img {
+		height: 137px;
+		max-height: 137px;
+	}
+
+	.prize-feature__img--hotel {
+		width: 241px;
+		height: 253px;
+	}
+
+	.prize-feature__img--hotel img {
+		max-height: 253px;
+	}
+
+	.prize-feature__img--paddock {
+		max-width: 386px;
+		height: 226px;
+	}
+
+	.prize-feature__img--paddock img {
+		max-height: 226px;
+		max-width: 386px;
+	}
+
+	.main-prize__lead {
+		margin: 125px auto 55px;
+		max-width: min(1140px, 90vw);
+		font-size: 38px;
+	}
+
+	.experience-fan__spark--bl {
+		left: -8%;
+		bottom: -4%;
+		width: 106px;
+	}
+
+	.experience-fan__spark--tr {
+		right: -12%;
+		top: 47%;
+		width: 106px;
+	}
+
+	.experience-card {
+		min-height: 620px;
+		max-width: 491px;
+	}
+
+	.experience-card__media {
+		height: 282px;
+	}
+
+	.experience-card__body h3 {
+		font-size: 25px;
+	}
+
+	.experience-card__body p,
+	.experience-card__body li {
+		font-size: 18px;
+	}
+
+	.main-prize__cta-wrap .btn-accent {
+		min-width: 400px;
+		padding: 25px 64px 29px;
+		font-size: 29px;
 	}
 }
