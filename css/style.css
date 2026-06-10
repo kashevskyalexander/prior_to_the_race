@@ -20,7 +20,8 @@
 	--section-pad-y: 80px;
 	--vh: 1vh;
 	--vw: 1vw;
-	--logo-visa-taller: 1.15;
+	--logo-visa-taller: 1.22;
+	--logo-size-scale: 0.85;
 }
 
 *,
@@ -243,11 +244,11 @@ img.re__bg-img {
 
 .site-header__visa {
 	width: auto;
-	height: calc(var(--prior-logo-w) * 38 / 293 * var(--logo-visa-taller));
+	height: calc(var(--prior-logo-w) * var(--logo-size-scale) * 38 / 293 * var(--logo-visa-taller));
 }
 
 .site-header__prior {
-	width: var(--prior-logo-w);
+	width: calc(var(--prior-logo-w) * var(--logo-size-scale));
 	height: auto;
 }
 
@@ -257,7 +258,7 @@ img.re__bg-img {
 }
 
 .site-header__prior-center img {
-	width: var(--prior-logo-w);
+	width: calc(var(--prior-logo-w) * var(--logo-size-scale));
 	height: auto;
 }
 
@@ -486,11 +487,11 @@ img.re__bg-img {
 
 .ticket__logo-visa {
 	width: auto;
-	height: calc(var(--prior-logo-w) * 38 / 293 * var(--logo-visa-taller));
+	height: calc(var(--prior-logo-w) * var(--logo-size-scale) * 38 / 293 * var(--logo-visa-taller));
 }
 
 .ticket__logo-prior {
-	width: var(--prior-logo-w);
+	width: calc(var(--prior-logo-w) * var(--logo-size-scale));
 	height: auto;
 }
 
@@ -1938,11 +1939,11 @@ img.re__bg-img {
 
 .site-footer__logos img:first-child {
 	width: auto;
-	height: calc(var(--prior-logo-w) * 38 / 293 * var(--logo-visa-taller));
+	height: calc(var(--prior-logo-w) * var(--logo-size-scale) * 38 / 293 * var(--logo-visa-taller));
 }
 
 .site-footer__logos img:last-child {
-	width: var(--prior-logo-w);
+	width: calc(var(--prior-logo-w) * var(--logo-size-scale));
 	max-width: 55vw;
 	height: auto;
 }
