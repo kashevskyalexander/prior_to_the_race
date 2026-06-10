@@ -20,6 +20,7 @@
 	--section-pad-y: 80px;
 	--vh: 1vh;
 	--vw: 1vw;
+	--logo-visa-taller: 1.15;
 }
 
 *,
@@ -228,6 +229,10 @@ img.re__bg-img {
 	padding-block: 20px 12px;
 }
 
+.site-header__bar {
+	--prior-logo-w: 216px;
+}
+
 .site-header__brand {
 	display: flex;
 	align-items: center;
@@ -237,12 +242,12 @@ img.re__bg-img {
 }
 
 .site-header__visa {
-	width: 62px;
-	height: auto;
+	width: auto;
+	height: calc(var(--prior-logo-w) * 38 / 293 * var(--logo-visa-taller));
 }
 
 .site-header__prior {
-	width: 216px;
+	width: var(--prior-logo-w);
 	height: auto;
 }
 
@@ -252,7 +257,7 @@ img.re__bg-img {
 }
 
 .site-header__prior-center img {
-	width: 230px;
+	width: var(--prior-logo-w);
 	height: auto;
 }
 
@@ -469,6 +474,7 @@ img.re__bg-img {
 }
 
 .ticket__logos {
+	--prior-logo-w: 122.09px;
 	position: absolute;
 	top: 8.98%;
 	left: 0;
@@ -479,12 +485,12 @@ img.re__bg-img {
 }
 
 .ticket__logo-visa {
-	width: 90px;
-	height: auto;
+	width: auto;
+	height: calc(var(--prior-logo-w) * 38 / 293 * var(--logo-visa-taller));
 }
 
 .ticket__logo-prior {
-	width: 122.09px;
+	width: var(--prior-logo-w);
 	height: auto;
 }
 
@@ -1923,6 +1929,7 @@ img.re__bg-img {
 }
 
 .site-footer__logos {
+	--prior-logo-w: 240px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -1930,12 +1937,14 @@ img.re__bg-img {
 }
 
 .site-footer__logos img:first-child {
-	width: 106px;
+	width: auto;
+	height: calc(var(--prior-logo-w) * 38 / 293 * var(--logo-visa-taller));
 }
 
 .site-footer__logos img:last-child {
-	width: 240px;
+	width: var(--prior-logo-w);
 	max-width: 55vw;
+	height: auto;
 }
 
 .site-footer__grid {
@@ -2010,14 +2019,11 @@ img.re__bg-img {
 		margin-bottom: 40px;
 	}
 
-	.site-footer__logos img:first-child {
-		width: 92px;
-		height: auto;
+	.site-footer__logos {
+		--prior-logo-w: 262px;
 	}
 
 	.site-footer__logos img:last-child {
-		width: 262px;
-		height: auto;
 		max-width: none;
 	}
 
@@ -2075,10 +2081,13 @@ img.re__bg-img {
 		margin-bottom: 0;
 	}
 
+	.site-footer__logos {
+		--prior-logo-w: 232px;
+	}
+
 	.site-footer__logos img:first-child {
 		grid-column: 1;
 		grid-row: 1;
-		width: 106px;
 		max-width: none;
 	}
 
@@ -2086,7 +2095,6 @@ img.re__bg-img {
 		grid-column: 2;
 		grid-row: 1;
 		justify-self: end;
-		width: 232px;
 		max-width: 100%;
 	}
 
@@ -2138,12 +2146,11 @@ img.re__bg-img {
 		margin-bottom: 40px;
 	}
 
-	.site-footer__logos img:first-child {
-		width: 106px;
+	.site-footer__logos {
+		--prior-logo-w: 260px;
 	}
 
 	.site-footer__logos img:last-child {
-		width: 260px;
 		max-width: 55vw;
 	}
 
@@ -2201,6 +2208,7 @@ img.re__bg-img {
 
 	
 	.site-header__bar {
+		--prior-logo-w: 139px;
 		grid-template-columns: 54px 1fr 40px;
 		grid-template-rows: auto;
 		gap: 0;
@@ -2225,10 +2233,6 @@ img.re__bg-img {
 		justify-self: right;
 	}
 
-	.site-header__prior-center img {
-		width: 139px;
-		height: auto;
-	}
 	.site-header__menu-btn{
 		width: 32px;
 		height: 32px;
@@ -2246,11 +2250,6 @@ img.re__bg-img {
 
 	.site-header__cta {
 		display: none;
-	}
-
-	.site-header__visa {
-		width: 82px;
-		height: auto;
 	}
 
 	
@@ -2929,12 +2928,11 @@ img.re__bg-img {
 		margin-bottom: 32px;
 	}
 
-	.site-footer__logos img:first-child {
-		width: 71px;
+	.site-footer__logos {
+		--prior-logo-w: 180px;
 	}
 
 	.site-footer__logos img:last-child {
-		width: 180px;
 		max-width: 52vw;
 	}
 
@@ -2954,6 +2952,7 @@ img.re__bg-img {
 
 @media (min-width: 768px) and (max-width: 1919.98px) {
 	.site-header__bar {
+		--prior-logo-w: 230px;
 		position: relative;
 		display: grid;
 		grid-template-columns: 1fr auto;
@@ -2970,20 +2969,12 @@ img.re__bg-img {
 		gap: 0;
 	}
 
-	.site-header__visa {
-		width: 80px;
-	}
-
 	.site-header__prior--brand {
 		display: none;
 	}
 
 	.site-header__prior-center {
 		display: block;
-	}
-
-	.site-header__prior-center img {
-		width: 230px;
 	}
 
 	.site-header__nav {
@@ -2999,6 +2990,7 @@ img.re__bg-img {
 
 @media (min-width: 1920px) {
 	.site-header__bar {
+		--prior-logo-w: 260px;
 		position: relative;
 		display: flex;
 		align-items: center;
@@ -3020,14 +3012,6 @@ img.re__bg-img {
 	.site-header__prior-center {
 		display: block;
 		flex-shrink: 0;
-	}
-
-	.site-header__prior-center img {
-		width: 260px;
-	}
-
-	.site-header__visa {
-		width: 92px;
 	}
 
 	.site-header__nav {
@@ -3099,6 +3083,7 @@ img.re__bg-img {
 	}
 
 	.site-header__bar {
+		--prior-logo-w: 262px;
 		display: grid;
 		grid-template-columns: 1fr auto 1fr;
 		grid-template-rows: auto;
@@ -3122,12 +3107,7 @@ img.re__bg-img {
 		justify-self: center;
 	}
 
-	.site-header__visa {
-		width: 80px;
-	}
-
 	.site-header__prior-center img {
-		width: 262px;
 		max-width: none;
 	}
 
@@ -3260,12 +3240,8 @@ img.re__bg-img {
 		top: 27.68%;
 	}
 
-	.ticket__logo-visa {
-		width: 34.82px;
-	}
-
-	.ticket__logo-prior {
-		width: 122.09px;
+	.ticket__logos {
+		--prior-logo-w: 122.09px;
 	}
 
 	.ticket__title,
@@ -3793,12 +3769,8 @@ img.re__bg-img {
 		aspect-ratio: 912 / 308;
 	}
 
-	.ticket__logo-visa {
-		width: 58px;
-	}
-
-	.ticket__logo-prior {
-		width: 198px;
+	.ticket__logos {
+		--prior-logo-w: 198px;
 	}
 
 	.ticket__title,
@@ -4003,18 +3975,11 @@ img.re__bg-img {
 
 .ticket__logos {
 	top: 11.05%;
+	--prior-logo-w: 293px;
 }
 
 .ticket__copy {
 	top: 32.58%;
-}
-
-.ticket__logo-visa {
-	width: 92px;
-}
-
-.ticket__logo-prior {
-	width: 293px;
 }
 
 .ticket__title,
@@ -4394,12 +4359,8 @@ a:hover {
 		top: 34.83%;
 	}
 
-	.ticket__logo-visa {
-		width: 90px;
-	}
-
-	.ticket__logo-prior {
-		width: 232px;
+	.ticket__logos {
+		--prior-logo-w: 232px;
 	}
 
 	.ticket__title,
@@ -4830,12 +4791,8 @@ a:hover {
 		top: 34.27%;
 	}
 
-	.ticket__logo-visa {
-		width: 90px;
-	}
-
-	.ticket__logo-prior {
-		width: 247px;
+	.ticket__logos {
+		--prior-logo-w: 247px;
 	}
 
 	.ticket__title,
@@ -5016,12 +4973,8 @@ a:hover {
 		top: 33.71%;
 	}
 
-	.ticket__logo-visa {
-		width: 90px;
-	}
-
-	.ticket__logo-prior {
-		width: 240px;
+	.ticket__logos {
+		--prior-logo-w: 240px;
 	}
 
 	.ticket__title,
@@ -5204,12 +5157,8 @@ a:hover {
 		top: 33.14%;
 	}
 
-	.ticket__logo-visa {
-		width: 90px;
-	}
-
-	.ticket__logo-prior {
-		width: 240px;
+	.ticket__logos {
+		--prior-logo-w: 240px;
 	}
 
 	.ticket__title,
@@ -5527,10 +5476,6 @@ a:hover {
 		margin: auto;
 	}
 	
-	.site-footer__logos img:last-child{
-		width: auto;
-	}
-
 	.site-footer__col--info {
         max-width: 665px;
     }
