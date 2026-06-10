@@ -2925,7 +2925,7 @@ img.re__bg-img {
 
 	.site-footer__logos {
 		flex-direction: row;
-		align-items: flex-start;
+		align-items: center;
 		justify-content: space-between;
 		gap: 16px;
 		margin-bottom: 32px;
