@@ -252,7 +252,7 @@ img.re__bg-img {
 }
 
 .site-header__prior-center img {
-	width: 262px;
+	width: 230px;
 	height: auto;
 }
 
@@ -479,7 +479,7 @@ img.re__bg-img {
 }
 
 .ticket__logo-visa {
-	width: 34.82px;
+	width: 90px;
 	height: auto;
 }
 
@@ -1930,11 +1930,11 @@ img.re__bg-img {
 }
 
 .site-footer__logos img:first-child {
-	width: 92px;
+	width: 106px;
 }
 
 .site-footer__logos img:last-child {
-	width: 293px;
+	width: 240px;
 	max-width: 55vw;
 }
 
@@ -2011,7 +2011,7 @@ img.re__bg-img {
 	}
 
 	.site-footer__logos img:first-child {
-		width: 80px;
+		width: 92px;
 		height: auto;
 	}
 
@@ -2078,7 +2078,7 @@ img.re__bg-img {
 	.site-footer__logos img:first-child {
 		grid-column: 1;
 		grid-row: 1;
-		width: 92px;
+		width: 106px;
 		max-width: none;
 	}
 
@@ -2139,11 +2139,11 @@ img.re__bg-img {
 	}
 
 	.site-footer__logos img:first-child {
-		width: 92px;
+		width: 106px;
 	}
 
 	.site-footer__logos img:last-child {
-		width: 293px;
+		width: 260px;
 		max-width: 55vw;
 	}
 
@@ -2249,7 +2249,7 @@ img.re__bg-img {
 	}
 
 	.site-header__visa {
-		width: 31px;
+		width: 82px;
 		height: auto;
 	}
 
@@ -2930,7 +2930,7 @@ img.re__bg-img {
 	}
 
 	.site-footer__logos img:first-child {
-		width: 62px;
+		width: 71px;
 	}
 
 	.site-footer__logos img:last-child {
@@ -2983,7 +2983,7 @@ img.re__bg-img {
 	}
 
 	.site-header__prior-center img {
-		width: 255px;
+		width: 230px;
 	}
 
 	.site-header__nav {
@@ -3023,7 +3023,7 @@ img.re__bg-img {
 	}
 
 	.site-header__prior-center img {
-		width: 293px;
+		width: 260px;
 	}
 
 	.site-header__visa {
@@ -4395,7 +4395,7 @@ a:hover {
 	}
 
 	.ticket__logo-visa {
-		width: 68px;
+		width: 90px;
 	}
 
 	.ticket__logo-prior {
@@ -4831,7 +4831,7 @@ a:hover {
 	}
 
 	.ticket__logo-visa {
-		width: 74px;
+		width: 90px;
 	}
 
 	.ticket__logo-prior {
@@ -5017,11 +5017,11 @@ a:hover {
 	}
 
 	.ticket__logo-visa {
-		width: 80px;
+		width: 90px;
 	}
 
 	.ticket__logo-prior {
-		width: 263px;
+		width: 240px;
 	}
 
 	.ticket__title,
@@ -5205,11 +5205,11 @@ a:hover {
 	}
 
 	.ticket__logo-visa {
-		width: 86px;
+		width: 90px;
 	}
 
 	.ticket__logo-prior {
-		width: 278px;
+		width: 240px;
 	}
 
 	.ticket__title,
