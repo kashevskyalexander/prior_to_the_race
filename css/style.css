@@ -20,8 +20,8 @@
 	--section-pad-y: 80px;
 	--vh: 1vh;
 	--vw: 1vw;
-	/* Visa выше Prior — по макету клиента */
-	--logo-visa-height-factor: 1.3;
+	/* Visa на 15% больше Prior по площади */
+	--logo-visa-area-ratio: 1.15;
 }
 
 *,
@@ -242,9 +242,21 @@ img.re__bg-img {
 	grid-row: 1;
 }
 
-.site-header__visa {
-	width: auto;
-	height: calc(var(--prior-logo-w) * 38 / 293 * var(--logo-visa-height-factor));
+.site-header__visa,
+.ticket__logo-visa,
+.site-footer__logos img:first-child {
+	width: calc(var(--prior-logo-w) * sqrt(var(--logo-visa-area-ratio) * 38 * 92 / (293 * 30)));
+	max-width: none;
+	height: auto;
+	flex-shrink: 0;
+	object-fit: contain;
+}
+
+.site-header__prior,
+.ticket__logo-prior,
+.site-footer__logos img:last-child {
+	flex-shrink: 0;
+	object-fit: contain;
 }
 
 .site-header__prior {
@@ -476,7 +488,6 @@ img.re__bg-img {
 
 .ticket__logos {
 	--prior-logo-w: 122.09px;
-	--logo-visa-height-factor: 1.45;
 	position: absolute;
 	top: 8.98%;
 	left: 0;
@@ -484,11 +495,6 @@ img.re__bg-img {
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
-}
-
-.ticket__logo-visa {
-	width: auto;
-	height: calc(var(--prior-logo-w) * 38 / 293 * var(--logo-visa-height-factor));
 }
 
 .ticket__logo-prior {
@@ -1931,21 +1937,15 @@ img.re__bg-img {
 }
 
 .site-footer__logos {
-	--prior-logo-w: 293px;
+	--prior-logo-w: min(293px, 55vw);
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
 	margin-bottom: 40px;
 }
 
-.site-footer__logos img:first-child {
-	width: auto;
-	height: calc(var(--prior-logo-w) * 38 / 293 * var(--logo-visa-height-factor));
-}
-
 .site-footer__logos img:last-child {
 	width: var(--prior-logo-w);
-	max-width: 55vw;
 	height: auto;
 }
 
@@ -2211,7 +2211,7 @@ img.re__bg-img {
 	
 	.site-header__bar {
 		--prior-logo-w: 139px;
-		grid-template-columns: 54px 1fr 40px;
+		grid-template-columns: auto 1fr 40px;
 		grid-template-rows: auto;
 		gap: 0;
 		padding: 8px 16px;
@@ -2222,6 +2222,7 @@ img.re__bg-img {
 		grid-row: 1;
 		justify-self: start;
 		gap: 0;
+		flex-shrink: 0;
 	}
 
 	.site-header__prior--brand {
@@ -2931,10 +2932,11 @@ img.re__bg-img {
 	}
 
 	.site-footer__logos {
-		--prior-logo-w: 180px;
+		--prior-logo-w: min(180px, 52vw);
 	}
 
 	.site-footer__logos img:last-child {
+		width: var(--prior-logo-w);
 		max-width: 52vw;
 	}
 
