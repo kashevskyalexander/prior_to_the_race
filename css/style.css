@@ -20,8 +20,8 @@
 	--section-pad-y: 80px;
 	--vh: 1vh;
 	--vw: 1vw;
-	--logo-visa-taller: 1.22;
-	--logo-size-scale: 0.85;
+	/* Visa выше Prior — по макету клиента */
+	--logo-visa-height-factor: 1.3;
 }
 
 *,
@@ -236,7 +236,7 @@ img.re__bg-img {
 
 .site-header__brand {
 	display: flex;
-	align-items: center;
+	align-items: flex-end;
 	gap: 12px;
 	grid-column: 1;
 	grid-row: 1;
@@ -244,11 +244,11 @@ img.re__bg-img {
 
 .site-header__visa {
 	width: auto;
-	height: calc(var(--prior-logo-w) * var(--logo-size-scale) * 38 / 293 * var(--logo-visa-taller));
+	height: calc(var(--prior-logo-w) * 38 / 293 * var(--logo-visa-height-factor));
 }
 
 .site-header__prior {
-	width: calc(var(--prior-logo-w) * var(--logo-size-scale));
+	width: var(--prior-logo-w);
 	height: auto;
 }
 
@@ -258,7 +258,7 @@ img.re__bg-img {
 }
 
 .site-header__prior-center img {
-	width: calc(var(--prior-logo-w) * var(--logo-size-scale));
+	width: var(--prior-logo-w);
 	height: auto;
 }
 
@@ -476,22 +476,23 @@ img.re__bg-img {
 
 .ticket__logos {
 	--prior-logo-w: 122.09px;
+	--logo-visa-height-factor: 1.45;
 	position: absolute;
 	top: 8.98%;
 	left: 0;
 	right: 0;
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-between;
 }
 
 .ticket__logo-visa {
 	width: auto;
-	height: calc(var(--prior-logo-w) * var(--logo-size-scale) * 38 / 293 * var(--logo-visa-taller));
+	height: calc(var(--prior-logo-w) * 38 / 293 * var(--logo-visa-height-factor));
 }
 
 .ticket__logo-prior {
-	width: calc(var(--prior-logo-w) * var(--logo-size-scale));
+	width: var(--prior-logo-w);
 	height: auto;
 }
 
@@ -1930,20 +1931,20 @@ img.re__bg-img {
 }
 
 .site-footer__logos {
-	--prior-logo-w: 240px;
+	--prior-logo-w: 293px;
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-between;
 	margin-bottom: 40px;
 }
 
 .site-footer__logos img:first-child {
 	width: auto;
-	height: calc(var(--prior-logo-w) * var(--logo-size-scale) * 38 / 293 * var(--logo-visa-taller));
+	height: calc(var(--prior-logo-w) * 38 / 293 * var(--logo-visa-height-factor));
 }
 
 .site-footer__logos img:last-child {
-	width: calc(var(--prior-logo-w) * var(--logo-size-scale));
+	width: var(--prior-logo-w);
 	max-width: 55vw;
 	height: auto;
 }
@@ -2015,7 +2016,7 @@ img.re__bg-img {
 
 	.site-footer__logos {
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: space-between;
 		margin-bottom: 40px;
 	}
@@ -2148,7 +2149,7 @@ img.re__bg-img {
 	}
 
 	.site-footer__logos {
-		--prior-logo-w: 260px;
+		--prior-logo-w: 293px;
 	}
 
 	.site-footer__logos img:last-child {
@@ -2923,7 +2924,7 @@ img.re__bg-img {
 
 	.site-footer__logos {
 		flex-direction: row;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: space-between;
 		gap: 16px;
 		margin-bottom: 32px;
