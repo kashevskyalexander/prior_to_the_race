@@ -2070,6 +2070,7 @@ img.re__bg-img {
 	}
 
 	.site-footer .site-container {
+		--prior-logo-w: 232px;
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) 257px;
 		justify-content: space-between;
@@ -2083,10 +2084,6 @@ img.re__bg-img {
 		margin-bottom: 0;
 	}
 
-	.site-footer__logos {
-		--prior-logo-w: 232px;
-	}
-
 	.site-footer__logos img:first-child {
 		grid-column: 1;
 		grid-row: 1;
@@ -2097,6 +2094,7 @@ img.re__bg-img {
 		grid-column: 2;
 		grid-row: 1;
 		justify-self: end;
+		width: var(--prior-logo-w);
 		max-width: 100%;
 	}
 
@@ -2149,11 +2147,11 @@ img.re__bg-img {
 	}
 
 	.site-footer__logos {
-		--prior-logo-w: 293px;
+		--prior-logo-w: min(293px, 55vw);
 	}
 
 	.site-footer__logos img:last-child {
-		max-width: 55vw;
+		width: var(--prior-logo-w);
 	}
 
 	.site-footer__grid {
@@ -2964,6 +2962,12 @@ img.re__bg-img {
 		align-items: center;
 		padding-top: 16px;
 		padding-bottom: 16px;
+	}
+
+	@media (min-width: 1200px) {
+		.site-header__bar {
+			--prior-logo-w: 260px;
+		}
 	}
 
 	.site-header__brand {
