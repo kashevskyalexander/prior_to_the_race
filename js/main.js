@@ -218,6 +218,45 @@
   initWinners();
   initFaq();
   initRegisterModal();
+  initMsiStepsModal();
+
+  function initMsiStepsModal() {
+    var modal = document.getElementById("msiStepsModal");
+    if (!modal) return;
+
+    var mobileMq = window.matchMedia("(max-width: 767.98px)");
+    var openTriggers = document.querySelectorAll("[data-msi-steps-modal-open]");
+    var closeTriggers = modal.querySelectorAll("[data-msi-steps-modal-close]");
+
+    function openModal() {
+      modal.removeAttribute("hidden");
+      document.body.classList.add("register-modal-open");
+    }
+
+    function closeModal() {
+      modal.setAttribute("hidden", "");
+      document.body.classList.remove("register-modal-open");
+    }
+
+    openTriggers.forEach(function (trigger) {
+      trigger.addEventListener("click", function (event) {
+        if (!mobileMq.matches) return;
+
+        event.preventDefault();
+        openModal();
+      });
+    });
+
+    closeTriggers.forEach(function (trigger) {
+      trigger.addEventListener("click", closeModal);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && !modal.hasAttribute("hidden")) {
+        closeModal();
+      }
+    });
+  }
 
   function initRegisterModal() {
     var modal = document.getElementById("registerModal");

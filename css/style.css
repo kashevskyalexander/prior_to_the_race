@@ -304,11 +304,28 @@ img.re__bg-img {
 	color: var(--white);
 }
 
+.site-offcanvas .offcanvas-body {
+	display: flex;
+	flex-direction: column;
+	min-height: 0;
+}
+
 .site-offcanvas__nav {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
 	font-size: 20px;
+	flex: 1;
+}
+
+.site-offcanvas__footer {
+	margin-top: auto;
+	padding-top: 32px;
+	padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.site-offcanvas__cta {
+	width: 100%;
 }
 
 .site-offcanvas__nav a:hover {
@@ -1563,17 +1580,29 @@ img.re__bg-img {
 }
 
 .how-to__qr-mobile {
-	margin: 0;
-	font-weight: 400;
-	font-size: 14px;
-	letter-spacing: 0.28px;
-	line-height: 1.4;
-	color: var(--white);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
-.how-to__qr-mobile a {
-	text-decoration: underline;
-	text-underline-offset: 2px;
+.how-to__badge {
+	display: block;
+	line-height: 0;
+	transition: opacity 0.2s ease;
+	margin: auto;
+}
+
+.how-to__badge:hover {
+	opacity: 0.85;
+}
+
+.how-to__badge img {
+	width: 180px;
+	object-fit: contain;
+}
+
+.how-to__badge:last-child img {
+	width: 180px;
 }
 
 .how-to__qr-text {
@@ -2775,12 +2804,6 @@ img.re__bg-img {
 		margin-top: 32px;
 	}
 
-	.how-to__qr-mobile {
-		font-size: 14px;
-		font-weight: 400;
-		letter-spacing: 0.28px;
-		line-height: 1.4;
-	}
 
 	
 	.winners {
@@ -5691,70 +5714,33 @@ a:hover {
 
 .register-modal__body {
 	display: grid;
-	grid-template-columns: 415px minmax(0, 585px);
+	grid-template-columns: 415px 585px;
 	align-items: center;
 	column-gap: 46px;
 	min-height: 533px;
 	padding: 34px 73px 34px 81px;
+	box-sizing: border-box;
 }
 
 .register-modal__visual {
-	position: relative;
 	width: 415px;
-	height: 433px;
+	height: auto;
+	aspect-ratio: 499 / 492;
 	flex-shrink: 0;
 }
 
-.register-modal__decor {
-	position: absolute;
-	border-radius: 50%;
-	background: var(--accent);
-	z-index: 0;
-}
-
-.register-modal__decor--lg {
-	left: -18px;
-	bottom: 34px;
-	width: 196px;
-	height: 196px;
-}
-
-.register-modal__decor--sm {
-	right: 34px;
-	top: 18px;
-	width: 88px;
-	height: 88px;
-}
-
-.register-modal__phone {
-	position: relative;
-	z-index: 1;
+.register-modal__visual-img {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
-}
-
-.register-modal__qr {
-	position: absolute;
-	left: 182px;
-	top: 178px;
-	z-index: 2;
-	width: 176px;
-	height: 176px;
-	object-fit: cover;
 }
 
 .register-modal__content {
 	display: flex;
 	flex-direction: column;
 	gap: 63px;
-	max-width: 585px;
-}
-
-.register-modal__head {
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
+	width: 585px;
+	max-width: 100%;
 }
 
 .register-modal__title {
@@ -5765,15 +5751,7 @@ a:hover {
 	line-height: 1.3;
 	letter-spacing: 0.48px;
 	color: var(--black);
-}
-
-.register-modal__subtitle {
-	margin: 0;
-	font-weight: 400;
-	font-size: 20px;
-	line-height: 1.2;
-	letter-spacing: 0.4px;
-	color: var(--black);
+	word-break: break-word;
 }
 
 .register-modal__stores {
@@ -5784,16 +5762,17 @@ a:hover {
 
 .register-modal__hint {
 	margin: 0;
+	max-width: 585px;
 	font-weight: 400;
 	font-size: 16px;
-	line-height: normal;
+	line-height: 1.35;
 	letter-spacing: 0.32px;
 	color: var(--black);
 }
 
 .register-modal__badges {
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	align-items: center;
 	gap: 12px;
 }
@@ -5810,8 +5789,6 @@ a:hover {
 }
 
 .register-modal__badge img {
-	width: 120px;
-	height: 40px;
 	object-fit: contain;
 }
 
@@ -5832,33 +5809,13 @@ body.register-modal-open {
 	}
 
 	.register-modal__visual {
-		width: 340px;
-		height: 355px;
-	}
-
-	.register-modal__decor--lg {
-		left: -14px;
-		bottom: 28px;
-		width: 160px;
-		height: 160px;
-	}
-
-	.register-modal__decor--sm {
-		right: 28px;
-		top: 14px;
-		width: 72px;
-		height: 72px;
-	}
-
-	.register-modal__qr {
-		left: 149px;
-		top: 146px;
-		width: 144px;
-		height: 144px;
+		width: 100%;
+		max-width: 340px;
 	}
 
 	.register-modal__content {
 		gap: 40px;
+		width: auto;
 	}
 
 	.register-modal__title {
@@ -5866,86 +5823,221 @@ body.register-modal-open {
 		letter-spacing: 0.44px;
 	}
 
-	.register-modal__subtitle {
-		font-size: 18px;
-		letter-spacing: 0.36px;
+	.register-modal__hint {
+		max-width: none;
+	}
+
+	.register-modal__badges {
+		flex-wrap: wrap;
 	}
 }
 
 @media (max-width: 767.98px) {
 	.register-modal {
 		padding: 16px;
-		align-items: flex-end;
+		align-items: center;
 	}
 
 	.register-modal__dialog {
+		width: min(359px, 100%);
 		max-height: calc(100dvh - 32px);
-		border-radius: 20px 20px 0 0;
+		border-radius: 12px;
 	}
 
 	.register-modal__close {
-		top: 20px;
-		right: 20px;
+		top: 16px;
+		right: 16px;
+		width: 32px;
+		height: 32px;
+	}
+
+	.register-modal__close img {
+		width: 32px;
+		height: 32px;
 	}
 
 	.register-modal__body {
-		grid-template-columns: 1fr;
-		row-gap: 32px;
-		padding: 56px 20px 32px;
+		display: block;
+		min-height: auto;
+		padding: 60px 22px 32px;
 	}
 
 	.register-modal__visual {
-		width: min(280px, 100%);
-		height: auto;
-		aspect-ratio: 415 / 433;
-		margin-inline: auto;
-	}
-
-	.register-modal__decor--lg {
-		left: -4%;
-		bottom: 8%;
-		width: 47%;
-		height: auto;
-		aspect-ratio: 1;
-	}
-
-	.register-modal__decor--sm {
-		right: 8%;
-		top: 4%;
-		width: 21%;
-		height: auto;
-		aspect-ratio: 1;
-	}
-
-	.register-modal__qr {
-		left: 43%;
-		top: 41%;
-		width: 42%;
-		height: auto;
-		aspect-ratio: 1;
+		display: none;
 	}
 
 	.register-modal__content {
-		gap: 24px;
-		max-width: none;
+		gap: 40px;
+		width: 100%;
+		max-width: 300px;
+		margin-inline: auto;
+		align-items: center;
+		text-align: center;
 	}
 
 	.register-modal__title {
-		font-size: 20px;
-		letter-spacing: 0.4px;
+		max-width: 300px;
+		font-size: 18px;
+		line-height: 1.3;
+		letter-spacing: 0.36px;
+		text-align: center;
 	}
 
-	.register-modal__subtitle {
-		font-size: 18px;
-		letter-spacing: 0.36px;
+	.register-modal__stores {
+		align-items: center;
+		width: 100%;
+		max-width: 300px;
 	}
 
 	.register-modal__hint {
-		font-size: 14px;
-		letter-spacing: 0.28px;
+		max-width: 300px;
+		font-size: 15px;
+		line-height: normal;
+		letter-spacing: 0.3px;
+		text-align: left;
 	}
 
 	.register-modal__badges {
-		justify-content: flex-start;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		align-items: center;
+		gap: 0;
 	}
+
+	.register-modal__badge img {
+		width: 140px;
+	}
+
+	.register-modal__badge:last-child img {
+		width: 140px;
+	}
+}
+
+.msi-steps-modal {
+	position: fixed;
+	inset: 0;
+	z-index: 1055;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 16px;
+}
+
+.msi-steps-modal[hidden] {
+	display: none;
+}
+
+.msi-steps-modal__backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(1, 12, 27, 0.72);
+}
+
+.msi-steps-modal__dialog {
+	position: relative;
+	width: min(359px, 100%);
+	max-height: calc(100dvh - 32px);
+	overflow: auto;
+	border-radius: 12px;
+	background: var(--white);
+	color: var(--black);
+}
+
+.msi-steps-modal__close {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+}
+
+.msi-steps-modal__close img {
+	width: 32px;
+	height: 32px;
+}
+
+.msi-steps-modal__body {
+	padding: 60px 22px 24px;
+}
+
+.msi-steps-modal__head {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	align-items: center;
+	margin-bottom: 12px;
+	text-align: center;
+}
+
+.msi-steps-modal__title,
+.msi-steps-modal__step {
+	margin: 0;
+	max-width: 300px;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 1.3;
+	letter-spacing: 0.36px;
+	color: var(--black);
+}
+
+.msi-steps-modal__content {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	align-items: center;
+	max-width: 300px;
+	margin-inline: auto;
+}
+
+.msi-steps-modal__lead,
+.msi-steps-modal__text {
+	margin: 0;
+	width: 100%;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.4;
+	letter-spacing: 0.28px;
+	color: var(--black);
+}
+
+.msi-steps-modal__stores {
+	margin: 0;
+	padding-left: 1.5em;
+	width: 100%;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.4;
+	letter-spacing: 0.28px;
+	color: var(--black);
+	list-style: disc;
+}
+
+.msi-steps-modal__stores li {
+	margin: 0;
+}
+
+.msi-steps-modal__stores a {
+	color: var(--black);
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.msi-steps-modal__stores a:hover {
+	opacity: 0.85;
+}
+
+.msi-steps-modal__phone {
+	display: block;
+	width: 150px;
+	height: 305px;
+	margin: 24px auto 0;
+	object-fit: contain;
 }

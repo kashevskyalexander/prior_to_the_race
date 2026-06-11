@@ -89,8 +89,10 @@
         <a href="#winners" data-winners-nav data-bs-dismiss="offcanvas" hidden>Победители</a>
         <a href="rules.pdf" target="_blank" rel="noopener noreferrer">Правила игры</a>
         <a href="#faq" data-bs-dismiss="offcanvas">Вопрос – Ответ</a>
-        <a href="#virtual-card" data-bs-dismiss="offcanvas">Оформить карту</a>
       </nav>
+      <div class="site-offcanvas__footer">
+        <a class="btn btn-outline-accent site-offcanvas__cta" href="#virtual-card" data-bs-dismiss="offcanvas">Оформить карту</a>
+      </div>
     </div>
   </div>
 
@@ -499,7 +501,7 @@
             <li>Оформление через мобильное приложение</li>
             <li>Валюта счета: BYN, RUB, USD, EUR</li>
           </ul>
-          <a href="#how-to" target="_blank" rel="noopener noreferrer" class="btn btn-accent virtual-card__btn">Оформить карту</a>
+          <a href="#how-to" rel="noopener noreferrer" class="btn btn-accent virtual-card__btn">Оформить карту</a>
         </div>
       </div>
     </section>
@@ -514,7 +516,7 @@
                 <span class="how-to__num" aria-hidden="true">1</span>
                 <div class="how-to__step-body">
                   <p class="how-to__step-title">Зайдите в мобильное приложение Prior Online</p>
-                  <p class="how-to__step-text">Если вы еще не клиент Приорбанка, то пройдите регистрацию в приложении, <a href="https://www.promo.priorbank.by/virtual-cards/#modalSteps" target="_blank" rel="noopener">следуя пошаговой инструкции</a></p>
+                  <p class="how-to__step-text">Если вы еще не клиент Приорбанка, то пройдите регистрацию в приложении, <a href="https://www.promo.priorbank.by/virtual-cards/#modalSteps" target="_blank" rel="noopener" data-msi-steps-modal-open>следуя пошаговой инструкции</a></p>
                 </div>
               </li>
               <li class="how-to__step">
@@ -537,7 +539,17 @@
                 <img src="img/qr-code.png" alt="QR-код Prior Online" width="100" height="100">
                 <p class="how-to__qr-text">Чтобы зайти в приложение —<br>отсканируйте QR‑код камерой вашего смартфона</p>
               </div>
-              <p class="how-to__qr-mobile">Чтобы зайти в приложение — переходите по <a href="https://prior.by/web/mobilestore" target="_blank" rel="noopener noreferrer">ссылке</a></p>
+              <div class="how-to__qr-mobile">
+                <a class="how-to__badge" href="https://play.google.com/store/apps/details?id=by.st.priormobile" target="_blank" rel="noopener noreferrer">
+                  <img src="img/badge-google-play.png" alt="Доступно в Google Play" width="120" height="40">
+                </a>
+                <a class="how-to__badge" href="https://apps.apple.com/kg/app/id521143601" target="_blank" rel="noopener noreferrer">
+                  <img src="img/badge-app-store.png" alt="Загрузите в App Store" width="120" height="40">
+                </a>
+                <a class="how-to__badge" href="https://appgallery.huawei.com/#/app/C103473577" target="_blank" rel="noopener noreferrer">
+                  <img src="img/badge-app-gallery.png" alt="Откройте в AppGallery" width="120" height="40">
+                </a>
+              </div>
             </div>
           </div>
           <img src="img/phone-app.png" alt="Prior Online" class="how-to__phone" width="395" height="800">
@@ -800,6 +812,33 @@
     </div>
   </footer>
 
+  <div class="msi-steps-modal" id="msiStepsModal" hidden>
+    <div class="msi-steps-modal__backdrop" data-msi-steps-modal-close></div>
+    <div class="msi-steps-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="msiStepsModalTitle">
+      <button class="msi-steps-modal__close" type="button" data-msi-steps-modal-close aria-label="Закрыть">
+        <img src="img/register-modal-close.svg" alt="" width="32" height="32">
+      </button>
+      <div class="msi-steps-modal__body">
+        <div class="msi-steps-modal__head">
+          <p class="msi-steps-modal__title" id="msiStepsModalTitle">Регистрация в Prior Online через МСИ</p>
+          <p class="msi-steps-modal__step">Шаг 1</p>
+        </div>
+        <div class="msi-steps-modal__content">
+          <p class="msi-steps-modal__lead">Скачайте мобильное приложение Prior Online в магазине приложений:</p>
+          <ul class="msi-steps-modal__stores">
+            <li><a href="https://play.google.com/store/apps/details?id=by.st.priormobile" target="_blank" rel="noopener noreferrer">Google Play Store</a></li>
+            <li><a href="https://apps.apple.com/kg/app/id521143601" target="_blank" rel="noopener noreferrer">Apple App Store</a></li>
+            <li><a href="https://appgallery.huawei.com/#/app/C103473577" target="_blank" rel="noopener noreferrer">Huawei AppGallery</a></li>
+          </ul>
+          <p class="msi-steps-modal__text">На экране входа нажмите на кнопку «Зарегистрироваться», далее «Стать клиентом банка».</p>
+          <p class="msi-steps-modal__text">Введите номер мобильного телефона, а также 14-и значный идентификационный номер документа, удостоверяющего личность, и нажмите «Продолжить»</p>
+          <p class="msi-steps-modal__text">Если вам отобразилось сообщение «Вы являетесь клиентом Приорбанка», нажмите на кнопку «Войти как клиент банка» либо «Не помню логин или пароль», чтобы восстановить доступ к своей учетной записи.</p>
+        </div>
+        <img src="img/msi-step-phone.png" alt="" class="msi-steps-modal__phone" width="150" height="305">
+      </div>
+    </div>
+  </div>
+
   <div class="register-modal" id="registerModal" hidden>
     <div class="register-modal__backdrop" data-register-modal-close></div>
     <div class="register-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="registerModalTitle">
@@ -808,26 +847,20 @@
       </button>
       <div class="register-modal__body">
         <div class="register-modal__visual" aria-hidden="true">
-          <span class="register-modal__decor register-modal__decor--lg"></span>
-          <span class="register-modal__decor register-modal__decor--sm"></span>
-          <img src="img/register-modal-phone.png" alt="" class="register-modal__phone" width="415" height="433">
-          <img src="img/register-modal-qr.png" alt="" class="register-modal__qr" width="176" height="176">
+          <img src="img/register-modal-phone_full.png" alt="" class="register-modal__visual-img" width="499" height="492">
         </div>
         <div class="register-modal__content">
-          <div class="register-modal__head">
-            <p class="register-modal__title" id="registerModalTitle">Установите мобильное приложение Prior Online</p>
-            <p class="register-modal__subtitle">и участвуйте в рекламной игре</p>
-          </div>
+          <p class="register-modal__title" id="registerModalTitle">Установите мобильное приложение Prior Online и участвуйте в рекламной игре</p>
           <div class="register-modal__stores">
             <p class="register-modal__hint">Отсканируйте QR-код камерой вашего смартфона или перейдите по ссылке в App Store, Google Play или AppGallery</p>
             <div class="register-modal__badges">
-              <a class="register-modal__badge" href="https://prior.by/web/mobilestore" target="_blank" rel="noopener noreferrer">
+              <a class="register-modal__badge" href="https://play.google.com/store/apps/details?id=by.st.priormobile" target="_blank" rel="noopener noreferrer">
                 <img src="img/badge-google-play.png" alt="Доступно в Google Play" width="120" height="40">
               </a>
-              <a class="register-modal__badge" href="https://prior.by/web/mobilestore" target="_blank" rel="noopener noreferrer">
+              <a class="register-modal__badge" href="https://apps.apple.com/kg/app/id521143601" target="_blank" rel="noopener noreferrer">
                 <img src="img/badge-app-store.png" alt="Загрузите в App Store" width="120" height="40">
               </a>
-              <a class="register-modal__badge" href="https://prior.by/web/mobilestore" target="_blank" rel="noopener noreferrer">
+              <a class="register-modal__badge" href="https://appgallery.huawei.com/#/app/C103473577" target="_blank" rel="noopener noreferrer">
                 <img src="img/badge-app-gallery.png" alt="Откройте в AppGallery" width="120" height="40">
               </a>
             </div>
