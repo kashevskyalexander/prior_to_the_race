@@ -29,7 +29,7 @@
   <meta property="og:site_name" content='Рекламная игра "С Приорбанком на гонку в Баку" — Priorbank Visa'>
   <meta property="og:title" content="С Приорбанком на гонку в Баку — Priorbank Visa">
   <meta property="og:description" content="Участвуйте в рекламной игре: оплачивайте картой Visa Приорбанка, получайте игровые коды и выигрывайте поездку на гонку в Баку на двоих.">
-  <meta property="og:image" content="img/hero-bg.jpg">
+  <meta property="og:image" content="img/preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="С Приорбанком на гонку в Баку — Priorbank × Visa">
@@ -37,7 +37,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="С Приорбанком на гонку в Баку — Priorbank × Visa">
   <meta name="twitter:description" content="Участвуйте в рекламной игре Priorbank и Visa и выигрывайте поездку на гонку Formula 1 в Баку.">
-  <meta name="twitter:image" content="img/hero-bg.jpg">
+  <meta name="twitter:image" content="img/preview.png">
 
   <link rel="icon" href="favicon.ico" sizes="any">
 
@@ -212,7 +212,7 @@
           </article>
         </div>
         <div class="mechanics__cta-wrap ">
-          <a href="https://www.priorbank.by/offers/services/mobile-applications/prior-online" target="_blank" rel="noopener noreferrer" class="btn btn-accent">Зарегистрироваться</a>
+          <button type="button" class="btn btn-accent" data-register-modal-open>Зарегистрироваться</button>
         </div>
       </div>
       </div>
@@ -499,7 +499,7 @@
             <li>Оформление через мобильное приложение</li>
             <li>Валюта счета: BYN, RUB, USD, EUR</li>
           </ul>
-          <a href="https://www.promo.priorbank.by/virtual-cards/#modalSteps" target="_blank" rel="noopener noreferrer" class="btn btn-accent virtual-card__btn">Оформить карту</a>
+          <a href="#how-to" target="_blank" rel="noopener noreferrer" class="btn btn-accent virtual-card__btn">Оформить карту</a>
         </div>
       </div>
     </section>
@@ -799,6 +799,43 @@
       </div>
     </div>
   </footer>
+
+  <div class="register-modal" id="registerModal" hidden>
+    <div class="register-modal__backdrop" data-register-modal-close></div>
+    <div class="register-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="registerModalTitle">
+      <button class="register-modal__close" type="button" data-register-modal-close aria-label="Закрыть">
+        <img src="img/register-modal-close.svg" alt="" width="40" height="40">
+      </button>
+      <div class="register-modal__body">
+        <div class="register-modal__visual" aria-hidden="true">
+          <span class="register-modal__decor register-modal__decor--lg"></span>
+          <span class="register-modal__decor register-modal__decor--sm"></span>
+          <img src="img/register-modal-phone.png" alt="" class="register-modal__phone" width="415" height="433">
+          <img src="img/register-modal-qr.png" alt="" class="register-modal__qr" width="176" height="176">
+        </div>
+        <div class="register-modal__content">
+          <div class="register-modal__head">
+            <p class="register-modal__title" id="registerModalTitle">Установите мобильное приложение Prior Online</p>
+            <p class="register-modal__subtitle">и участвуйте в рекламной игре</p>
+          </div>
+          <div class="register-modal__stores">
+            <p class="register-modal__hint">Отсканируйте QR-код камерой вашего смартфона или перейдите по ссылке в App Store, Google Play или AppGallery</p>
+            <div class="register-modal__badges">
+              <a class="register-modal__badge" href="https://prior.by/web/mobilestore" target="_blank" rel="noopener noreferrer">
+                <img src="img/badge-google-play.png" alt="Доступно в Google Play" width="120" height="40">
+              </a>
+              <a class="register-modal__badge" href="https://prior.by/web/mobilestore" target="_blank" rel="noopener noreferrer">
+                <img src="img/badge-app-store.png" alt="Загрузите в App Store" width="120" height="40">
+              </a>
+              <a class="register-modal__badge" href="https://prior.by/web/mobilestore" target="_blank" rel="noopener noreferrer">
+                <img src="img/badge-app-gallery.png" alt="Откройте в AppGallery" width="120" height="40">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="data/winners.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>

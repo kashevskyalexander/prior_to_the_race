@@ -217,6 +217,39 @@
 
   initWinners();
   initFaq();
+  initRegisterModal();
+
+  function initRegisterModal() {
+    var modal = document.getElementById("registerModal");
+    if (!modal) return;
+
+    var openTriggers = document.querySelectorAll("[data-register-modal-open]");
+    var closeTriggers = modal.querySelectorAll("[data-register-modal-close]");
+
+    function openModal() {
+      modal.removeAttribute("hidden");
+      document.body.classList.add("register-modal-open");
+    }
+
+    function closeModal() {
+      modal.setAttribute("hidden", "");
+      document.body.classList.remove("register-modal-open");
+    }
+
+    openTriggers.forEach(function (trigger) {
+      trigger.addEventListener("click", openModal);
+    });
+
+    closeTriggers.forEach(function (trigger) {
+      trigger.addEventListener("click", closeModal);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && !modal.hasAttribute("hidden")) {
+        closeModal();
+      }
+    });
+  }
 
   function initFaq() {
     var accordion = document.getElementById("faqAccordion");
