@@ -224,24 +224,94 @@
     var modal = document.getElementById("msiStepsModal");
     if (!modal) return;
 
-    var mobileMq = window.matchMedia("(max-width: 767.98px)");
     var openTriggers = document.querySelectorAll("[data-msi-steps-modal-open]");
     var closeTriggers = modal.querySelectorAll("[data-msi-steps-modal-close]");
+    var dialog = modal.querySelector(".msi-steps-modal__dialog");
+    var slides = modal.querySelectorAll(".msi-steps-modal__slide");
+    var prevBtn = modal.querySelector("[data-msi-steps-prev]");
+    var nextBtn = modal.querySelector("[data-msi-steps-next]");
+    var nav = modal.querySelector(".msi-steps-modal__nav");
+    var currentStep = 0;
+    var totalSteps = slides.length;
+
+    function updateNav() {
+      if (!nav || !prevBtn || !nextBtn) return;
+
+      var isFirst = currentStep === 0;
+      var isLast = currentStep === totalSteps - 1;
+
+      prevBtn.hidden = isFirst;
+      nextBtn.hidden = isLast;
+
+      if (isFirst) {
+        nav.setAttribute("data-nav-mode", "next-only");
+      } else if (isLast) {
+        nav.setAttribute("data-nav-mode", "back-only");
+      } else {
+        nav.setAttribute("data-nav-mode", "both");
+      }
+    }
+
+    function setActiveSlide(index) {
+      slides.forEach(function (slide, slideIndex) {
+        var isActive = slideIndex === index;
+        slide.classList.toggle("is-active", isActive);
+        slide.setAttribute("aria-hidden", isActive ? "false" : "true");
+      });
+    }
+
+    function updateDialogScroll() {
+      if (!dialog) return;
+
+      dialog.classList.remove("is-scrollable");
+      dialog.scrollTop = 0;
+
+      requestAnimationFrame(function () {
+        var needsScroll = dialog.scrollHeight > dialog.clientHeight + 1;
+        dialog.classList.toggle("is-scrollable", needsScroll);
+
+        if (!needsScroll) {
+          dialog.scrollTop = 0;
+        }
+      });
+    }
+
+    function goToStep(index) {
+      if (index < 0 || index >= totalSteps) return;
+
+      currentStep = index;
+      setActiveSlide(currentStep);
+      updateNav();
+      updateDialogScroll();
+    }
 
     function openModal() {
+      goToStep(0);
       modal.removeAttribute("hidden");
       document.body.classList.add("register-modal-open");
+      updateDialogScroll();
     }
 
     function closeModal() {
       modal.setAttribute("hidden", "");
       document.body.classList.remove("register-modal-open");
+      goToStep(0);
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function () {
+        goToStep(currentStep - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function () {
+        goToStep(currentStep + 1);
+      });
     }
 
     openTriggers.forEach(function (trigger) {
       trigger.addEventListener("click", function (event) {
-        if (!mobileMq.matches) return;
-
         event.preventDefault();
         openModal();
       });
@@ -254,6 +324,12 @@
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape" && !modal.hasAttribute("hidden")) {
         closeModal();
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (!modal.hasAttribute("hidden")) {
+        updateDialogScroll();
       }
     });
   }

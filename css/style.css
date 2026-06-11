@@ -5935,12 +5935,16 @@ body.register-modal-open {
 
 .msi-steps-modal__dialog {
 	position: relative;
-	width: min(359px, 100%);
+	width: 100%;
 	max-height: calc(100dvh - 32px);
-	overflow: auto;
+	overflow: hidden;
 	border-radius: 12px;
 	background: var(--white);
 	color: var(--black);
+}
+
+.msi-steps-modal__dialog.is-scrollable {
+	overflow-y: auto;
 }
 
 .msi-steps-modal__close {
@@ -5965,36 +5969,96 @@ body.register-modal-open {
 }
 
 .msi-steps-modal__body {
-	padding: 60px 22px 24px;
-}
-
-.msi-steps-modal__head {
 	display: flex;
 	flex-direction: column;
-	gap: 32px;
-	align-items: center;
-	margin-bottom: 12px;
-	text-align: center;
+	flex: 0 1 auto;
 }
 
-.msi-steps-modal__title,
-.msi-steps-modal__step {
-	margin: 0;
-	max-width: 300px;
+.msi-steps-modal__viewport {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.msi-steps-modal__track {
+	position: relative;
+	overflow: hidden;
+}
+
+.msi-steps-modal__slide {
+	width: 100%;
+	padding: 56px 22px 0;
+	box-sizing: border-box;
+	transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
+}
+
+.msi-steps-modal__slide:not(.is-active) {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateX(20px);
+	pointer-events: none;
+}
+
+.msi-steps-modal__slide.is-active {
+	position: relative;
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(0);
+	pointer-events: auto;
+}
+
+.msi-steps-modal__title {
+	margin: 0 0 32px;
+	width: 100%;
+	max-width: none;
 	font-weight: 500;
 	font-size: 18px;
 	line-height: 1.3;
 	letter-spacing: 0.36px;
 	color: var(--black);
+	text-align: center;
+}
+
+.msi-steps-modal__main {
+	display: flex;
+	flex-direction: column;
+}
+
+.msi-steps-modal__panel {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	order: 1;
+}
+
+.msi-steps-modal__step-label {
+	margin: 0;
+	width: 100%;
+	max-width: none;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 1.3;
+	letter-spacing: 0.36px;
+	color: var(--black);
+	text-align: center;
 }
 
 .msi-steps-modal__content {
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
-	align-items: center;
-	max-width: 300px;
-	margin-inline: auto;
+	align-items: stretch;
+	width: 100%;
+}
+
+.msi-steps-modal__lead-block {
+	width: 100%;
 }
 
 .msi-steps-modal__lead,
@@ -6034,10 +6098,237 @@ body.register-modal-open {
 	opacity: 0.85;
 }
 
+.msi-steps-modal__download {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	width: 100%;
+	margin: 8px auto 0;
+	text-align: center;
+}
+
+.msi-steps-modal__download-title {
+	margin: 0;
+	width: 100%;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 1.3;
+	letter-spacing: 0.36px;
+	color: var(--black);
+}
+
+.msi-steps-modal__badges {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0;
+}
+
+.msi-steps-modal__badge {
+	display: block;
+	line-height: 0;
+	transition: opacity 0.2s ease;
+}
+
+.msi-steps-modal__badge:hover {
+	opacity: 0.85;
+}
+
+.msi-steps-modal__badge img {
+	width: 140px;
+	object-fit: contain;
+}
+
+.msi-steps-modal__badge:last-child img {
+	width: 140px;
+}
+
 .msi-steps-modal__phone {
 	display: block;
+	order: 2;
 	width: 150px;
-	height: 305px;
-	margin: 24px auto 0;
+	height: auto;
+	max-height: 305px;
+	margin: 16px auto 0;
 	object-fit: contain;
+}
+
+.msi-steps-modal__nav {
+	display: flex;
+	gap: 8px;
+	width: 100%;
+	margin: 16px 0 0;
+	padding: 0 22px 22px;
+	box-sizing: border-box;
+}
+
+.msi-steps-modal__nav[data-nav-mode="next-only"],
+.msi-steps-modal__nav[data-nav-mode="back-only"] {
+	justify-content: center;
+}
+
+.msi-steps-modal__nav[data-nav-mode="both"] .msi-steps-modal__btn {
+	flex: 1 1 0;
+	min-width: 0;
+}
+
+.msi-steps-modal__btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 16px 42px 20px;
+	border-radius: 8px;
+	border: 1px solid transparent;
+	background: transparent;
+	font-family: var(--font);
+	font-weight: 500;
+	font-size: 18px;
+	line-height: normal;
+	color: var(--black);
+	cursor: pointer;
+	white-space: nowrap;
+	transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.msi-steps-modal__btn--next {
+	background: var(--accent);
+	border-color: var(--accent);
+}
+
+.msi-steps-modal__btn--back {
+	border-color: #9b9b9b;
+	color: #9b9b9b;
+}
+
+.msi-steps-modal__btn:hover {
+	opacity: 0.85;
+}
+
+.msi-steps-modal__btn[hidden] {
+	display: none;
+}
+
+.msi-steps-modal__btn--back::before {
+	content: "‹\00a0";
+	font-size: 1.15em;
+	line-height: 1;
+}
+
+.msi-steps-modal__btn--next::after {
+	content: "\00a0›";
+	font-size: 1.15em;
+	line-height: 1;
+}
+
+@media (min-width: 768px) {
+	.msi-steps-modal {
+		padding: 40px;
+	}
+
+	.msi-steps-modal__dialog {
+		max-width: 960px;
+		border-radius: 24px;
+	}
+
+	.msi-steps-modal__close {
+		top: 24px;
+		right: 24px;
+		width: 40px;
+		height: 40px;
+	}
+
+	.msi-steps-modal__close img {
+		width: 40px;
+		height: 40px;
+	}
+
+	.msi-steps-modal__slide {
+		padding: 56px 48px 0;
+	}
+
+	.msi-steps-modal__title {
+		margin-bottom: 40px;
+		font-size: 28px;
+		line-height: 1.2;
+		letter-spacing: 0;
+	}
+
+	.msi-steps-modal__main {
+		display: grid;
+		grid-template-columns: minmax(200px, 240px) 1fr;
+		gap: 48px;
+		align-items: center;
+	}
+
+	.msi-steps-modal__phone {
+		order: 0;
+		width: 100%;
+		max-width: 220px;
+		max-height: none;
+		margin: 0 auto;
+	}
+
+	.msi-steps-modal__panel {
+		order: 0;
+		gap: 16px;
+		align-self: center;
+	}
+
+	.msi-steps-modal__step-label {
+		font-size: 24px;
+		line-height: 1.25;
+		letter-spacing: 0;
+		text-align: left;
+	}
+
+	.msi-steps-modal__lead,
+	.msi-steps-modal__text,
+	.msi-steps-modal__stores {
+		font-size: 16px;
+		line-height: 1.5;
+		letter-spacing: 0;
+	}
+
+	.msi-steps-modal__content {
+		gap: 12px;
+	}
+
+	.msi-steps-modal__download {
+		align-items: flex-start;
+		margin-top: 24px;
+		text-align: left;
+	}
+
+	.msi-steps-modal__download-title {
+		font-size: 20px;
+		line-height: 1.3;
+		letter-spacing: 0;
+		text-align: left;
+	}
+
+	.msi-steps-modal__badges {
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 12px;
+		justify-content: flex-start;
+	}
+
+	.msi-steps-modal__nav {
+		gap: 16px;
+		margin-top: 32px;
+		padding: 0 48px 40px;
+	}
+
+	.msi-steps-modal__nav[data-nav-mode="both"] {
+		max-width: 480px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.msi-steps-modal__btn {
+		min-width: 180px;
+		padding: 14px 36px 16px;
+		border-radius: 12px;
+	}
 }
